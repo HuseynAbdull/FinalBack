@@ -2,6 +2,7 @@ using FinalProjectCode.DataAccessLayer;
 using FinalProjectCode.Interfaces;
 using FinalProjectCode.Models;
 using FinalProjectCode.Services;
+using FinalProjectCode.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -27,7 +28,7 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
     options.Lockout.MaxFailedAccessAttempts = 5;
 }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 
-
+builder.Services.Configure<SmtpSetting>(builder.Configuration.GetSection("SmtpSetting"));
 builder.Services.AddScoped<ILayoutServices,LayoutServices>();
 builder.Services.AddSession(options =>
 {

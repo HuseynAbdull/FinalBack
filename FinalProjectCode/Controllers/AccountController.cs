@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MimeKit;
 using MailKit.Net.Smtp;
+using FinalProjectCode.ViewModels;
+using Microsoft.Extensions.Options;
 
 namespace FinalProjectCode.Controllers
 {
@@ -13,14 +15,17 @@ namespace FinalProjectCode.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly SignInManager<AppUser> _signInManager;
+        private readonly SmtpSetting _smtpSetting;
 
         public AccountController(UserManager<AppUser> userManager,
             RoleManager<IdentityRole> roleManager,
-            SignInManager<AppUser> signInManager)
+            SignInManager<AppUser> signInManager,
+            IOptions<SmtpSetting> smtpSetting)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _signInManager = signInManager;
+            _smtpSetting = smtpSetting.Value;
         }
 
         [HttpGet]
@@ -56,21 +61,25 @@ namespace FinalProjectCode.Controllers
             }
 
             await _userManager.AddToRoleAsync(appUser, "Member");
+            string token = await _userManager.GenerateEmailConfirmationTokenAsync(appUser);
+
+            string url = Url.Action("EmailConfirm", "Account", new {id=appUser.Id, token=token},HttpContext.Request.Scheme, HttpContext.Request.Host.ToString());
+
 
             MimeMessage mimeMessage = new MimeMessage();
-            mimeMessage.From.Add(MailboxAddress.Parse("husennikov@gmail.com"));
+            mimeMessage.From.Add(MailboxAddress.Parse(_smtpSetting.Email));
             mimeMessage.To.Add(MailboxAddress.Parse(appUser.Email));
             mimeMessage.Subject = "Email Confirmation";
-            mimeMessage.Body = new TextPart(MimeKit.Text.TextFormat.Html)
+            mimeMessage.Body = new TextPart(MimeKit.Text.TextFormat.Plain)
             {
-                Text = "Test Email Confirm"
+                Text = url
             };
 
 
             using (SmtpClient smtpClient = new SmtpClient())
             {
-                await smtpClient.ConnectAsync("smtp.gmail.com", 587, MailKit.Security.SecureSocketOptions.StartTls);
-                await smtpClient.AuthenticateAsync("husennikov@gmail.com", "oooomwecmdxuhqws");
+                await smtpClient.ConnectAsync(_smtpSetting.Host, _smtpSetting.Port, MailKit.Security.SecureSocketOptions.StartTls);
+                await smtpClient.AuthenticateAsync(_smtpSetting.Email, _smtpSetting.Password);
                 await smtpClient.SendAsync(mimeMessage);
                 await smtpClient.DisconnectAsync(true);
                 smtpClient.Dispose();
@@ -217,6 +226,34 @@ namespace FinalProjectCode.Controllers
 
             return RedirectToAction("index", "home");
         }
+
+
+        [HttpGet]
+        public async Task<IActionResult> EmailConfirm(string id,string token)
+        {
+            if (string.IsNullOrWhiteSpace(id))
+            {
+                return BadRequest();
+            }
+            AppUser appUser = await _userManager.FindByIdAsync(id);
+
+            if (appUser == null)
+            {
+                return NotFound();
+            }
+
+          IdentityResult identityResult = await _userManager.ConfirmEmailAsync(appUser, token);
+
+            if (!identityResult.Succeeded) 
+            {
+                return BadRequest();
+            }
+
+            await _signInManager.SignInAsync(appUser, false);
+
+            return RedirectToAction("index", "home");
+        }
+
 
         #region Create Role And SuperAdmin
         /*      [HttpGet]
