@@ -7,6 +7,7 @@ using MimeKit;
 using MailKit.Net.Smtp;
 using FinalProjectCode.ViewModels;
 using Microsoft.Extensions.Options;
+using MailKit.Security;
 
 namespace FinalProjectCode.Controllers
 {
@@ -82,7 +83,9 @@ namespace FinalProjectCode.Controllers
 
             using (SmtpClient smtpClient = new SmtpClient())
             {
-                await smtpClient.ConnectAsync(_smtpSetting.Host, _smtpSetting.Port, MailKit.Security.SecureSocketOptions.StartTls);
+                smtpClient.ServerCertificateValidationCallback = (s, c, h, e) => true;
+                await smtpClient.ConnectAsync(_smtpSetting.Host, _smtpSetting.Port, MailKit.Security.SecureSocketOptions.Auto);
+
                 await smtpClient.AuthenticateAsync(_smtpSetting.Email, _smtpSetting.Password);
                 await smtpClient.SendAsync(mimeMessage);
                 await smtpClient.DisconnectAsync(true);
