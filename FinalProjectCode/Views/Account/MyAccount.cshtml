@@ -1,0 +1,31 @@
+﻿@inject UserManager<AppUser> userManager
+@{
+    AppUser appUser = null;
+    if (User.Identity.IsAuthenticated)
+    {
+        appUser = await userManager.FindByNameAsync(User.Identity.Name);
+    }
+}
+<section id="my-account">
+    <div class="container">
+        <div class="account-info">
+            <h4>ACCOUNT DETAILS</h4>
+            <a asp-controller="account" asp-action="logout">LOGOUT</a>
+        </div>
+        <div class="account-order">
+            <div class="left-account">
+                <h6>@(appUser?.Name.ToUpper() + " " + appUser?.Surname.ToUpper())</h6>
+                <p>@appUser?.UserName.ToUpper()</p>
+                <p>@appUser?.Email</p>
+                <p class="small fw-bold mt-2 pt-1 mb-0">
+                    Edit Profile ---> <a asp-controller="account" asp-action="profile" class="link register-ha">Go</a></p>
+
+            </div>
+            <div class="vr"></div>
+            <div class="order-history">
+                <h4>ORDER HISTORY</h4>
+                <p>You haven't placed any orders yet.</p>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,90 @@
+﻿@model ShopVM
+
+<div class="container">
+    <div class="shop-full">
+        <div class="catagory-sale">
+            <p>GENDER</p>
+            <ul>
+                @foreach (Gender gender in Model.Genders)
+                {
+                    <li>
+                        <a class="gender-selector-btn" style="cursor:pointer" data-producttype-id="@ViewBag.ProductTypeId " data-id="@gender.Id">@gender.Name <span>(15)</span></a>
+                    </li>
+                }
+            </ul>
+
+            <p>PRODUCT TYPE</p>
+            <ul>
+                @foreach (ProductType productType in Model.ProductTypes)
+                {
+                    <li>
+                        <a class="producttype-selector-btn" style="cursor:pointer" data-gender-id="@ViewBag.GenderId" data-id="@productType.Id">@productType.Name <span>(28)</span></a>
+                    </li>
+                }
+            </ul>
+
+        </div>
+        <div class="right-sale">
+            <div class="shop-selector">
+                <select>
+                    <option>Feautured</option>
+                    <option>Newest</option>
+                    <option>Most Papular</option>
+                    <option>Name</option>
+                    <option>Lowest Price</option>
+                    <option>Highest Price</option>
+                </select>
+            </div>
+            <div class="refine-by">
+                <span>REFINE BY</span>
+            </div>
+            <div class="products-all">
+                <div class="container">
+                    <div class="row g-4">
+                        @foreach (Product product in Model.Products)
+                        {
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-6">
+                                <div class="box">
+                                    <a asp-action="index" asp-controller="ProductDetail" asp-route-productid="@product.Id">
+                                        <img class="img-fluid" src="~/assets/photos/products/@product.MainImage" alt="">
+                                        <div class="product-detail">
+                                            <p><a href="">@product.Title</a></p>
+                                            <p>from <span class="span-red">@product.DiscountedPrice$</span> <span class="old-price">@product.Price$</span></p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section id="pagination-sec">
+    <div class="container">
+        <div class="pagination p12">
+            <ul>
+                <a class="pagination-list" data-gender-id="@ViewBag.GenderId" data-producttype-id="@ViewBag.ProductTypeId" data-id="@(ViewBag.pageIndex - 1)">
+                <li>Previous</li>
+                </a>
+
+                @for(var i=1; i<=ViewBag.pageCount; i++)
+                {
+                    <a class="pagination-list" data-gender-id="@ViewBag.GenderId" data-producttype-id="@ViewBag.ProductTypeId" data-id="@i">
+                    <li> @i </li>
+                    </a>
+
+                }
+                <a class="pagination-list" data-gender-id="@ViewBag.GenderId" data-producttype-id="@ViewBag.ProductTypeId" data-id="@(ViewBag.pageIndex+1)">
+                <li>Next</li>
+                </a>
+
+            </ul>
+        </div>
+    </div>
+    
+</section>

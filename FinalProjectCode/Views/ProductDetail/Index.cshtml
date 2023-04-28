@@ -1,0 +1,70 @@
+﻿@model Product
+
+<section id="product-detail">
+    <div class="container">
+        <div class="product-detail-full">
+            <div class="product-image">
+                <h3>@Model.Title</h3>
+                <div class="product-slider">
+                    <div class="row slider-disc">
+                        @foreach(ProductImage productImage in Model.ProductImages)
+                        {
+                            <div class="col col-lg-12">
+                                <div class="discount-photo">
+                                    <img src="~/assets/photos/products/@productImage.Image" alt="">
+                                </div>
+                            </div> 
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="add-to-cart">
+                <div class="option-title">@Model.BrandName</div>
+                <span class="span-blue">@Model.Count items left</span>
+                <span class="span-red">$@Model.DiscountedPrice <span class="old-price">$@Model.Price</span></span>
+                <span class="span-blue">Estimated Processing & Delivery Time:7-9 Business Days</span>
+                <a class="addToBasket cart-button send-button" data-id="@Model.Id">ADD TO CART</a>
+                <a class="wishlist-button"><i class="fa-regular fa-heart"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="description-detail">
+    <div class="container">
+        <div class="links">
+            <button id="1" class="active-description">DESCRIPTION</button>
+            <button id="2">DETAILS</button>
+            <button id="3">SHIPPING & RETURN</button>
+            <button id="4">ABOUT THE BREND</button>
+        </div>
+        <hr>
+
+
+        <div class="contents">
+            <div id="1" class="content-box description">
+                <p>
+                    @Model.Description
+                </p>
+                <img src="~/assets/photos/products/@Model.MainImage" alt="">
+
+            </div>
+            <div id="2" class="content-box detail d-none">
+                <p><b>BRAND:</b> @Model.BrandName</p>
+                <p><b>UPC:</b> @Model.UPC</p>
+                <p><b>Model:</b> @Model.Model</p>
+            </div>
+            <div id="3" class="content-box d-none">
+                <p>
+                    Get your order fast. ShadesDaddy offers expedited shipping on all standard orders within the United States. Read our New Window <a href="shipping.html">SHIPPING INFORMATION</a> page for more info.
+                    Not satisfied with your purchase? We make returns easy. We allow returns within 30 days of order delivery. Read our New Window RETURN POLICY page for more info.
+                </p>
+            </div>
+            <div id="4" class="content-box d-none">
+                <p>Dolce&Gabbana frames stand out with their unique and remarkable style, focusing on the details and the quality of materials used. Featuring incredible craftsmanship and refinement, Dolce&Gabbana is a brand that represents creativity and elegance.</p>
+            </div>
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,186 @@
+﻿@model HomeVM
+<div class="opened-photo">
+    <img src="assets/photos/SD_Homepage_Banner_3 1 (1).png" alt="">
+</div>
+
+<div class="container-custom">
+    <div class="new-products">
+        <p>New Products</p>
+    </div>
+    <div class="row slider new-arrivals">
+
+        @foreach(Product product in Model.Products)
+        {
+            if (product.IsNewArrival == true && product.ProductTypeId==1)
+            {
+                <div class="col-md-12">
+                    <div class="slider-photo">
+                        <a asp-action="index" asp-controller="ProductDetail" asp-route-productid="@product.Id">
+                            <img src="~/assets/photos/products/@product.MainImage" alt="">
+                        </a>
+                    </div>
+                    <div class="product-detail">
+                        <p><a href="">@product.Title</a></p>
+                        <p>from <span>@product.DiscountedPrice$</span> <span class="old-price">@product.Price$</span></p>
+                    </div>
+
+                </div>
+            }
+        }
+    </div>
+</div>
+
+<section id="slider-about-section">
+    <div class="row slider-ab slider-about">
+        <div class="col-md-12">
+            <div class="about-picture">
+                <a href="">
+                    <img src="https://cdn.shopify.com/s/files/1/0025/3332/6907/files/map2_2000x.jpg?v=1680267467" alt="">
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="about-picture">
+                <a href="">
+                    <img src="https://cdn.shopify.com/s/files/1/0025/3332/6907/files/ezgif-5-1c06849acc_2000x.gif?v=1680297448" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="about-picture">
+                <a href="">
+                    <img src="https://cdn.shopify.com/s/files/1/0025/3332/6907/files/salezxx_2000x.jpg?v=1680267367" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="about-picture">
+                <a href="">
+                    <img src="https://cdn.shopify.com/s/files/1/0025/3332/6907/files/sport_081d0295-b6ef-4a78-97c1-f9a715bfd26c_2000x.jpg?v=1680267417" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="about-picture">
+                <a href="">
+                    <img src="https://cdn.shopify.com/s/files/1/0025/3332/6907/files/luxe_2ce59b2a-2ba5-47bf-ae31-9b5e6c78d676_2000x.jpg?v=1680267548" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="about-picture">
+                <a href="">
+                    <img src="https://cdn.shopify.com/s/files/1/0025/3332/6907/files/polarized_8db1736d-6904-4d58-9602-55bd19eb662c_2000x.jpg?v=1680267245" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="brands-all">
+    <div class="container-custom">
+        <div class="information">
+            <h3>Swipe to discover huge savings on top designer brands.</h3>
+        </div>
+
+        <div class="row brands-logo slider-brands">
+
+            @foreach(BrandLogo brandlogo in Model.BrandLogos)
+            {
+                <div class="col-md-12">
+                    <div class="brand-photo">
+                        <a href="">
+                            <img src="~/assets/photos/brands-logos/@brandlogo.Image" alt="">
+                        </a>
+                    </div>
+                </div>
+            }
+
+        </div>
+
+    </div>
+</section>
+
+<section id="catagory">
+
+    <div class="catagory-left">
+        <img src="https://cdn.shopify.com/s/files/1/0025/3332/6907/files/his_2def799f-44ba-4c91-872d-3b43cb332758_600x.jpg?v=1680267646" alt="">
+        <h4>Men’s Collection</h4>
+        <p>Save big on handsome optical designs for him.</p>
+        <a class="category-button">SHOP MEN'S</a>
+    </div>
+    <div class="catagory-right">
+        <img src="https://cdn.shopify.com/s/files/1/0025/3332/6907/files/hers_b9ebd63a-aa8e-4d39-bf55-862af5f60a80_600x.jpg?v=1680267668" alt="">
+        <h4>Women’s Collection</h4>
+        <p>Shop the hottest prescription-ready eyeglasses for her.</p>
+        <a class="category-button" href="">SHOP WOMEN'S</a>
+    </div>
+
+
+</section>
+
+<section>
+    <div class="container">
+        <div class="video-sec">
+            <video playsinline="" autoplay="" muted="" loop="" src="assets/video/5be16844f9664bcab99a6dd50f4ff47f.mov"></video>
+        </div>
+    </div>
+</section>
+
+
+<section id="slider-discount">
+    <div class="row slider-disc">
+        <div class="col col-lg-12">
+            <div class="discount-photo">
+                <img src="https://cdn.shopify.com/s/files/1/0025/3332/6907/files/3.31-4.10_MAP_Widescreen_2000x.jpg?v=1680271207" alt="">
+            </div>
+        </div>
+
+        <div class="col col-lg-12">
+            <div class="discount-photo">
+                <img src="https://cdn.shopify.com/s/files/1/0025/3332/6907/files/3.31-4.10_MAP_Widescreen_2000x.jpg?v=1680271207" alt="">
+            </div>
+        </div>
+
+        <div class="col col-lg-12">
+            <div class="discount-photo">
+                <img src="https://cdn.shopify.com/s/files/1/0025/3332/6907/files/3.31-4.10_MAP_Widescreen_2000x.jpg?v=1680271207" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section id="contact-page">
+    <h3>GET IN TOUCH</h3>
+    <div class="container">
+        <div class="full-contact">
+            <div class="left-contact">
+                <p>
+                    At ShadesDaddy, we understand how the right pair of eyewear can <br> have a great effect on lifestyles and outdoor activities. We are here to answer any <br> questions you may have about selecting the perfect <br> eyewear. Our certified opticians would love to help make your lifestyle <br> and experience enjoyable.
+                    <br>
+                    <br>
+                    Give us a call at 877-457-5314.
+                    <br>
+                    <br>
+                    Read more on our Contact page.
+                </p>
+                <a class="social-media-logos" href=""><i class="fa-brands fa-facebook-f"></i></a>
+                <a class="social-media-logos" href=""><i class="fa-brands fa-youtube"></i></a>
+                <a class="social-media-logos" href=""><i class="fa-brands fa-pinterest-p"></i></a>
+                <a class="social-media-logos" href=""><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="right-contact">
+                <p>NAME<span> *</span> </p>
+                <input type="text" placeholder="NAME">
+                <p>EMAIL<span> *</span> </p>
+                <input class="email-input" type="email" placeholder="EMAIL">
+                <button class="send-button">SEND</button>
+            </div>
+        </div>
+    </div>
+</section>
+

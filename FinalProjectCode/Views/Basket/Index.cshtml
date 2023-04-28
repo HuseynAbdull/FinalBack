@@ -1,0 +1,17 @@
+﻿@model BasketVM
+<section id="empty-cart">
+    <div class="container">
+        <div class="emptyy">
+            <div class="empty-cart-full">
+                <hr>
+                <p>There are no items in your cart.</p>
+                <hr class="empty-hr">
+                <a href="">CONTINUE SHOPPING</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="basket-full">
+    @await Html.PartialAsync("_BasketPartialView", Model)
+</section>

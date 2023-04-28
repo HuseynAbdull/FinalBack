@@ -1,0 +1,296 @@
+﻿@inject ILayoutServices layoutservice
+@inject UserManager<AppUser> userManager
+@{
+    AppUser appUser = null;
+    if (User.Identity.IsAuthenticated)
+    {
+        appUser = await userManager.FindByNameAsync(User.Identity.Name);
+    }
+}
+@{
+    IDictionary<string ,string> settings = await layoutservice.GetSettings();
+    IEnumerable<BasketVM> basketVMs = await layoutservice.GetBaskets();
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <title>Sunglasses Sale: Best of sunglasses sale</title>
+
+</head>
+<body>
+    <header>
+        <div class="container-custom">
+            <div class="full-top">
+
+
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+
+                <div class="logo-phone">
+                    <a href="index.html">
+                        <img src="https://cdn.shopify.com/s/files/1/0025/3332/6907/files/SD_Logos_copy_Logo_F05F88_410x.png?v=1624897388" alt="">
+                    </a>
+                </div>
+                <div class="left-top">
+                    <a href="">@Html.Raw(settings.FirstOrDefault(s=>s.Key == "Slogan").Value)</a>
+                </div>
+                <div class="right-top">
+
+                    <div class="phone-search">
+                        <a class="phone-search-btn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </a>
+                    </div>
+
+
+
+                    <div class="wishList">
+                        <a href="">
+                            <i class="fa-regular fa-heart"></i>
+                            <span>Wishlist</span>
+                        </a>
+                    </div>
+                    <div class="number">
+                        <a href="tel:+994.070.744.20.44">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                            <span>@Html.Raw(settings.FirstOrDefault(s=>s.Key == "Phone").Value)</span>
+                        </a>
+                    </div>
+                    <div class="login">
+                        @if (User.Identity.IsAuthenticated == true)
+                        {
+                            <a asp-controller="account" asp-action="myaccount">
+                                <i class="fa-regular fa-user"></i>
+                                <span>@appUser.UserName</span>
+                            </a>
+                        }
+                        else
+                        {
+                            <a asp-controller="account" asp-action="login">
+                                <i class="fa-regular fa-user"></i>
+                                <span>Login</span>
+                            </a>
+                        }
+                    </div>
+                    <div class="cart-header">
+                        <a asp-action="index" asp-controller="Basket">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span>0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="header-bottom">
+            <div class="full-bottom">
+                <div class="left-header-bottom">
+                    <a asp-action="index" asp-controller="Home">
+                        <img src="https://cdn.shopify.com/s/files/1/0025/3332/6907/files/SD_Logos_copy_Logo_F05F88_410x.png?v=1624897388" alt="">
+                    </a>
+                </div>
+                <div class="center-nav">
+                    <ul>
+                        <li class="nav-li">
+                            <a asp-action="index" asp-controller="Shop">Sale</a>
+                            <hr class="mobile-hr">
+                        </li>
+                        <li class="nav-li">
+                            <a asp-action="index" asp-controller="Brands">Our Brands</a>
+                            <hr class="mobile-hr">
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="right-header-bottom">
+                    <input id="searchInput" type="text" placeholder="  Search">
+                    <div style="position:absolute">
+                        <ul style="z-index:3" id="searchbody">
+                            
+                           
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+          
+    </header>
+
+    
+    <div class="body-top">
+        <h3>SAVE ON SPRING BREAK WITH US</h3>
+    </div>
+    
+
+    @RenderBody();
+
+    <section id="blue-hp">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blue-hp-support">
+                    <p>Sign up & get 10% off your next order + the best deals straight to your phone!</p>
+                    <input type="text" placeholder="Enter your Email Adress...">
+                    <button class="send-button">SIGN UP</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="head-footer">
+        <div class="container">
+            <div class="shipping-logos-footer">
+                <div class="shipping-logo">
+                    <i class="fa-solid fa-truck-moving"></i>
+                    <span>Free Shipping in the USA</span>
+                </div>
+                <div class="shipping-logo">
+                    <i class="fa-solid fa-lock"></i>
+                    <span>100% Secure Check Out</span>
+                </div>
+                <div class="shipping-logo">
+                    <i class="fa-regular fa-circle-check"></i>
+                    <span>Authorized Dealer</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center text-lg-start bg-white text-muted footer-custom">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom social-media-section">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
+            </div>
+            <!-- Left -->
+            <!-- Right -->
+            <div>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+        <!-- Section: Links  -->
+        <section class="links-section">
+            <div class="container text-center text-md-start">
+                <!-- Grid row -->
+                <div class="row 3 pt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3 text-secondary"></i>Shades Daddy
+                        </h6>
+                        <p>
+                            Get the hottest name brand sunglasses and lenses on the market today - All at the best possible prices. That’s the ShadesDaddy promise.
+                        </p>
+                    </div>
+
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Customers
+                        </h6>
+                        <p>
+                            <a href="myaccount.html" class="text-reset">My Account</a>
+                        </p>
+                        <p>
+                            <a href="myaccount.html" class="text-reset">Order Status</a>
+                        </p>
+                        <p>
+                            <a href="shipping.html" class="text-reset">Shipping</a>
+                        </p>
+
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Company
+                        </h6>
+                        <p>
+                            <a href="aboutus.html" class="text-reset">About Us</a>
+                        </p>
+                        <p>
+                            <a href="contactus.html" class="text-reset">Contact Us / Support</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Privacy Policy</a>
+                        </p>
+                        <p>
+                            <a href="terms.html" class="text-reset">Terms & Conditions</a>
+                        </p>
+                        <p>
+                            <a href="california.html" class="text-reset">California Prop 65</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+
+    </footer>
+
+    <!-- </div> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js" integrity="sha512-xq+Vm8jC94ynOikewaQXMEkJIOBp7iArs3IhFWSWdRT3Pq8wFz46p+ZDFAR7kHnSFf+zUv52B3prRYnbDRdgog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.5/lib/darkmode-js.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="~/assets/js/app.js"></script>
+    <script src="~/assets/js/custom.js" asp-append-version="true"></script>
+   @* <script>
+        var options = {
+            bottom: '64px', // default: '32px'
+            right: 'unset', // default: '32px'
+            left: '32px', // default: 'unset'
+            time: '0.5s', // default: '0.3s'
+            mixColor: '#fff', // default: '#fff'
+            backgroundColor: '#fff',  // default: '#fff'
+            buttonColorDark: '#100f2c',  // default: '#100f2c'
+            buttonColorLight: '#fff', // default: '#fff'
+            saveInCookies: false, // default: true,
+            label: '🌓', // default: ''
+            autoMatchOsTheme: true // default: true
+        }
+        const darkmode = new Darkmode(options);
+        darkmode.showWidget();
+    </script>*@
+
+</body>
+</html>

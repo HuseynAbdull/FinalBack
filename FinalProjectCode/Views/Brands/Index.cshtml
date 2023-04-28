@@ -1,0 +1,29 @@
+﻿@model BrandsVM
+
+<section>
+    <div class="container">
+        <div class="brand-text">
+            <p>
+                Shop our huge luxury selection of designer brands from all over the world.
+                From high-end American design, to the hottest European fashion houses - we've got them all.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="brands-all">
+    <div class="container">
+        <div class="row g-4">
+            @foreach(BrandLogo brandLogo in Model.BrandLogos)
+            {
+                <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                    <div class="box-logo">
+                        <a href="">
+                            <img class="img-fluid" src="~/assets/photos/brands-logos/@brandLogo.Image" alt="">
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

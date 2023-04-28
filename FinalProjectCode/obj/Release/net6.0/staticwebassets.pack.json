@@ -1,0 +1,745 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\css\\style.css",
+      "PackagePath": "staticwebassets\\assets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\js\\app.js",
+      "PackagePath": "staticwebassets\\assets\\js\\app.js"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\js\\custom.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom.js"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\SD_Homepage_Banner_3 1 (1).png",
+      "PackagePath": "staticwebassets\\assets\\photos\\SD_Homepage_Banner_3 1 (1).png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\about-us\\aboutus.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\about-us\\aboutus.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\about-us\\big-brand.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\about-us\\big-brand.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\brands-logos\\brand-armani.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\brands-logos\\brand-armani.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\brands-logos\\brand-arnette.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\brands-logos\\brand-arnette.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\brands-logos\\brand-boss.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\brands-logos\\brand-boss.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\brands-logos\\brand-burberry.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\brands-logos\\brand-burberry.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\brands-logos\\brand-carnetta.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\brands-logos\\brand-carnetta.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\brands-logos\\brand-cartier.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\brands-logos\\brand-cartier.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\brands-logos\\brand-celine.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\brands-logos\\brand-celine.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\brands-logos\\brand-coach.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\brands-logos\\brand-coach.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\brands-logos\\brand-costa.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\brands-logos\\brand-costa.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\brands-logos\\brand-dita.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\brands-logos\\brand-dita.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\brands-logos\\brand-dolcegabana.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\brands-logos\\brand-dolcegabana.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\brands-logos\\brand-emperioarmani.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\brands-logos\\brand-emperioarmani.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\brands-logos\\brand-eyevan.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\brands-logos\\brand-eyevan.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\brands-logos\\brand-gucci.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\brands-logos\\brand-gucci.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\brands-logos\\brand-guess.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\brands-logos\\brand-guess.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\brands-logos\\brand-lacoste.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\brands-logos\\brand-lacoste.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\brands-logos\\brand-michaelkors.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\brands-logos\\brand-michaelkors.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\brands-logos\\brand-montblanc.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\brands-logos\\brand-montblanc.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\brands-logos\\brand-nike.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\brands-logos\\brand-nike.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\brands-logos\\brand-oakley.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\brands-logos\\brand-oakley.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\brands-logos\\brand-porche.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\brands-logos\\brand-porche.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\brands-logos\\brand-prada.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\brands-logos\\brand-prada.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\brands-logos\\brand-rayban.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\brands-logos\\brand-rayban.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\brands-logos\\brand-tomford.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\brands-logos\\brand-tomford.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\brands-logos\\brand-valentino.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\brands-logos\\brand-valentino.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\brands-logos\\brand-versace.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\brands-logos\\brand-versace.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\gender\\men.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\gender\\men.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\gender\\women.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\gender\\women.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\logos\\logo1.avif",
+      "PackagePath": "staticwebassets\\assets\\photos\\logos\\logo1.avif"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-1.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-1.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-10.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-10.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-100.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-100.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-101.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-101.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-102.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-102.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-103.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-103.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-104.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-104.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-105.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-105.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-106.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-106.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-107.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-107.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-108.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-108.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-109.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-109.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-11.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-11.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-110.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-110.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-111.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-111.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-112.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-112.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-113.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-113.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-114.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-114.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-115.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-115.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-116.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-116.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-117.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-117.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-118.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-118.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-119.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-119.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-12.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-12.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-120.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-120.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-121.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-121.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-122.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-122.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-123.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-123.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-124.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-124.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-125.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-125.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-126.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-126.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-127.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-127.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-128.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-128.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-129.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-129.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-13.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-13.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-130.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-130.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-131.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-131.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-132.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-132.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-133.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-133.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-134.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-134.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-135.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-135.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-136.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-136.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-137.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-137.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-138.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-138.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-139.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-139.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-14.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-14.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-140.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-140.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-141.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-141.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-15.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-15.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-16.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-16.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-17.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-17.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-18.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-18.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-19.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-19.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-2.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-20.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-20.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-21.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-21.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-22.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-22.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-23.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-23.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-24.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-24.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-25.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-25.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-26.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-26.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-27.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-27.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-28.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-28.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-29.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-29.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-3.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-3.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-30.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-30.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-31.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-31.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-32.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-32.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-33.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-33.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-34.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-34.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-35.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-35.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-36.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-36.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-37.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-37.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-38.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-38.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-39.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-39.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-4.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-4.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-40.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-40.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-41.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-41.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-42.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-42.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-43.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-43.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-44.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-44.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-45.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-45.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-46.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-46.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-47.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-47.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-48.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-48.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-49.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-49.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-5.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-5.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-50.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-50.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-51.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-51.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-52.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-52.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-53.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-53.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-54.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-54.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-55.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-55.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-56.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-56.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-57.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-57.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-58.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-58.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-59.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-59.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-6.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-6.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-60.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-60.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-61.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-61.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-62.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-62.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-63.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-63.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-64.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-64.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-65.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-65.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-66.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-66.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-67.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-67.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-68.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-68.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-69.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-69.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-7.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-7.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-70.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-70.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-71.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-71.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-72.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-72.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-73.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-73.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-74.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-74.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-75.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-75.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-76.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-76.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-77.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-77.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-78.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-78.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-79.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-79.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-8.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-8.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-80.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-80.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-81.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-81.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-82.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-82.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-83.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-83.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-84.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-84.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-85.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-85.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-86.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-86.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-87.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-87.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-88.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-88.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-89.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-89.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-9.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-9.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-90.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-90.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-91.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-91.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-92.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-92.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-93.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-93.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-94.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-94.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-95.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-95.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-96.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-96.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-97.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-97.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-98.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-98.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-99.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-99.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\shop-home-photo\\6cc5db85df435323f28fe8aea37c6a6f_1200x.progressive.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\shop-home-photo\\6cc5db85df435323f28fe8aea37c6a6f_1200x.progressive.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\shop-home-photo\\eyeglasses.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\shop-home-photo\\eyeglasses.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\shop-home-photo\\newarrivals.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\shop-home-photo\\newarrivals.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\shop-home-photo\\sunglasses.png",
+      "PackagePath": "staticwebassets\\assets\\photos\\shop-home-photo\\sunglasses.png"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\video\\5be16844f9664bcab99a6dd50f4ff47f.mov",
+      "PackagePath": "staticwebassets\\assets\\video\\5be16844f9664bcab99a6dd50f4ff47f.mov"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.FinalProjectCode.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.build.FinalProjectCode.props",
+      "PackagePath": "build\\FinalProjectCode.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.FinalProjectCode.props",
+      "PackagePath": "buildMultiTargeting\\FinalProjectCode.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.buildTransitive.FinalProjectCode.props",
+      "PackagePath": "buildTransitive\\FinalProjectCode.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,77 @@
+﻿@model ProfileVM
+
+<section id="login-pg">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <form class="user" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text text-danger"></div>
+                    <!-- First Name input -->
+                    <div class="form-outline mb-4">
+                        <p class="inpt-p">First Name</p>
+                        <input asp-for="Name" class="login-input"
+                               placeholder="First Name" />
+                        <span asp-validation-for="Name" class="text text-danger"></span>
+                    </div>
+
+                    <!-- Last Name input -->
+                    <div class="form-outline mb-4">
+                        <p class="inpt-p">Last Name</p>
+                        <input asp-for="Surname" class="login-input"
+                               placeholder="Enter a valid email address" />
+                        <span asp-validation-for="Surname" class="text text-danger"></span>
+                    </div>
+
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <p class="inpt-p">Email</p>
+                        <input asp-for="Email" class="login-input"
+                               placeholder="Enter a valid email address" />
+                        <span asp-validation-for="Email" class="text text-danger"></span>
+                    </div>
+
+                    <!-- Username input -->
+                    <div class="form-outline mb-4">
+                        <p class="inpt-p">UserName</p>
+                        <input asp-for="Username" class="login-input"
+                               placeholder="UserName" />
+                        <span asp-validation-for="Username" class="text text-danger"></span>
+                    </div>
+
+                    <!--OLD Password input -->
+                    <div class="form-outline mb-3">
+                        <p class="inpt-p">Old Password</p>
+                        <input asp-for="OldPassword" class="login-input"
+                               placeholder="Enter Old password" />
+                        <span asp-validation-for="OldPassword" class="text text-danger"></span>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-3">
+                        <p class="inpt-p">New Password</p>
+                        <input asp-for="Password" class="login-input"
+                               placeholder="Enter new password" />
+                        <span asp-validation-for="Password" class="text text-danger"></span>
+                    </div>
+
+                    <!--Confirm Password input -->
+                    @* <div class="form-outline mb-3">
+                    <p class="inpt-p">Confirm Password</p>
+                    <input asp-for="Password" class="login-input"
+                    placeholder="Confirm password" />
+                    <span asp-validation-for="ConfirmPassword" class="text text-danger"></span>
+                    </div>*@
+
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button type="submit" class="login-button"
+                                style="padding-left: 2.5rem; padding-right: 2.5rem;">
+                            SUBMIT
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
