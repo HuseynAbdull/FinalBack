@@ -3,6 +3,8 @@ using FinalProjectCode.ViewModels.RegisterVM;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using MimeKit;
+using MailKit.Net.Smtp;
 
 namespace FinalProjectCode.Controllers
 {
@@ -53,7 +55,26 @@ namespace FinalProjectCode.Controllers
                 return View(registerVM);
             }
 
-            await _userManager.AddToRoleAsync(appUser, "Admin");
+            await _userManager.AddToRoleAsync(appUser, "Member");
+
+            MimeMessage mimeMessage = new MimeMessage();
+            mimeMessage.From.Add(MailboxAddress.Parse("husennikov@gmail.com"));
+            mimeMessage.To.Add(MailboxAddress.Parse(appUser.Email));
+            mimeMessage.Subject = "Email Confirmation";
+            mimeMessage.Body = new TextPart(MimeKit.Text.TextFormat.Html)
+            {
+                Text = "Test Email Confirm"
+            };
+
+
+            using (SmtpClient smtpClient = new SmtpClient())
+            {
+                await smtpClient.ConnectAsync("smtp.gmail.com", 587, MailKit.Security.SecureSocketOptions.StartTls);
+                await smtpClient.AuthenticateAsync("husennikov@gmail.com", "oooomwecmdxuhqws");
+                await smtpClient.SendAsync(mimeMessage);
+                await smtpClient.DisconnectAsync(true);
+                smtpClient.Dispose();
+            }
 
             return RedirectToAction(nameof(Login));
         }
