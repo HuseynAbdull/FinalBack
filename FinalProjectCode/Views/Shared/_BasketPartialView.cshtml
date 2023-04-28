@@ -1,14 +1,16 @@
-﻿@inject ILayoutServices layoutservice
+﻿@*@inject ILayoutServices layoutservice
 @{
     IEnumerable<BasketVM> basketVMs =await layoutservice.GetBaskets();
-}
+}*@
+
+@model IEnumerable<BasketVM>
 
 <div class="container">
     <div class="full-basket">
         <div class="basket-products">
             <div class="row">
                 <div class="col-12">
-                    @foreach(BasketVM basketVM in basketVMs)
+                    @foreach(BasketVM basketVM in Model)
                     {
                         <div class="product-shop-info">
                             <div class="prod-img">
@@ -38,11 +40,11 @@
         <div class="basket-buy">
             <div class="sub-total">
                 <p><b>Subtotal</b></p>
-                <p><b>$@basketVMs.Sum(b =>b.Count * b.DiscountedPrice)</b></p>
+                <p><b>$@Model.Sum(b =>b.Count * b.DiscountedPrice)</b></p>
             </div>
             <div class="sub-total sav-total">
                 <p>Total Savings</p>
-                <p class="p-red">$@basketVMs.Sum(b =>b.Price - b.DiscountedPrice)</p>
+                <p class="p-red">$@Model.Sum(b =>b.Price - b.DiscountedPrice)</p>
             </div>
             <p>Orders will be processed in USD.</p>
             <a class="send-button" href=""><i class="fa-solid fa-lock"></i> CHECKOUT</a>

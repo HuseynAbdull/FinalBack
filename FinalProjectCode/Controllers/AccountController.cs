@@ -63,16 +63,20 @@ namespace FinalProjectCode.Controllers
             await _userManager.AddToRoleAsync(appUser, "Member");
             string token = await _userManager.GenerateEmailConfirmationTokenAsync(appUser);
 
-            string url = Url.Action("EmailConfirm", "Account", new {id=appUser.Id, token=token},HttpContext.Request.Scheme, HttpContext.Request.Host.ToString());
+            string url = Url.Action("EmailConfirm", "Account", new {id=appUser.Id, token=token},
+                HttpContext.Request.Scheme, HttpContext.Request.Host.ToString());
 
+            string fullpath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "Shared", "_EmailConfirmPartial.cshtml");
+            string templateContent = await System.IO.File.ReadAllTextAsync(fullpath);
+            templateContent = templateContent.Replace("{{url}}", url);
 
             MimeMessage mimeMessage = new MimeMessage();
             mimeMessage.From.Add(MailboxAddress.Parse(_smtpSetting.Email));
             mimeMessage.To.Add(MailboxAddress.Parse(appUser.Email));
             mimeMessage.Subject = "Email Confirmation";
-            mimeMessage.Body = new TextPart(MimeKit.Text.TextFormat.Plain)
+            mimeMessage.Body = new TextPart(MimeKit.Text.TextFormat.Html)
             {
-                Text = url
+                Text = templateContent
             };
 
 
