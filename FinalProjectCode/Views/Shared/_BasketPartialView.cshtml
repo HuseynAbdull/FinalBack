@@ -5,8 +5,25 @@
 
 @model IEnumerable<BasketVM>
 
+@if (Model.Count() == 0)
+{
+    <section id="empty-cart">
+        <div class="container">
+            <div class="emptyy">
+                <div class="empty-cart-full">
+                    <hr>
+                    <p>There are no items in your cart.</p>
+                    <hr class="empty-hr">
+                    <a href="">CONTINUE SHOPPING</a>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+
 <div class="container">
-    <div class="full-basket">
+    <div class="full-basket pt-5">
         <div class="basket-products">
             <div class="row">
                 <div class="col-12">

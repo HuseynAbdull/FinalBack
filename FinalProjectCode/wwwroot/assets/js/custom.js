@@ -153,7 +153,13 @@ $(document).ready(function (){
             })
             .then(data => {
                 $('#basket-full').html(data);
+
             });
+
+        
+
     });
-  
+
+
+
 })
