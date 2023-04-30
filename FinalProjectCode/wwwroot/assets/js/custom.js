@@ -1,3 +1,4 @@
+
 let buttons = document.querySelectorAll(".links button");
     for (let btn of buttons) {
       btn.onclick = function() {

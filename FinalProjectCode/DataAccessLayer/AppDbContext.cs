@@ -21,5 +21,8 @@ namespace FinalProjectCode.DataAccessLayer
 
         public DbSet<Settings> Settings { get; set; }
 
+        public DbSet<Review> Reviews { get; set; }
+
+
     }
 }

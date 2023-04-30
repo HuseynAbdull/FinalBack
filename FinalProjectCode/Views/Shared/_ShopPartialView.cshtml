@@ -68,18 +68,18 @@
     <div class="container">
         <div class="pagination p12">
             <ul>
-                <a class="pagination-list" data-gender-id="@ViewBag.GenderId" data-producttype-id="@ViewBag.ProductTypeId" data-id="@(ViewBag.pageIndex - 1)">
-                <li>Previous</li>
+                <a class="pagination-list" data-gender-id="@ViewBag.GenderId" style="cursor: pointer" data-producttype-id="@ViewBag.ProductTypeId" data-id="@(ViewBag.pageIndex - 1)">
+                <li >Previous</li>
                 </a>
 
                 @for(var i=1; i<=ViewBag.pageCount; i++)
                 {
-                    <a class="pagination-list" data-gender-id="@ViewBag.GenderId" data-producttype-id="@ViewBag.ProductTypeId" data-id="@i">
+                    <a style="cursor: pointer" class="pagination-list" data-gender-id="@ViewBag.GenderId" data-producttype-id="@ViewBag.ProductTypeId" data-id="@i">
                     <li> @i </li>
                     </a>
 
                 }
-                <a class="pagination-list" data-gender-id="@ViewBag.GenderId" data-producttype-id="@ViewBag.ProductTypeId" data-id="@(ViewBag.pageIndex+1)">
+                <a class="pagination-list" style="cursor: pointer" data-gender-id="@ViewBag.GenderId" data-producttype-id="@ViewBag.ProductTypeId" data-id="@(ViewBag.pageIndex+1)">
                 <li>Next</li>
                 </a>
 

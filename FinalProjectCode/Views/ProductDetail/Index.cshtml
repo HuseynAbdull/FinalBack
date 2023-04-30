@@ -1,13 +1,13 @@
-﻿@model Product
+﻿@model ProductReviewVM
 
 <section id="product-detail">
     <div class="container">
         <div class="product-detail-full">
             <div class="product-image">
-                <h3>@Model.Title</h3>
+                <h3>@Model.Product.Title</h3>
                 <div class="product-slider">
                     <div class="row slider-disc">
-                        @foreach(ProductImage productImage in Model.ProductImages)
+                        @foreach(ProductImage productImage in Model.Product.ProductImages)
                         {
                             <div class="col col-lg-12">
                                 <div class="discount-photo">
@@ -19,11 +19,11 @@
                 </div>
             </div>
             <div class="add-to-cart">
-                <div class="option-title">@Model.BrandName</div>
-                <span class="span-blue">@Model.Count items left</span>
-                <span class="span-red">$@Model.DiscountedPrice <span class="old-price">$@Model.Price</span></span>
+                <div class="option-title">@Model.Product.BrandName</div>
+                <span class="span-blue">@Model.Product.Count items left</span>
+                <span class="span-red">$@Model.Product.DiscountedPrice <span class="old-price">$@Model.Product.Price</span></span>
                 <span class="span-blue">Estimated Processing & Delivery Time:7-9 Business Days</span>
-                <a class="addToBasket cart-button send-button" data-id="@Model.Id">ADD TO CART</a>
+                <a class="addToBasket cart-button send-button" data-id="@Model.Product.Id">ADD TO CART</a>
                 <a class="wishlist-button"><i class="fa-regular fa-heart"></i></a>
             </div>
         </div>
@@ -37,7 +37,7 @@
             <button id="1" class="active-description">DESCRIPTION</button>
             <button id="2">DETAILS</button>
             <button id="3">SHIPPING & RETURN</button>
-            <button id="4">ABOUT THE BREND</button>
+            <button id="4">REVIEW</button>
         </div>
         <hr>
 
@@ -45,15 +45,15 @@
         <div class="contents">
             <div id="1" class="content-box description">
                 <p>
-                    @Model.Description
+                    @Model.Product.Description
                 </p>
-                <img src="~/assets/photos/products/@Model.MainImage" alt="">
+                <img src="~/assets/photos/products/@Model.Product.MainImage" alt="">
 
             </div>
             <div id="2" class="content-box detail d-none">
-                <p><b>BRAND:</b> @Model.BrandName</p>
-                <p><b>UPC:</b> @Model.UPC</p>
-                <p><b>Model:</b> @Model.Model</p>
+                <p><b>BRAND:</b> @Model.Product.BrandName</p>
+                <p><b>UPC:</b> @Model.Product.UPC</p>
+                <p><b>Model:</b> @Model.Product.Model</p>
             </div>
             <div id="3" class="content-box d-none">
                 <p>
@@ -61,10 +61,45 @@
                     Not satisfied with your purchase? We make returns easy. We allow returns within 30 days of order delivery. Read our New Window RETURN POLICY page for more info.
                 </p>
             </div>
-            <div id="4" class="content-box d-none">
-                <p>Dolce&Gabbana frames stand out with their unique and remarkable style, focusing on the details and the quality of materials used. Featuring incredible craftsmanship and refinement, Dolce&Gabbana is a brand that represents creativity and elegance.</p>
+            <div id="4" class="content-box d-none review">
+                <div class="overall-rev">
+                    <p><b><span>4.5</span></b> (Overall)</p>
+                    <p>Based on <span>@Model.Product.Reviews.Count()</span> Comments</p>
+                </div>
+
+                @if(Model.Product.Reviews != null && Model.Product.Reviews.Count() > 0)
+                {
+                    foreach (Review review in Model.Product.Reviews)
+                    {
+                        <div class="review-box">
+                            <div class="rewiev-box-header">
+                                <div class="name-rew">
+                                    <p>@review.Name</p>
+                                </div>
+                                <div class="stars-rew">
+                                    @for (int i = 1; i <= 5; i++)
+                                    {
+                                        <i class="@(i <= review.Star ? "fas":"far") fa-star"></i>
+                                    }
+                                    <span>(@review.Star)</span>
+                                </div>
+                            </div>
+                            <div class="rewiev-box-bottom">
+                                <p>@review.Description</p>
+                            </div>
+                        </div>
+                    }
+                }
+
+                <div class="review-add-comment">
+                    @if(User.Identity.IsAuthenticated && User.IsInRole("Member")){
+
+                        @await Html.PartialAsync("_AddReviewPartial",Model.Review)
+                        ;
+                    }
+                   
+                </div>
             </div>
         </div>
-
     </div>
 </section>

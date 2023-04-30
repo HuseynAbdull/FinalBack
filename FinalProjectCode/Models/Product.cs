@@ -46,6 +46,8 @@ namespace FinalProjectCode.Models
 
         public IEnumerable<ProductImage> ProductImages { get; set;}
 
+        public IEnumerable<Review>? Reviews { get; set; }
+
 
     }
 }

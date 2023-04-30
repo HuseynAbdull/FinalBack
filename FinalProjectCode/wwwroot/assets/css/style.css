@@ -1,4 +1,4 @@
-* {
+﻿* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -1564,6 +1564,138 @@ li {
 
 
 
+
+.rewiev-box-header {
+    display: flex;
+    align-items: center;
+}
+
+.stars-rew {
+    margin-left: 10px;
+}
+
+.overall-rev p {
+    color: #262626;
+    font-size: 19px;
+}
+
+.stars-rew i {
+    color: rgb(173, 173, 42);
+}
+
+.stars-rew span {
+    color: #262626;
+    font-weight: 600;
+}
+
+
+
+
+.review-add-comment {
+    margin-top: 5rem;
+}
+
+.rating-add span {
+    color: #262626;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.rating-add i {
+    color: rgb(173, 173, 42);
+}
+
+.add-com p {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.rating-inp hr {
+    width: 100%;
+    align: center;
+}
+
+.review {
+    width: 100%;
+    padding: 5px;
+    border: grey solid 2px;
+    border-radius: 5px;
+}
+
+    .review:hover {
+        border: bluelight solid 2px;
+    }
+
+.rating-inp form {
+    transition: 0.25s;
+}
+
+.desc {
+    height: 150px;
+    width: 100%;
+    padding: 5px;
+    border: grey solid 2px;
+    border-radius: 5px;
+}
+
+.rating-inp button {
+    float: right;
+    margin-top: 1rem;
+
+}
+
+.buttonganteng {
+    border-radius: 3px;
+    background-color: #36b8ce;
+    color: white;
+    margin: 0;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+
+    .rate:not(:checked) > input {
+        position: absolute;
+        top: -9999px;
+    }
+
+    .rate:not(:checked) > label {
+        float: right;
+        width: 1em;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 30px;
+        color: #ccc;
+    }
+
+        .rate:not(:checked) > label:before {
+            content: '★ ';
+        }
+
+    .rate > input:checked ~ label {
+        color: #ffc700;
+    }
+
+    .rate:not(:checked) > label:hover,
+    .rate:not(:checked) > label:hover ~ label {
+        color: #deb217;
+    }
+
+    .rate > input:checked + label:hover,
+    .rate > input:checked + label:hover ~ label,
+    .rate > input:checked ~ label:hover,
+    .rate > input:checked ~ label:hover ~ label,
+    .rate > label:hover ~ input:checked ~ label {
+        color: #c59b08;
+    }
 
 
 

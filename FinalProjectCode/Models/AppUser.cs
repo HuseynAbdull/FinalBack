@@ -11,5 +11,6 @@ namespace FinalProjectCode.Models
         [StringLength(100)]
         public string? Surname { get; set; }
 
+        public IEnumerable<Review>? Reviews { get; set; }
     }
 }
