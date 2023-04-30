@@ -23,6 +23,10 @@ namespace FinalProjectCode.DataAccessLayer
 
         public DbSet<Review> Reviews { get; set; }
 
+        public DbSet<Order> Orders { get; set; }
+
+        public DbSet<OrderItem> OrderItems { get; set; }
+
 
     }
 }

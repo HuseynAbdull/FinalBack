@@ -8,7 +8,7 @@
                 @foreach (Gender gender in Model.Genders)
                 {
                     <li>
-                        <a class="gender-selector-btn" style="cursor:pointer" data-producttype-id="@ViewBag.ProductTypeId " data-id="@gender.Id">@gender.Name <span>(15)</span></a>
+                        <a class="gender-selector-btn" style="cursor:pointer" data-producttype-id="@ViewBag.ProductTypeId " data-id="@gender.Id">@gender.Name <span>(@Model.Products.Count())</span></a>
                     </li>
                 }
             </ul>
@@ -18,7 +18,7 @@
                 @foreach (ProductType productType in Model.ProductTypes)
                 {
                     <li>
-                        <a class="producttype-selector-btn" style="cursor:pointer" data-gender-id="@ViewBag.GenderId" data-id="@productType.Id">@productType.Name <span>(28)</span></a>
+                        <a class="producttype-selector-btn" style="cursor:pointer" data-gender-id="@ViewBag.GenderId" data-id="@productType.Id">@productType.Name <span>(@Model.Products.Count())</span></a>
                     </li>
                 }
             </ul>

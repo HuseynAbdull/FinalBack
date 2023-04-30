@@ -2,7 +2,6 @@
 @{
     IEnumerable<BasketVM> basketVMs =await layoutservice.GetBaskets();
 }*@
-
 @model IEnumerable<BasketVM>
 
 @if (Model.Count() == 0)
@@ -14,7 +13,7 @@
                     <hr>
                     <p>There are no items in your cart.</p>
                     <hr class="empty-hr">
-                    <a href="">CONTINUE SHOPPING</a>
+                    <a asp-action="index" asp-controller="Shop">CONTINUE SHOPPING</a>
                 </div>
             </div>
         </div>
@@ -65,7 +64,7 @@
             </div>
             <p>Orders will be processed in USD.</p>
             <a class="send-button" href=""><i class="fa-solid fa-lock"></i> CHECKOUT</a>
-            <a class="continue-shopping" href="">CONTINUE SHOPPING</a>
+            <a asp-action="index" asp-controller="Shop"class="continue-shopping">CONTINUE SHOPPING</a>
         </div>
     </div>
 </div>

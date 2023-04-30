@@ -157,10 +157,41 @@ $(document).ready(function (){
 
             });
 
-        
-
     });
+    
 
+    $('.wishlist-button').click(function myfunction(e) {
+        e.preventDefault();
+        let productId = $(this).data('id');
+        fetch('basket/AddWishlist?id=' + productId)
+            .then(res => {
+                return res.text();
+            }).then(data => {
+                console.log(data)
+                if (data != null) {
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'bottom-start',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: false,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    })
+
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'Product Added from Wishlist',
+                        customClass: {
+                            container: 'my-sweet-alert'
+                        }
+                    })
+                }
+            })
+
+    })
 
 
 })

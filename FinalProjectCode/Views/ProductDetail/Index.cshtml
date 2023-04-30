@@ -24,12 +24,11 @@
                 <span class="span-red">$@Model.Product.DiscountedPrice <span class="old-price">$@Model.Product.Price</span></span>
                 <span class="span-blue">Estimated Processing & Delivery Time:7-9 Business Days</span>
                 <a class="addToBasket cart-button send-button" data-id="@Model.Product.Id">ADD TO CART</a>
-                <a class="wishlist-button"><i class="fa-regular fa-heart"></i></a>
+                <a class="wishlist-button" data-id="@Model.Product.Id"><i class="fa-regular fa-heart"></i></a>
             </div>
         </div>
     </div>
 </section>
-
 
 <section id="description-detail">
     <div class="container">
@@ -94,8 +93,7 @@
                 <div class="review-add-comment">
                     @if(User.Identity.IsAuthenticated && User.IsInRole("Member")){
 
-                        @await Html.PartialAsync("_AddReviewPartial",Model.Review)
-                        ;
+                        @await Html.PartialAsync("_AddReviewPartial",Model.Review);
                     }
                    
                 </div>

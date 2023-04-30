@@ -2,6 +2,7 @@
 using FinalProjectCode.Interfaces;
 using FinalProjectCode.Models;
 using FinalProjectCode.ViewModels.BasketVM;
+using FinalProjectCode.ViewModels.WishlistVM;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 
@@ -48,6 +49,37 @@ namespace FinalProjectCode.Services
 
 
             return basketVMs;
+        }
+
+        public async Task<IEnumerable<WishlistVM>> GetWishlist()
+        {
+            string wishlist = _httpContextAccessor.HttpContext.Request.Cookies["wishlist"];
+
+            List<WishlistVM> wishlistVMs = null;
+            if (!string.IsNullOrWhiteSpace(wishlist))
+            {
+                wishlistVMs = JsonConvert.DeserializeObject<List<WishlistVM>>(wishlist);
+
+                foreach (WishlistVM wishlistVM in wishlistVMs)
+                {
+                    Product product = await _appDbContext.Products
+                        .FirstOrDefaultAsync(p => p.Id == wishlistVM.Id && p.IsDeleted == false);
+
+                    if (product != null)
+                    {
+                        wishlistVM.Price = product.Price;
+                        wishlistVM.Title = product.Title;
+                        wishlistVM.Image = product.MainImage;
+                    }
+
+                }
+            }
+            else
+            {
+                wishlistVMs = new List<WishlistVM>();
+            }
+
+            return wishlistVMs;
         }
 
         public async Task<IDictionary<string, string>> GetSettings()
