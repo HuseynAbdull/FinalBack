@@ -17,7 +17,7 @@ namespace FinalProjectCode.Models
         [StringLength(200)]
         public string? AddressLine { get; set; }
 
-        public bool? IsMain { get; set; }
+        public bool IsMain { get; set; }
 
         public string? UserId { get; set; }
         public AppUser? User { get; set; }

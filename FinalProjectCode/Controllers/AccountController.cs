@@ -9,6 +9,8 @@ using FinalProjectCode.ViewModels;
 using Microsoft.Extensions.Options;
 using FinalProjectCode.DataAccessLayer;
 using Microsoft.EntityFrameworkCore;
+using FinalProjectCode.ViewModels.BasketVM;
+using Newtonsoft.Json;
 
 namespace FinalProjectCode.Controllers
 {
@@ -115,7 +117,9 @@ namespace FinalProjectCode.Controllers
                 return View(loginVM);
             }
 
-            AppUser appUser = await _userManager.FindByEmailAsync(loginVM.Email);
+            AppUser appUser = await _userManager.Users.Include(u=>u.Baskets.Where(b=>b.IsDeleted == false))
+                .FirstOrDefaultAsync(u=>u.NormalizedEmail == loginVM.Email.Trim().ToUpperInvariant());
+            
 
             if (appUser == null) 
             {
@@ -131,6 +135,35 @@ namespace FinalProjectCode.Controllers
             {
                 ModelState.AddModelError("", "Email ve ya Şifrə Yanlishdir");
                 return View(loginVM);
+            }
+
+            string basket = HttpContext.Request.Cookies["basket"];
+
+            if (string.IsNullOrWhiteSpace(basket))
+            {
+                if(appUser.Baskets != null && appUser.Baskets.Count() > 0)
+                {
+                    List<BasketVM> basketVMs = new List<BasketVM>();
+
+                    foreach (Basket basket1 in appUser.Baskets)
+                    {
+                        BasketVM basketVM = new BasketVM
+                        {
+                            Id = (int)basket1.ProductId,
+                            Count = basket1.Count,
+                        };
+
+                         basketVMs.Add(basketVM);
+                    }
+
+                    basket = JsonConvert.SerializeObject(basketVMs);
+
+                    HttpContext.Response.Cookies.Append("basket", basket);
+                }
+            }
+            else
+            {
+                HttpContext.Response.Cookies.Append("basket","");
             }
 
             return RedirectToAction("index","home");

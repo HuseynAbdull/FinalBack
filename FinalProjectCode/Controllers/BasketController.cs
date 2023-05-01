@@ -14,10 +14,12 @@ namespace FinalProjectCode.Controllers
     public class BasketController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly UserManager<AppUser> _userManager;
 
-        public BasketController(AppDbContext context)
+        public BasketController(AppDbContext context, UserManager<AppUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         public IActionResult Index()
@@ -38,7 +40,6 @@ namespace FinalProjectCode.Controllers
                         
                     }
 
-                   
                 }
 
             }
@@ -109,6 +110,33 @@ namespace FinalProjectCode.Controllers
                     };
 
                     basketVMs.Add(basketVM);
+
+                }
+
+                if(User.Identity.IsAuthenticated)
+                {
+                    AppUser appUser = await _userManager.Users
+                        .Include(u=>u.Baskets.Where(b=>b.IsDeleted == false))
+                        .FirstOrDefaultAsync(u=>u.NormalizedUserName ==User.Identity.Name.ToUpperInvariant());
+
+
+                    if(appUser.Baskets.Any(b=>b.ProductId == id))
+                    {
+                        appUser.Baskets.FirstOrDefault(b => b.ProductId == id).Count = basketVMs.FirstOrDefault(b => b.Id == id).Count;
+                    }
+                    else
+                    {
+                        Basket dbbasket = new Basket
+                        {
+                            ProductId = id,
+                            Count = basketVMs.FirstOrDefault(b => b.Id == id).Count,
+
+                        };
+
+                        appUser.Baskets.Add(dbbasket);
+
+                    }
+                    await _context.SaveChangesAsync();
 
                 }
 

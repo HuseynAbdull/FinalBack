@@ -29,5 +29,7 @@ namespace FinalProjectCode.DataAccessLayer
 
         public DbSet<Address> Addresses { get; set; }
 
+        public DbSet<Basket> Baskets { get; set; }
+
     }
 }

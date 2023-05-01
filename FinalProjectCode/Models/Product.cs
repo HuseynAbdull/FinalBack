@@ -44,6 +44,8 @@ namespace FinalProjectCode.Models
 
         public bool IsNewArrival { get; set; }
 
+        public IEnumerable<Basket>? Baskets { get; set; }
+
         public IEnumerable<ProductImage> ProductImages { get; set;}
 
         public IEnumerable<Review>? Reviews { get; set; }

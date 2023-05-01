@@ -16,5 +16,7 @@ namespace FinalProjectCode.Models
         public IEnumerable<Address>? Addresses { get; set; }
 
         public IEnumerable<Order>? Orders { get; set; }
+
+        public List<Basket>? Baskets { get; set; }
     }
 }

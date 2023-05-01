@@ -1,6 +1,6 @@
 ﻿@model Order
 
-<form method="post">
+<form id="orderCheckoutForm" method="post">
     <div class="row">
         <div class="col-md-6">
             <div class="single-input-item">
@@ -48,6 +48,12 @@
         <label asp-for="PostalCode" class="required"></label>
         <input asp-for="PostalCode" id="postcode" placeholder="Postcode / ZIP" required />
         <span asp-validation-for="PostalCode" class="text-danger"></span>
+    </div>
+
+    <div class="single-input-item">
+        <label asp-for="AddressLine" class="required"></label>
+        <input asp-for="AddressLine" id="postcode" placeholder="Address Line" required />
+        <span asp-validation-for="AddressLine" class="text-danger"></span>
     </div>
 
     <div class="single-input-item">

@@ -10,7 +10,7 @@ namespace FinalProjectCode.Models
 
         public AppUser? User { get; set; }
 
-        public IEnumerable<OrderItem> OrderItems { get; set; }
+        public IEnumerable<OrderItem>? OrderItems { get; set; }
 
         [StringLength(100)]
         public string? Name { get; set; }

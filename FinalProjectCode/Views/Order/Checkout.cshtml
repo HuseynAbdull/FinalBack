@@ -1,4 +1,6 @@
-﻿ <!-- checkout main wrapper start -->
+﻿@model OrderVM
+
+ <!-- checkout main wrapper start -->
 <div class="checkout-page-wrapper section-padding">
     <div class="container">
         <div class="row">
@@ -7,7 +9,7 @@
                 <div class="checkout-billing-details-wrap">
                     <h4 class="checkout-title">Billing Details</h4>
                     <div class="billing-form-wrap">
-                        @await Html.PartialAsync("_CheckoutPartial")
+                        @await Html.PartialAsync("_CheckoutPartial",Model.Order)
                     </div>
                 </div>
             </div>
@@ -27,24 +29,15 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <a href="product-details.html">Suscipit Vestibulum <strong> × 1</strong></a>
-                                        </td>
-                                        <td>$165.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="product-details.html">Ami Vestibulum suscipit <strong> × 4</strong></a>
-                                        </td>
-                                        <td>$165.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="product-details.html">Vestibulum suscipit <strong> × 2</strong></a>
-                                        </td>
-                                        <td>$165.00</td>
-                                    </tr>
+                                    @foreach (BasketVM basketVM in Model.BasketVMs)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <a>@basketVM.Title <strong> × @basketVM.Count</strong></a>
+                                            </td>
+                                            <td>$@(basketVM.DiscountedPrice * basketVM.Count)</td>
+                                        </tr>
+                                    }
                                 </tbody>
                                 <tfoot>
                                     <tr>
@@ -60,7 +53,7 @@
                         </div>
                         <!-- BUTTON -->
                         <div class="order-payment-method">
-                         <button type="submit" class="btn btn-sqr btn-place">Place Order</button
+                            <button form="orderCheckoutForm" class="btn btn-sqr btn-place">Place Order</button>
                         </div>
                     </div>
                 </div>

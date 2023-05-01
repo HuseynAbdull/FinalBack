@@ -63,7 +63,10 @@
                 <p class="p-red">$@Model.Sum(b =>b.Price - b.DiscountedPrice)</p>
             </div>
             <p>Orders will be processed in USD.</p>
-            <a class="send-button" asp-action="checkout" asp-controller="order" ><i class="fa-solid fa-lock"></i> CHECKOUT</a>
+            @if (Model != null && Model.Count() > 0)
+            {
+                <a class="send-button" asp-action="checkout" asp-controller="order"><i class="fa-solid fa-lock"></i> CHECKOUT</a>
+            }
             <a asp-action="index" asp-controller="Shop"class="continue-shopping">CONTINUE SHOPPING</a>
         </div>
     </div>

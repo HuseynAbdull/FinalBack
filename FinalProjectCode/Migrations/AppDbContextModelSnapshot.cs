@@ -59,7 +59,7 @@ namespace FinalProjectCode.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<bool?>("IsMain")
+                    b.Property<bool>("IsMain")
                         .HasColumnType("bit");
 
                     b.Property<string>("PostalCode")
@@ -158,6 +158,56 @@ namespace FinalProjectCode.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("FinalProjectCode.Models.Basket", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Baskets");
                 });
 
             modelBuilder.Entity("FinalProjectCode.Models.BrandLogo", b =>
@@ -811,6 +861,21 @@ namespace FinalProjectCode.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("FinalProjectCode.Models.Basket", b =>
+                {
+                    b.HasOne("FinalProjectCode.Models.Product", "Product")
+                        .WithMany("Baskets")
+                        .HasForeignKey("ProductId");
+
+                    b.HasOne("FinalProjectCode.Models.AppUser", "User")
+                        .WithMany("Baskets")
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Product");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("FinalProjectCode.Models.Order", b =>
                 {
                     b.HasOne("FinalProjectCode.Models.AppUser", "User")
@@ -935,6 +1000,8 @@ namespace FinalProjectCode.Migrations
                 {
                     b.Navigation("Addresses");
 
+                    b.Navigation("Baskets");
+
                     b.Navigation("Orders");
 
                     b.Navigation("Reviews");
@@ -952,6 +1019,8 @@ namespace FinalProjectCode.Migrations
 
             modelBuilder.Entity("FinalProjectCode.Models.Product", b =>
                 {
+                    b.Navigation("Baskets");
+
                     b.Navigation("ProductImages");
 
                     b.Navigation("Reviews");
