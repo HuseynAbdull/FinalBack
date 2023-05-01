@@ -1,0 +1,161 @@
+﻿@model Order
+
+<form method="post">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="single-input-item">
+                <label asp-for="Name" class="required"></label>
+                <input asp-for="Name" id="f_name" placeholder="First Name" required />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="single-input-item">
+                <label asp-for="SurName" class="required"></label>
+                <input asp-for="SurName" id="l_name" placeholder="Last Name" required />
+                <span asp-validation-for="SurName" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="single-input-item">
+        <label asp-for="Email" class="required"></label>
+        <input asp-for="Email" id="email" placeholder="Email Address" required />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="single-input-item">
+            <label asp-for="Country" class="required"></label>
+            <input asp-for="Country" id="l_name" placeholder="Country" required />
+            <span asp-validation-for="Country" class="text-danger"></span>
+    </div>
+   
+    <div class="single-input-item">
+        <label asp-for="City" class="required"></label>
+        <input asp-for="City" id="town" placeholder="Town / City" required />
+        <span asp-validation-for="City" class="text-danger"></span>
+    </div>
+
+    <div class="single-input-item">
+        <label asp-for="State"></label>
+        <input asp-for="State" id="state" placeholder="State / Divition" />
+        <span asp-validation-for="State" class="text-danger"></span>
+
+    </div>
+
+    <div class="single-input-item">
+        <label asp-for="PostalCode" class="required"></label>
+        <input asp-for="PostalCode" id="postcode" placeholder="Postcode / ZIP" required />
+        <span asp-validation-for="PostalCode" class="text-danger"></span>
+    </div>
+
+    <div class="single-input-item">
+        <label asp-for="Phone"></label>
+        <input asp-for="Phone" id="phone" placeholder="Phone" />
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+
+  @*  <div class="checkout-box-wrap">
+        <div class="single-input-item">
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="create_pwd">
+                <label class="custom-control-label" for="create_pwd">
+                    Create an
+                    account?
+                </label>
+            </div>
+        </div>
+        <div class="account-create single-form-row">
+            <p>
+                Create an account by entering the information below. If you are a
+                returning customer please login at the top of the page.
+            </p>
+            <div class="single-input-item">
+                <label for="pwd" class="required">Account Password</label>
+                <input type="password" id="pwd" placeholder="Account Password" required />
+            </div>
+        </div>
+    </div>*@
+
+    @*<div class="checkout-box-wrap">
+        <div class="single-input-item">
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="ship_to_different">
+                <label class="custom-control-label" for="ship_to_different">
+                    Ship to a
+                    different address?
+                </label>
+            </div>
+        </div>
+        <div class="ship-to-different single-form-row">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="single-input-item">
+                        <label for="f_name_2" class="required">First Name</label>
+                        <input type="text" id="f_name_2" placeholder="First Name" required />
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="single-input-item">
+                        <label for="l_name_2" class="required">Last Name</label>
+                        <input type="text" id="l_name_2" placeholder="Last Name" required />
+                    </div>
+                </div>
+            </div>
+
+            <div class="single-input-item">
+                <label for="email_2" class="required">Email Address</label>
+                <input type="email" id="email_2" placeholder="Email Address" required />
+            </div>
+
+            <div class="single-input-item">
+                <label for="com-name_2">Company Name</label>
+                <input type="text" id="com-name_2" placeholder="Company Name" />
+            </div>
+
+            <div class="single-input-item">
+                <label for="country_2" class="required">Country</label>
+                <select class="count-sel" name="country" id="country_2">
+                    <option value="Bangladesh">Bangladesh</option>
+                    <option value="India">India</option>
+                    <option value="Pakistan">Pakistan</option>
+                    <option value="England">England</option>
+                    <option value="London">London</option>
+                    <option value="London">London</option>
+                    <option value="Chaina">Chaina</option>
+                </select>
+            </div>
+
+            <div class="single-input-item">
+                <label for="street-address_2" class="required mt-20">Street address</label>
+                <input type="text" id="street-address_2" placeholder="Street address Line 1" required />
+            </div>
+
+            <div class="single-input-item">
+                <input type="text" placeholder="Street address Line 2 (Optional)" />
+            </div>
+
+            <div class="single-input-item">
+                <label for="town_2" class="required">Town / City</label>
+                <input type="text" id="town_2" placeholder="Town / City" required />
+            </div>
+
+            <div class="single-input-item">
+                <label for="state_2">State / Divition</label>
+                <input type="text" id="state_2" placeholder="State / Divition" />
+            </div>
+
+            <div class="single-input-item">
+                <label for="postcode_2" class="required">Postcode / ZIP</label>
+                <input type="text" id="postcode_2" placeholder="Postcode / ZIP" required />
+            </div>
+        </div>
+    </div>*@
+
+    @*<div class="single-input-item">
+        <label for="ordernote">Order Note</label>
+        <textarea name="ordernote" id="ordernote" cols="30" rows="3" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+    </div>*@
+</form>

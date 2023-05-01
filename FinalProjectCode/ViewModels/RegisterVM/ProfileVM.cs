@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using FinalProjectCode.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace FinalProjectCode.ViewModels.RegisterVM
 {
@@ -22,5 +23,7 @@ namespace FinalProjectCode.ViewModels.RegisterVM
 
         [DataType(DataType.Password)]
         public string? Password { get; set; }
+
+        public IEnumerable<Address>? Addresses { get; set; }
     }
 }

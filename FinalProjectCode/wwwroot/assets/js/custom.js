@@ -91,6 +91,14 @@ $(document).ready(function (){
      
     })
 
+    $(document).on('click', '.addAdress', function (e) {
+        e.preventDefault();
+        $('.addressContainer').addClass('d-none');
+        $('.addressForm').removeClass('d-none');
+    })
+
+
+
     $('.addToBasket').click(function myfunction(e) {
         e.preventDefault();
         let productId = $(this).data('id');

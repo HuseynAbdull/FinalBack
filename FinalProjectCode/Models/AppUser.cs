@@ -12,5 +12,9 @@ namespace FinalProjectCode.Models
         public string? Surname { get; set; }
 
         public IEnumerable<Review>? Reviews { get; set; }
+
+        public IEnumerable<Address>? Addresses { get; set; }
+
+        public IEnumerable<Order>? Orders { get; set; }
     }
 }

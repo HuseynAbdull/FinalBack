@@ -1,0 +1,61 @@
+﻿@model Address
+                <form method="post" asp-controller="account" asp-action="addaddress">
+
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <!-- Checkbox -->
+                            <div class="form-check mb-0">
+                                <input asp-for="IsMain" class="form-check-input me-2" />
+                                <label class="form-check-label" asp-for="IsMain">Is Main</label>
+                            </div>
+                            
+                        </div>
+
+                    <!-- Country input -->
+                    <div class="form-outline mb-4">
+                        <p class="inpt-p">Country</p>
+                        <input asp-for="Country" class="login-input"
+                               placeholder="Country" />
+                    </div>
+
+                    <!-- City input -->
+                    <div class="form-outline mb-4">
+                        <p class="inpt-p">City</p>
+                        <input asp-for="City" class="login-input"
+                               placeholder="City" />
+                        
+                    </div>
+
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <p class="inpt-p">State</p>
+                        <input asp-for="State" class="login-input"
+                               placeholder="State" />
+                       
+                    </div>
+
+                    <!-- PostalCode input -->
+                    <div class="form-outline mb-4">
+                        <p class="inpt-p">PostalCode</p>
+                        <input asp-for="PostalCode" class="login-input"
+                               placeholder="Postal Code" />
+                       
+                    </div>
+
+                    <!--Address Line input -->
+                    <div class="form-outline mb-3">
+                        <p class="inpt-p">AddressLine</p>
+                        <input asp-for="AddressLine" class="login-input"
+                               placeholder="AddressLine" />
+
+                    </div>
+
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button type="submit" class="login-button"
+                                style="padding-left: 2.5rem; padding-right: 2.5rem;">
+                            Save Change
+                        </button>
+                    </div>
+                </form>
+
+               

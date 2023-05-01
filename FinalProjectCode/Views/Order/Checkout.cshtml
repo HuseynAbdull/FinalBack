@@ -1,7 +1,71 @@
-﻿
-@{
-    ViewData["Title"] = "Checkout";
-}
+﻿ <!-- checkout main wrapper start -->
+<div class="checkout-page-wrapper section-padding">
+    <div class="container">
+        <div class="row">
+            <!-- Checkout Billing Details -->
+            <div class="col-lg-6">
+                <div class="checkout-billing-details-wrap">
+                    <h4 class="checkout-title">Billing Details</h4>
+                    <div class="billing-form-wrap">
+                        @await Html.PartialAsync("_CheckoutPartial")
+                    </div>
+                </div>
+            </div>
 
-<h1>Checkout</h1>
-
+            <!-- Order Summary Details -->
+            <div class="col-lg-6">
+                <div class="order-summary-details">
+                    <h4 class="checkout-title">Your Order Summary</h4>
+                    <div class="order-summary-content">
+                        <!-- Order Summary Table -->
+                        <div class="order-summary-table table-responsive text-center">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Products</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="product-details.html">Suscipit Vestibulum <strong> × 1</strong></a>
+                                        </td>
+                                        <td>$165.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="product-details.html">Ami Vestibulum suscipit <strong> × 4</strong></a>
+                                        </td>
+                                        <td>$165.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="product-details.html">Vestibulum suscipit <strong> × 2</strong></a>
+                                        </td>
+                                        <td>$165.00</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td>Sub Total</td>
+                                        <td><strong>$400</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total Amount</td>
+                                        <td><strong>$470</strong></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <!-- BUTTON -->
+                        <div class="order-payment-method">
+                         <button type="submit" class="btn btn-sqr btn-place">Place Order</button
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- checkout main wrapper end -->

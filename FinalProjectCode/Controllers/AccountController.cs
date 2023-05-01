@@ -7,7 +7,8 @@ using MimeKit;
 using MailKit.Net.Smtp;
 using FinalProjectCode.ViewModels;
 using Microsoft.Extensions.Options;
-using MailKit.Security;
+using FinalProjectCode.DataAccessLayer;
+using Microsoft.EntityFrameworkCore;
 
 namespace FinalProjectCode.Controllers
 {
@@ -17,16 +18,19 @@ namespace FinalProjectCode.Controllers
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly SmtpSetting _smtpSetting;
+        private readonly AppDbContext _context;
 
         public AccountController(UserManager<AppUser> userManager,
             RoleManager<IdentityRole> roleManager,
             SignInManager<AppUser> signInManager,
-            IOptions<SmtpSetting> smtpSetting)
+            IOptions<SmtpSetting> smtpSetting,
+            AppDbContext context)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _signInManager = signInManager;
             _smtpSetting = smtpSetting.Value;
+            _context = context;
         }
 
         [HttpGet]
@@ -148,18 +152,35 @@ namespace FinalProjectCode.Controllers
         [Authorize]
         public async Task<IActionResult> Profile()
         {
-            AppUser appUser = await _userManager.FindByNameAsync(User.Identity.Name);
-
+            AppUser appUser = await _userManager.Users.Include(u => u.Addresses.Where(a => a.IsDeleted == false))
+                .FirstOrDefaultAsync(u => u.NormalizedUserName == User.Identity.Name.ToUpperInvariant());
+        
             ProfileVM profileVM = new ProfileVM
             {
                 Name = appUser.Name,
                 Email = appUser.Email,
                 Surname = appUser.Surname,
                 Username = appUser.UserName,
+                Addresses = appUser.Addresses,
             };
 
             return View(profileVM);
         }
+
+        /* public async Task<IActionResult> Profile()
+                {
+                    AppUser appUser = await _userManager.FindByNameAsync(User.Identity.Name);
+
+                    ProfileVM profileVM = new ProfileVM
+                    {
+                        Name = appUser.Name,
+                        Email = appUser.Email,
+                        Surname = appUser.Surname,
+                        Username = appUser.UserName,
+                    };
+
+                    return View(profileVM);
+          }*/
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -261,6 +282,42 @@ namespace FinalProjectCode.Controllers
             return RedirectToAction("index", "home");
         }
 
+
+        [HttpPost]
+        [Authorize(Roles ="Member")]
+
+        public async Task<IActionResult> AddAddress(Address address)
+        {
+            AppUser appUser = await _userManager.Users.Include(u => u.Addresses.Where(a => a.IsDeleted == false))
+               .FirstOrDefaultAsync(u => u.NormalizedUserName == User.Identity.Name.ToUpperInvariant());
+
+            ProfileVM profileVM = new ProfileVM
+            {
+                Addresses = appUser.Addresses
+            };
+
+
+            if (!ModelState.IsValid)
+            {
+                return View(nameof(Profile),profileVM);
+            }
+
+            if(address.IsMain == true && appUser.Addresses != null &&appUser.Addresses.Count() > 0 && appUser.Addresses.Any(u=>u.IsMain == true))
+            {
+                appUser.Addresses.FirstOrDefault(a => a.IsMain == true).IsMain = false;
+
+            }
+
+            address.UserId = appUser.Id;
+            address.CreatedBy = $"{appUser.Name} {appUser.Surname}";
+            address.CreatedAt = DateTime.UtcNow.AddHours(4);
+
+            await _context.Addresses.AddAsync(address);
+            await _context.SaveChangesAsync();
+
+
+            return RedirectToAction(nameof(Profile));
+        }
 
         #region Create Role And SuperAdmin
         /*      [HttpGet]

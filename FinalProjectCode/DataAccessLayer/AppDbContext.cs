@@ -27,6 +27,7 @@ namespace FinalProjectCode.DataAccessLayer
 
         public DbSet<OrderItem> OrderItems { get; set; }
 
+        public DbSet<Address> Addresses { get; set; }
 
     }
 }
