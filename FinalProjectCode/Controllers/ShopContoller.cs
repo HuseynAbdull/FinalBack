@@ -2,7 +2,10 @@
 using FinalProjectCode.Models;
 using FinalProjectCode.ViewModels.ShopVM;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using NuGet.Protocol.Plugins;
+using System.Globalization;
 
 namespace FinalProjectCode.Controllers
 {
@@ -19,6 +22,7 @@ namespace FinalProjectCode.Controllers
             
         public async Task<IActionResult> Index()   
         {
+
             IEnumerable<Product> Products = await _context.Products.Where(p => p.IsDeleted == false).ToListAsync();
             ViewBag.pageCount = (int)Math.Ceiling((decimal)Products.Count() / 6);
 
@@ -31,6 +35,7 @@ namespace FinalProjectCode.Controllers
                 ProductTypes = await _context.ProductTypes.Where(p => p.IsDeleted == false).ToListAsync(),
                 Genders = await _context.Genders.Where(g => g.IsDeleted == false).ToListAsync(),
             };
+
 
             return View(shopVM);
         }

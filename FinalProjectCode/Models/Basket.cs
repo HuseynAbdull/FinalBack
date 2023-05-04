@@ -1,6 +1,6 @@
 ﻿namespace FinalProjectCode.Models
 {
-    public class Basket :BaseEntity
+    public class Basket : BaseEntity
     {
         
         public int Count { get; set; }

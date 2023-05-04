@@ -58,7 +58,7 @@
 
 
                     <div class="wishList">
-                        <a href="">
+                        <a asp-controller="Wishlist" asp-action="Index">
                             <i class="fa-regular fa-heart"></i>
                             <span>Wishlist</span>
                         </a>
@@ -88,7 +88,7 @@
                     <div class="cart-header">
                         <a asp-action="index" asp-controller="Basket">
                             <i class="fa-solid fa-cart-shopping"></i>
-                            <span>0</span>
+                            <span class="count-basket">@(basketVMs?.Count() == null ? 0 : basketVMs?.Count())</span>
                         </a>
                     </div>
                 </div>

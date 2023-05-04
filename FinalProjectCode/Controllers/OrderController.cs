@@ -36,7 +36,7 @@ namespace FinalProjectCode.Controllers
 
             if (string.IsNullOrWhiteSpace(coockie))
             {
-                return RedirectToAction("Index","Shop");
+                return RedirectToAction("Index","Product");
             }
 
 
@@ -77,7 +77,7 @@ namespace FinalProjectCode.Controllers
             };
 
 
-            return View();
+            return View(orderVM);
         }
 
         [HttpPost]
@@ -87,7 +87,7 @@ namespace FinalProjectCode.Controllers
         {
             AppUser appUser = await _userManager.Users
                 .Include(u => u.Addresses.Where(a => a.IsMain && a.IsDeleted == false))
-                .Include(u=>u.Baskets.Where(b=>b.IsDeleted == false))
+                .Include(u => u.Baskets.Where(b => b.IsDeleted == false))
                 .FirstOrDefaultAsync(u => u.UserName == User.Identity.Name);
 
             string coockie = HttpContext.Request.Cookies["basket"];
@@ -107,6 +107,7 @@ namespace FinalProjectCode.Controllers
 
                 basketVM.Price = product.Price;
                 basketVM.DiscountedPrice = product.DiscountedPrice;
+                basketVM.Image = product.MainImage;
                 basketVM.Title = product.Title;
 
             }
@@ -116,6 +117,12 @@ namespace FinalProjectCode.Controllers
                 Order = order,
                 BasketVMs = basketVMs,
             };
+            if (orderVM.Order == null)
+            {
+                orderVM.Order = new Order();
+            }
+
+            // Pass the orderVM object to the partial view
 
 
             if (!ModelState.IsValid)
@@ -135,7 +142,7 @@ namespace FinalProjectCode.Controllers
                     CreatedAt = DateTime.UtcNow.AddHours(4),
                     CreatedBy = $"{appUser.Name} {appUser.Surname}",
 
-                 };
+                };
 
                 orderItems.Add(orderItem);
             }
@@ -149,7 +156,7 @@ namespace FinalProjectCode.Controllers
 
 
             order.UserId = appUser.Id;
-            order.CreatedAt=DateTime.UtcNow.AddHours(4);
+            order.CreatedAt = DateTime.UtcNow.AddHours(4);
             order.CreatedBy = $"{appUser.Name} {appUser.Surname}";
             order.OrderItems = orderItems;
 
@@ -157,8 +164,7 @@ namespace FinalProjectCode.Controllers
             await _context.Orders.AddAsync(order);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("index","home");
-           
+            return RedirectToAction("index", "home");
         }
     }
 }

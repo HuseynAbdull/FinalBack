@@ -37,7 +37,6 @@ namespace FinalProjectCode.Controllers
                         basketVM.Title = product.Title;
                         basketVM.Image = product.MainImage;                     
                         basketVM.Price = product.Price;
-                        
                     }
 
                 }
@@ -47,7 +46,6 @@ namespace FinalProjectCode.Controllers
             {
                 basketVMs = new List<BasketVM>();
             }
-
 
             return View(basketVMs);
         }
@@ -113,14 +111,14 @@ namespace FinalProjectCode.Controllers
 
                 }
 
-                if(User.Identity.IsAuthenticated)
+                if (User.Identity.IsAuthenticated)
                 {
                     AppUser appUser = await _userManager.Users
-                        .Include(u=>u.Baskets.Where(b=>b.IsDeleted == false))
-                        .FirstOrDefaultAsync(u=>u.NormalizedUserName ==User.Identity.Name.ToUpperInvariant());
+                        .Include(u => u.Baskets.Where(b => b.IsDeleted == false))
+                        .FirstOrDefaultAsync(u => u.NormalizedUserName == User.Identity.Name.ToUpperInvariant());
 
 
-                    if(appUser.Baskets.Any(b=>b.ProductId == id))
+                    if (appUser.Baskets.Any(b => b.ProductId == id))
                     {
                         appUser.Baskets.FirstOrDefault(b => b.ProductId == id).Count = basketVMs.FirstOrDefault(b => b.Id == id).Count;
                     }
@@ -140,11 +138,13 @@ namespace FinalProjectCode.Controllers
 
                 }
 
+
                 string strProducts = JsonConvert.SerializeObject(basketVMs);
 
                 HttpContext.Response.Cookies.Append("basket", strProducts);
 
             }
+
 
             return Ok();
         }
@@ -155,8 +155,6 @@ namespace FinalProjectCode.Controllers
         {
             return Json(JsonConvert.DeserializeObject<List<BasketVM>>(HttpContext.Request.Cookies["basket"]));
         }
-
-
 
         public async Task<IActionResult> PlusCount(int? id)
         {
@@ -220,38 +218,60 @@ namespace FinalProjectCode.Controllers
 
         public async Task<IActionResult> DeleteBasket(int? id)
         {
+            if (id == null) return BadRequest();
+
+            if (!await _context.Products.AnyAsync(p => p.IsDeleted == false && p.Id == id)) return NotFound();
+
             string basket = HttpContext.Request.Cookies["basket"];
-            List<BasketVM> basketVMs = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
 
-            if (id == null)
-            {
-                return BadRequest();
-            }
+            List<BasketVM> basketVMs = null;
 
-            if (!basketVMs.Any(b => b.Id == id))
-            {
-                return NotFound();
-            }
+            if (string.IsNullOrWhiteSpace(basket)) { return BadRequest(); }
 
-            var itemToRemove = basketVMs.SingleOrDefault(b => b.Id == id);
-            if (itemToRemove != null)
-            {
-                basketVMs.Remove(itemToRemove);
-            }
-
-            if (basketVMs.Count == 0)
-            {
-                HttpContext.Response.Cookies.Delete("basket");
-            }
             else
             {
-                string jsonBasket = JsonConvert.SerializeObject(basketVMs);
-                HttpContext.Response.Cookies.Append("basket", jsonBasket);
+                basketVMs = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
+                if (basketVMs.Exists(b => b.Id == id))
+                {
+                    BasketVM basketVM = basketVMs.Find(b => b.Id == id);
+                    basketVMs.Remove(basketVM);
+                    basket = JsonConvert.SerializeObject(basketVMs);
+                    HttpContext.Response.Cookies.Append("basket", basket);
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            foreach (BasketVM basketVM in basketVMs)
+            {
+                Product product = await _context.Products.FirstOrDefaultAsync(p => p.Id == basketVM.Id && p.IsDeleted == false);
+
+                if (product != null)
+                {
+                    basketVM.DiscountedPrice = product.DiscountedPrice;
+                    basketVM.Price = product.Price;
+                    basketVM.Title = product.Title;
+                    basketVM.Image = product.MainImage;
+                }
             }
 
             return PartialView("_BasketPartialView", basketVMs);
         }
 
+        public IActionResult BasketCount()
+        {
+            string basket = HttpContext.Request.Cookies["basket"];
 
+            if (string.IsNullOrWhiteSpace(basket))
+            {
+                return Json(0);
+            }
+
+            List<BasketVM> basketVMs = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
+            int count = basketVMs.Select(b=>b.Id).Distinct().Count();
+
+            return Json(count);
+        }
     }
 }

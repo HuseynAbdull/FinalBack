@@ -1,4 +1,5 @@
 ﻿using FinalProjectCode.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace FinalProjectCode.ViewModels.ShopVM
 {
@@ -9,6 +10,8 @@ namespace FinalProjectCode.ViewModels.ShopVM
         public IEnumerable<ProductType> ProductTypes { get; set; }
 
         public IEnumerable<Gender> Genders { get; set; }
+
+
 
     }
 }

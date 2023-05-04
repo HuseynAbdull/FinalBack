@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WishlistVM>
+
+@if (Model.Count() == 0)
+{
+<section id="empty-cart">
+    <div class="container">
+        <div class="emptyy">
+            <div class="empty-cart-full">
+                <hr>
+                <p>There are no items in your cart.</p>
+                <hr class="empty-hr">
+                <a asp-action="index" asp-controller="Shop">CONTINUE SHOPPING</a>
+            </div>
+        </div>
+    </div>
+</section>
+}
+
+
+<div class="container">
+    <div class="full-basket">
+        <div class="basket-products">
+            <div class="row">
+               @foreach (WishlistVM wishlistVM in Model)
+                {
+                    <div class="col-12">
+                        <div class="product-shop-info">
+                            <div class="prod-img">
+                                <img src="~/assets/photos/products/@wishlistVM.Image" alt="">
+                            </div>
+                            <div class="prod-detail">
+                                <p class="prod-nm"></p>
+                                <div class="option-title">@wishlistVM.Title</div>
+                                <span class="span-red">$@wishlistVM.DiscountedPrice <span class="old-price">$@wishlistVM.Price</span></span>
+
+                                <p><b>Total:</b>$$@(wishlistVM.Count * wishlistVM.DiscountedPrice)</p>
+                                <button class="add-btn"> <i class="fa-solid fa-add"></i> Add to Cart</button>
+
+                            </div>
+                            <div class="remove-button">
+                                <button data-id="@wishlistVM.Id" class="romovewishlist">Remove <i class="fa-solid fa-trash"></i></button>
+                            </div>
+                            <hr>
+                        </div>
+                        <hr>
+
+                    </div>
+                }
+            </div>
+        </div>
+       
+    </div>
+</div>

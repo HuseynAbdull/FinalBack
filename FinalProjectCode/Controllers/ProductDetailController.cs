@@ -21,11 +21,20 @@ namespace FinalProjectCode.Controllers
 
         public async Task<IActionResult> Index(int? productid)
         {
-                IEnumerable<Product> products = await _context.Products
+
+            if(productid == null)
+            {
+                return BadRequest();
+            }
+                Product product = await _context.Products
                 .Include(p => p.Reviews.Where(r => r.IsDeleted == false))
-                .Where(p => p.IsDeleted == false)
-                .Include(p => p.ProductImages).ToListAsync();
-                Product product = products.FirstOrDefault(p => p.Id == productid);
+                .Include(p => p.ProductImages)
+                .FirstOrDefaultAsync(p=>p.IsDeleted == false && p.Id == productid);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
 
             ProductReviewVM productReviewVM = new ProductReviewVM
             {
@@ -59,31 +68,17 @@ namespace FinalProjectCode.Controllers
                 return View("Index", productReviewVM);
             }
 
+            review.UserId = appUser.Id;
             review.CreatedBy = $"{appUser.Name}{appUser.Surname}";
             review.CreatedAt =DateTime.UtcNow.AddHours(4);
 
             await _context.Reviews.AddAsync(review);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction(nameof(Index),new {id = product.Id});
+            return RedirectToAction("Index","ProductDetail",new { productId = product.Id});
         }
 
 
-    /*    public async Task<IActionResult> Review(int? id)
-        {
-            if (id == null) { return BadRequest(); }
-
-            Product product = await _context.Products
-             .Include(p => p.ProductImages.Where(pi => pi.IsDeleted == false))
-             .Include(p => p.BrandName)
-               .Include(p => p.Reviews.Where(r => r.IsDeleted == false))
-              .FirstOrDefaultAsync(p => p.IsDeleted == false && p.Id == id);
-
-            if (product == null) return NotFound();
-
-
-            return View(product);
-
-        }*/
+   
     }
 }

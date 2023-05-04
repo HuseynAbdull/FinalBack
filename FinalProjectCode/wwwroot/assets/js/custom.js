@@ -57,6 +57,9 @@ $(document).on('click', '.producttype-selector-btn', (function () {
 
 
 
+
+
+
 $(document).on('click', '.pagination-list', (function () {
     let pageindex = this.getAttribute('data-id');
     let producttypeid = this.getAttribute('data-producttype-id');
@@ -127,6 +130,13 @@ $(document).ready(function (){
                             container: 'my-sweet-alert'
                         }
                     })
+                    fetch('basket/BasketCount')
+                        .then(res => {
+                            return res.json();
+                        })
+                        .then(data => {
+                            $('.count-basket').text(data);
+                        })
                 }
             })
    
@@ -162,16 +172,21 @@ $(document).ready(function (){
             })
             .then(data => {
                 $('#basket-full').html(data);
-
+                fetch('basket/BasketCount')
+                    .then(res => {
+                        return res.json();
+                    })
+                    .then(data => {
+                        $('.count-basket').text(data);
+                    })
             });
 
     });
     
-
     $('.wishlist-button').click(function myfunction(e) {
         e.preventDefault();
         let productId = $(this).data('id');
-        fetch('basket/AddWishlist?id=' + productId)
+        fetch('/wishlist/AddWishlist?id=' + productId)
             .then(res => {
                 return res.text();
             }).then(data => {
@@ -202,4 +217,17 @@ $(document).ready(function (){
     })
 
 
+    $(document).on('click', '.romovewishlist', function () {
+        const removeId = $(this).attr('data-id');
+        fetch('/wishlist/DeleteWishlist?id=' + removeId)
+            .then(res => {
+                return res.text();
+            })
+            .then(data => {
+                $('#basket-full').html(data);
+            });
+
+    });
+
 })
+

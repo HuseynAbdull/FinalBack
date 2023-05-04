@@ -131,6 +131,12 @@ namespace FinalProjectCode.Controllers
             Microsoft.AspNetCore.Identity.SignInResult signInResult = await _signInManager
                 .PasswordSignInAsync(appUser,loginVM.Password,loginVM.RemeindMe,true);
 
+            if (signInResult.IsLockedOut)
+            {
+                ModelState.AddModelError("","Hesab blocklanib");
+                return View(loginVM);
+            }
+
             if (!signInResult.Succeeded)
             {
                 ModelState.AddModelError("", "Email ve ya Şifrə Yanlishdir");
@@ -158,7 +164,7 @@ namespace FinalProjectCode.Controllers
 
                     basket = JsonConvert.SerializeObject(basketVMs);
 
-                    HttpContext.Response.Cookies.Append("basket", basket);
+                    HttpContext.Response.Cookies.Append("basket",basket);
                 }
             }
             else
@@ -166,12 +172,24 @@ namespace FinalProjectCode.Controllers
                 HttpContext.Response.Cookies.Append("basket","");
             }
 
-            return RedirectToAction("index","home");
+            return RedirectToAction("Index","Home");
         }
 
-        public IActionResult MyAccount()
+        public async Task<IActionResult> MyAccount()
         {
-            return View();
+            AppUser appUser = await _userManager.Users.Include(u => u.Addresses.Where(a => a.IsDeleted == false))
+                .FirstOrDefaultAsync(u => u.NormalizedUserName == User.Identity.Name.ToUpperInvariant());
+
+            ProfileVM profileVM = new ProfileVM
+            {
+                Name = appUser.Name,
+                Email = appUser.Email,
+                Surname = appUser.Surname,
+                Username = appUser.UserName,
+                Addresses = appUser.Addresses,
+            };
+
+            return View(profileVM);
         }
 
         [HttpGet]
