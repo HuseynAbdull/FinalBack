@@ -22,7 +22,7 @@
                     </li>
                 }
             </ul>
-
+          
         </div>
         <div class="right-sale">
             <div class="shop-selector">
@@ -48,7 +48,7 @@
                                     <a asp-action="index" asp-controller="ProductDetail" asp-route-productid="@product.Id">
                                         <img class="img-fluid" src="~/assets/photos/products/@product.MainImage" alt="">
                                         <div class="product-detail">
-                                            <p><a href="">@product.Title</a></p>
+                                            <p><a>@product.Title</a></p>
                                             <p>from <span class="span-red">@product.DiscountedPrice$</span> <span class="old-price">@product.Price$</span></p>
                                         </div>
                                     </a>

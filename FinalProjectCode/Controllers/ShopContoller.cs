@@ -3,8 +3,10 @@ using FinalProjectCode.Models;
 using FinalProjectCode.ViewModels.ShopVM;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using NuGet.Protocol.Plugins;
+using System.Data;
 using System.Globalization;
 
 namespace FinalProjectCode.Controllers
@@ -82,6 +84,8 @@ namespace FinalProjectCode.Controllers
 
             return PartialView("_SearchPartial", products);
         }
+
+      
 
 
     }

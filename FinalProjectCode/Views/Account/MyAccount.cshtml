@@ -17,8 +17,7 @@
         </div>
         <div class="account-order">
             <div class="left-account">
-               @* <h6>@(User.Identity?.Name.ToUpper() + " " + User.Identity?.Surname.ToUpper())</h6>*@
-                  @User.Identity.Name
+                <h6>@User.Identity.Name</h6>
                 <h4>PRIMARY ADDRESS</h4>
                 <a class="addAdress" style="cursor:pointer;background-color:aquamarine"><i class="far fa-edit">Add Address</i></a>
                 <div class="addressForm d-none">
