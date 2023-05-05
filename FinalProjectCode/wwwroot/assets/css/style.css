@@ -29,11 +29,9 @@
     background-color: black;
 }
 
-/* .header-bottom{
-    position:fixed;
-    background-color: white;
-    z-index: 3;
-} */
+.order-history{
+    width: 60% !important;
+}
 
 .brand-text {
     margin-top: 1.5rem;
@@ -2355,9 +2353,8 @@ li {
 .hiddenRow {
     padding: 0 4px !important;
     background-color: #eeeeee;
-    font-size: 13px;
+    font-size:  13px;
 }
-
 
 
 

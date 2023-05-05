@@ -25,5 +25,7 @@ namespace FinalProjectCode.ViewModels.RegisterVM
         public string? Password { get; set; }
 
         public IEnumerable<Address>? Addresses { get; set; }
+
+        public IEnumerable<Order> Orders { get; set; }
     }
 }

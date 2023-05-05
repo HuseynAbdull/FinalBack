@@ -203,7 +203,11 @@ namespace FinalProjectCode.Controllers
         [Authorize]
         public async Task<IActionResult> Profile()
         {
-            AppUser appUser = await _userManager.Users.Include(u => u.Addresses.Where(a => a.IsDeleted == false))
+            AppUser appUser = await _userManager.Users
+                .Include(u=>u.Orders.Where(o=>o.IsDeleted == false))
+                .ThenInclude(o =>o.OrderItems.Where(oi=>oi.IsDeleted))
+                .ThenInclude(oi=>oi.Product)
+                .Include(u => u.Addresses.Where(a => a.IsDeleted == false))
                 .FirstOrDefaultAsync(u => u.NormalizedUserName == User.Identity.Name.ToUpperInvariant());
         
             ProfileVM profileVM = new ProfileVM
@@ -213,6 +217,7 @@ namespace FinalProjectCode.Controllers
                 Surname = appUser.Surname,
                 Username = appUser.UserName,
                 Addresses = appUser.Addresses,
+                Orders = appUser.Orders
             };
 
             return View(profileVM);

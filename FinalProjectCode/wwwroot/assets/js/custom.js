@@ -1,11 +1,3 @@
-    $('.accordian-body').on('click', function () {
-        $(this).closest("table")
-            .find(".collapse.in")
-            .not(this)
-        //.collapse('toggle')
-    })
-
-
 let buttons = document.querySelectorAll(".links button");
     for (let btn of buttons) {
       btn.onclick = function() {
