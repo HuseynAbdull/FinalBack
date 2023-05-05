@@ -86,6 +86,7 @@ namespace FinalProjectCode.Controllers
         public async Task<IActionResult> Checkout(Order order)
         {
             AppUser appUser = await _userManager.Users
+                .Include(u=>u.Orders)
                 .Include(u => u.Addresses.Where(a => a.IsMain && a.IsDeleted == false))
                 .Include(u => u.Baskets.Where(b => b.IsDeleted == false))
                 .FirstOrDefaultAsync(u => u.UserName == User.Identity.Name);
@@ -159,7 +160,7 @@ namespace FinalProjectCode.Controllers
             order.CreatedAt = DateTime.UtcNow.AddHours(4);
             order.CreatedBy = $"{appUser.Name} {appUser.Surname}";
             order.OrderItems = orderItems;
-
+            order.No = appUser.Orders != null && appUser.Orders.Count() > 0 ? appUser.Orders.Last().No + 1 : 1;
 
             await _context.Orders.AddAsync(order);
             await _context.SaveChangesAsync();
