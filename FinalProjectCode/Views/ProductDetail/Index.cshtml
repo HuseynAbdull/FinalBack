@@ -1,5 +1,16 @@
 ﻿@model ProductReviewVM
 
+@{
+    int? a = 0;
+}
+
+@foreach(Review review in Model.Product.Reviews)
+{
+   a = a + review.Star;
+}
+
+
+
 <section id="product-detail">
     <div class="container">
         <div class="product-detail-full">
@@ -62,7 +73,7 @@
             </div>
             <div id="4" class="content-box d-none review">
                 <div class="overall-rev">
-                    <p><b><span>4.5</span></b> (Overall)</p>
+                    <p><b><span>@(a / Model.Product.Reviews.Count())</span></b> (Overall)</p>
                     <p>Based on <span>@Model.Product.Reviews.Count()</span> Comments</p>
                 </div>
 
