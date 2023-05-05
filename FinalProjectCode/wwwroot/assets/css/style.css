@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+.active-for-gender {
+    color: cornflowerblue !important;
+    font-weight: 700;
+    font-size: 17px;
+    text-decoration: underline !important;
+}
+
 .first-div {
     display: none;
 }
@@ -40,8 +47,26 @@
 
 
 
+.addAdress a{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100px;
+    height: 40px;
+    font-size: 14px;
+    background-color: #36b8ce;
+    color: azure;
+    cursor: pointer;
+}
 
-
+.editAdress {
+    margin-top: 5px;
+    margin-bottom: 1rem;
+    width: 100px;
+    height: 40px;
+    font-size: 14px;
+    color: #36b8ce;
+    cursor: pointer;
+}
 
 
 .phone-search-page {

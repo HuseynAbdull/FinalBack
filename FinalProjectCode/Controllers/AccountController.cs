@@ -218,20 +218,7 @@ namespace FinalProjectCode.Controllers
             return View(profileVM);
         }
 
-        /* public async Task<IActionResult> Profile()
-                {
-                    AppUser appUser = await _userManager.FindByNameAsync(User.Identity.Name);
 
-                    ProfileVM profileVM = new ProfileVM
-                    {
-                        Name = appUser.Name,
-                        Email = appUser.Email,
-                        Surname = appUser.Surname,
-                        Username = appUser.UserName,
-                    };
-
-                    return View(profileVM);
-          }*/
 
         [HttpPost]
         [ValidateAntiForgeryToken]

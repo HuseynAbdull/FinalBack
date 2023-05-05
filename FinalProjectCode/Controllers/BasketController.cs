@@ -22,24 +22,26 @@ namespace FinalProjectCode.Controllers
             _userManager = userManager;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             string basket = HttpContext.Request.Cookies["basket"];
             List<BasketVM> basketVMs = null;
             if (basket != null)
             {
                 basketVMs=JsonConvert.DeserializeObject<List<BasketVM>>(basket);
-                foreach (BasketVM basketVM in basketVMs)
-                {
-                    Product product = _context.Products.FirstOrDefault(p => p.Id == basketVM.Id && p.IsDeleted == false);
-                    if (product != null)
+                
+                    foreach (BasketVM basketVM in basketVMs)
                     {
-                        basketVM.Title = product.Title;
-                        basketVM.Image = product.MainImage;                     
-                        basketVM.Price = product.Price;
-                    }
+                        Product product = _context.Products.FirstOrDefault(p => p.Id == basketVM.Id && p.IsDeleted == false);
+                        if (product != null)
+                        {
+                            basketVM.Title = product.Title;
+                            basketVM.Image = product.MainImage;
+                            basketVM.Price = product.Price;
+                        }
 
-                }
+                    }
+                
 
             }
             else

@@ -27,6 +27,8 @@ namespace FinalProjectCode.Controllers
 
             IEnumerable<Product> Products = await _context.Products.Where(p => p.IsDeleted == false).ToListAsync();
             ViewBag.pageCount = (int)Math.Ceiling((decimal)Products.Count() / 6);
+            ViewBag.pageIndex = 1;
+
 
             Products = Products.Skip(0).Take(6);
 
@@ -48,7 +50,7 @@ namespace FinalProjectCode.Controllers
             if(genderid != null)
             {
                 Products = Products.Where(p => p.GenderId == genderid).ToList();
-                ViewBag.GenderId = genderid;
+                ViewBag.genderid = genderid;
             }
             
             if (producttypeid != null)
@@ -60,6 +62,8 @@ namespace FinalProjectCode.Controllers
             ViewBag.pageCount = (int)Math.Ceiling((decimal)Products.Count() / 6);
 
             ViewBag.pageIndex= pageindex;
+
+            
 
             Products = Products.Skip((pageindex-1)*6).Take(6);
 

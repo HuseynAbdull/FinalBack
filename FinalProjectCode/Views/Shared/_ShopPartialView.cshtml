@@ -8,7 +8,7 @@
                 @foreach (Gender gender in Model.Genders)
                 {
                     <li>
-                        <a class="gender-selector-btn" style="cursor:pointer" data-producttype-id="@ViewBag.ProductTypeId " data-id="@gender.Id">@gender.Name <span>(@Model.Products.Count())</span></a>
+                        <a class="gender-selector-btn @(gender.Id == ViewBag.genderid ? "active-for-gender" : "")" style="cursor:pointer" data-producttype-id="@ViewBag.ProductTypeId " data-id="@gender.Id">@gender.Name</a>
                     </li>
                 }
             </ul>
@@ -18,7 +18,7 @@
                 @foreach (ProductType productType in Model.ProductTypes)
                 {
                     <li>
-                        <a class="producttype-selector-btn" style="cursor:pointer" data-gender-id="@ViewBag.GenderId" data-id="@productType.Id">@productType.Name <span>(@Model.Products.Count())</span></a>
+                        <a class="producttype-selector-btn  @(productType.Id == ViewBag.ProductTypeId ? "active-for-gender" : "")" style="cursor:pointer" data-gender-id="@ViewBag.GenderId" data-id="@productType.Id">@productType.Name</a>
                     </li>
                 }
             </ul>
@@ -74,9 +74,13 @@
 
                 @for(var i=1; i<=ViewBag.pageCount; i++)
                 {
-                    <a style="cursor: pointer" class="pagination-list" data-gender-id="@ViewBag.GenderId" data-producttype-id="@ViewBag.ProductTypeId" data-id="@i">
-                    <li> @i </li>
-                    </a>
+
+                    <a style="cursor: pointer" class="pagination-list @(ViewBag.pageIndex == i ? "is-active" : "")" data-gender-id="@ViewBag.GenderId" data-producttype-id="@ViewBag.ProductTypeId" data-id="@i">
+                        <li> @i </li>
+                        </a>
+                        
+                    
+                    
 
                 }
                 <a class="pagination-list" style="cursor: pointer" data-gender-id="@ViewBag.GenderId" data-producttype-id="@ViewBag.ProductTypeId" data-id="@(ViewBag.pageIndex+1)">

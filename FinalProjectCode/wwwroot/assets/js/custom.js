@@ -1,5 +1,4 @@
-
-    $('.accordian-body').on('show.bs.collapse', function () {
+    $('.accordian-body').on('click', function () {
         $(this).closest("table")
             .find(".collapse.in")
             .not(this)
