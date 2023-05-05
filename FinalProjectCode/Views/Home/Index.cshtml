@@ -1,34 +1,39 @@
 ﻿@model HomeVM
-<div class="opened-photo">
-    <img src="assets/photos/SD_Homepage_Banner_3 1 (1).png" alt="">
-</div>
 
-<div class="container-custom">
-    <div class="new-products">
-        <p>New Products</p>
+<section>
+    <div class="opened-photo">
+        <img src="assets/photos/SD_Homepage_Banner_3 1 (1).png" alt="">
     </div>
-    <div class="row slider new-arrivals">
+</section>
 
-        @foreach(Product product in Model.Products)
-        {
-            if (product.IsNewArrival == true && product.ProductTypeId==1)
+<section>
+    <div class="container-custom">
+        <div class="new-products">
+            <p>New Products</p>
+        </div>
+        <div class="row slider new-arrivals">
+
+            @foreach (Product product in Model.Products)
             {
-                <div class="col-md-12">
-                    <div class="slider-photo">
-                        <a asp-action="index" asp-controller="ProductDetail" asp-route-productid="@product.Id">
-                            <img src="~/assets/photos/products/@product.MainImage" alt="">
-                        </a>
-                    </div>
-                    <div class="product-detail">
-                        <p><a href="">@product.Title</a></p>
-                        <p>from <span>@product.DiscountedPrice$</span> <span class="old-price">@product.Price$</span></p>
-                    </div>
+                if (product.IsNewArrival == true && product.ProductTypeId == 1)
+                {
+                    <div class="col-md-12">
+                        <div class="slider-photo">
+                            <a asp-action="index" asp-controller="ProductDetail" asp-route-productid="@product.Id">
+                                <img src="~/assets/photos/products/@product.MainImage" alt="">
+                            </a>
+                        </div>
+                        <div class="product-detail">
+                            <p><a href="">@product.Title</a></p>
+                            <p>from <span>@product.DiscountedPrice$</span> <span class="old-price">@product.Price$</span></p>
+                        </div>
 
-                </div>
+                    </div>
+                }
             }
-        }
+        </div>
     </div>
-</div>
+</section>
 
 <section id="slider-about-section">
     <div class="row slider-ab slider-about">
@@ -123,7 +128,7 @@
 <section>
     <div class="container">
         <div class="video-sec">
-            <video playsinline="" autoplay="" muted="" loop="" src="assets/video/5be16844f9664bcab99a6dd50f4ff47f.mov"></video>
+            <a asp-action="index" asp-controller="shop"> <video playsinline="" autoplay="" muted="" loop="" src="assets/video/5be16844f9664bcab99a6dd50f4ff47f.mov"></video></a>
         </div>
     </div>
 </section>
@@ -132,7 +137,7 @@
 <section id="slider-discount">
     <div class="row slider-disc">
         <div class="col col-lg-12">
-            <div class="discount-photo">
+            <div  class="discount-photo">
                 <img src="https://cdn.shopify.com/s/files/1/0025/3332/6907/files/3.31-4.10_MAP_Widescreen_2000x.jpg?v=1680271207" alt="">
             </div>
         </div>
@@ -150,8 +155,6 @@
         </div>
     </div>
 </section>
-
-
 
 
 <section id="contact-page">

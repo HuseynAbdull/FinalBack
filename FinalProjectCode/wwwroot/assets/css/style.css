@@ -567,15 +567,6 @@ a {
         color: #36b8ce;
     }
 
-/* .social-media-logos:hover::before{
-    content: " ";
-    position: absolute;
-    width: 50px;
-    height: 10px;
-    top: -10%;
-    left: 0;
-    background-color: #000;
-} */
 
 
 #head-footer {
@@ -646,18 +637,6 @@ a {
     font-weight: bold;
 }
 
-
-
-/* .divider:after,
-.divider:before {
-content: "";
-flex: 1;
-height: 1px;
-background: #eee;
-}
-.h-custom {
-height: calc(100% - 73px);
-} */
 
 
 .login-button {
@@ -1531,50 +1510,6 @@ li {
 }
 
 
-/* .add-btn {
-        width: 150px;
-        height: 40px;
-        margin: 20px 0;
-        border-radius: 3px;
-        border-color: #36b8ce;
-        color: #36b8ce;
-        transition: 0.2s;
-    }
-
-    .add-btn:hover {
-       
-        color: white;
-        background-color: #000;
-        border-color: white
-    }
-
-
-    .box:hover .product-hover {
-        left: 19%;
-        top: 0;
-        opacity: 100%;
-    }
-    
-
-    .product-hover{
-        position: absolute;
-        left: 0;
-        top: 0;
-        opacity: 0;
-        color: white;
-        background-color: rgba(0, 0, 0, 0.705);
-        border-color: #cccccc;
-        border: none;
-        width: 30px;
-        height: 30px;
-        transition: 1s;
-    } */
-
-
-/* .product-hover:hover{
-        background-color: #36b8ce;
-        color: white;
-    } */
 
 .video-sec {
     width: 100%;
@@ -2353,11 +2288,28 @@ li {
 .hiddenRow {
     padding: 0 4px !important;
     background-color: #eeeeee;
-    font-size:  13px;
+    font-size: 13px;
 }
 
 
+#searchbody{
+    background-color: white !important;
+    margin-left: 0 !important;
+    margin-right:3rem !important;
+    padding-left: 1rem !important;
+}
 
+    #searchbody li {
+        background-color: white !important;
+        cursor:pointer;
+    }
+    #searchbody img{
+        display:block;
+
+    }
+    #searchbody img {
+        display: block;
+    }
 
 
 
@@ -2398,6 +2350,10 @@ li {
         display: block;
     }
 
+    #searchbody{
+        width: 100% !important;
+        padding-left: 4.2rem !important;
+    }
     .login-button {
         width: 100%;
     }

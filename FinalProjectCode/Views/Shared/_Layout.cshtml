@@ -45,7 +45,7 @@
                     </a>
                 </div>
                 <div class="left-top">
-                    <a href="">@Html.Raw(settings.FirstOrDefault(s=>s.Key == "Slogan").Value)</a>
+                    <a>@Html.Raw(settings.FirstOrDefault(s=>s.Key == "Slogan").Value)</a>
                 </div>
                 <div class="right-top">
 
@@ -119,9 +119,10 @@
                     <input id="searchInput" type="text" placeholder="  Search">
                     <div style="position:absolute">
                         <ul style="z-index:3" id="searchbody">
+                            <a asp-action ="index" asp-controller="shop">
+                                
                             
-                           
-
+                            </a>
                         </ul>
                     </div>
                 </div>

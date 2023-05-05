@@ -74,14 +74,10 @@
 
                 @for(var i=1; i<=ViewBag.pageCount; i++)
                 {
-
                     <a style="cursor: pointer" class="pagination-list @(ViewBag.pageIndex == i ? "is-active" : "")" data-gender-id="@ViewBag.GenderId" data-producttype-id="@ViewBag.ProductTypeId" data-id="@i">
-                        <li> @i </li>
-                        </a>
+                       <li> @i </li>
+                    </a>
                         
-                    
-                    
-
                 }
                 <a class="pagination-list" style="cursor: pointer" data-gender-id="@ViewBag.GenderId" data-producttype-id="@ViewBag.ProductTypeId" data-id="@(ViewBag.pageIndex+1)">
                 <li>Next</li>
