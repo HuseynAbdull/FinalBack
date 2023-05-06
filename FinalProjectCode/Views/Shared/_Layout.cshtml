@@ -295,5 +295,17 @@
         darkmode.showWidget();
     </script>*@
 
+    @if (TempData["ToasterMessage4"] != null)
+    {
+        <script>
+            Swal.fire({
+                title: '@TempData["ToasterMessage4"]',
+                icon: 'success',
+                timer: 2000,
+                showConfirmButton: false
+            });
+        </script>
+    }
+
 </body>
 </html>

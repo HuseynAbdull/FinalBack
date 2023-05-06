@@ -172,6 +172,7 @@ namespace FinalProjectCode.Controllers
                 HttpContext.Response.Cookies.Append("basket","");
             }
 
+            TempData["ToasterMessage4"] = "Login Successfully!";
             return RedirectToAction("Index","Home");
         }
 
@@ -196,7 +197,10 @@ namespace FinalProjectCode.Controllers
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
+
+            TempData["ToasterMessage4"] = "Logout Successfully!";
             return RedirectToAction(nameof(Login));
+
         }
 
         [HttpGet]
@@ -322,6 +326,7 @@ namespace FinalProjectCode.Controllers
 
             await _signInManager.SignInAsync(appUser, false);
 
+            TempData["ToasterMessage4"] = "Email Confirmed Successfully!";
             return RedirectToAction("index", "home");
         }
 

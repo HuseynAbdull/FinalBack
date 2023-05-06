@@ -165,6 +165,7 @@ namespace FinalProjectCode.Controllers
             await _context.Orders.AddAsync(order);
             await _context.SaveChangesAsync();
 
+            TempData["ToasterMessage4"] = "Order Placed Successfully!";
             return RedirectToAction("index", "home");
         }
     }
