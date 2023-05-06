@@ -342,7 +342,7 @@ namespace FinalProjectCode.Controllers
 
             if (!ModelState.IsValid)
             {
-                return View(nameof(Profile),profileVM);
+                return View(nameof(MyAccount),profileVM);
             }
 
             if(address.IsMain == true && appUser.Addresses != null &&appUser.Addresses.Count() > 0 && appUser.Addresses.Any(u=>u.IsMain == true))
@@ -359,7 +359,7 @@ namespace FinalProjectCode.Controllers
             await _context.SaveChangesAsync();
 
 
-            return RedirectToAction(nameof(Profile));
+            return RedirectToAction(nameof(MyAccount));
         }
 
         #region Create Role And SuperAdmin

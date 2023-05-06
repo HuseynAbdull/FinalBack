@@ -1,4 +1,5 @@
-﻿@model ProfileVM
+﻿@using FinalProjectCode.ViewModels.RegisterVM;
+@model ProfileVM
 
 <section id="login-pg">
     <div class="container-fluid h-custom">
@@ -53,14 +54,6 @@
                                placeholder="Enter new password" />
                         <span asp-validation-for="Password" class="text text-danger"></span>
                     </div>
-
-                    <!--Confirm Password input -->
-                    @* <div class="form-outline mb-3">
-                    <p class="inpt-p">Confirm Password</p>
-                    <input asp-for="Password" class="login-input"
-                    placeholder="Confirm password" />
-                    <span asp-validation-for="ConfirmPassword" class="text text-danger"></span>
-                    </div>*@
 
                     <div class="text-center text-lg-start mt-4 pt-2">
                         <button type="submit" class="login-button"

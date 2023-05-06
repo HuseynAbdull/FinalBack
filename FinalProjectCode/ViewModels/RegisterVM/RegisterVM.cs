@@ -21,7 +21,10 @@ namespace FinalProjectCode.ViewModels.RegisterVM
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
-      /*  [Required]
+
+      /* SAYTIN OZUNDE OLMADIGI UCUN ISTIFADE ETMEDIM
+       * 
+       * [Required]
         [DataType(DataType.Password)]
         [Compare("Password")]
         public string ConfirmPassword { get; set; }*/
