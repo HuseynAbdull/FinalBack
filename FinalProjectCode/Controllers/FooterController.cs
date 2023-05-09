@@ -30,5 +30,10 @@ namespace FinalProjectCode.Controllers
             return View();
         }
 
+        public async Task<IActionResult> Addpage()
+        {
+            return View();
+        }
+
     }
 }

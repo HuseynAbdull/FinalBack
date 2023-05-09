@@ -42,8 +42,10 @@
             </div>
             <div class="order-history">
                 <h4>ORDER HISTORY</h4>
-                
-				
+
+				<div class="my-account-order account-wrapper">
+					<h4 class="account-title">Orders</h4>
+					<div class="account-table text-center mt-30 table-responsive">
 						<table class="table table-hover">
 							<thead>
 								<tr>
@@ -55,11 +57,8 @@
 								</tr>
 							</thead>
 							<tbody>
-
-
 								@if (Model.Orders != null)
 								{
-
 									@foreach (Order order in Model.Orders)
 									{
 										<tr>
@@ -106,6 +105,8 @@
 								}
 							</tbody>
 						</table>
+					</div>
+				</div>
 				
 			</div>
         </div>

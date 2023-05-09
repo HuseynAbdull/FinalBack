@@ -28,6 +28,10 @@
                                         <th>Total</th>
                                     </tr>
                                 </thead>
+                                @{
+                                    double? totalPrice = 0;
+                                    
+                                }
                                 <tbody>
                                     @foreach (BasketVM basketVM in Model.BasketVMs)
                                     {
@@ -36,17 +40,16 @@
                                                 <a>@basketVM.Title <strong> × @basketVM.Count</strong></a>
                                             </td>
                                             <td>$@(basketVM.DiscountedPrice * basketVM.Count)</td>
+
                                         </tr>
+                                        totalPrice += basketVM.DiscountedPrice * basketVM.Count;
                                     }
                                 </tbody>
                                 <tfoot>
+   
                                     <tr>
-                                        <td>Sub Total</td>
-                                        <td><strong>$400</strong></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Total Amount</td>
-                                        <td><strong>$470</strong></td>
+                                        <td>Total Price</td>
+                                        <td>$<strong>@totalPrice</strong></td>
                                     </tr>
                                 </tfoot>
                             </table>

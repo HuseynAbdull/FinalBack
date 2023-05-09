@@ -152,7 +152,6 @@ namespace FinalProjectCode.Controllers
         }
 
 
-
         public async Task<IActionResult> GetBasket()
         {
             return Json(JsonConvert.DeserializeObject<List<BasketVM>>(HttpContext.Request.Cookies["basket"]));
