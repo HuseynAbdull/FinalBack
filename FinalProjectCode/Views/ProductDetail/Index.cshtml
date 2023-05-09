@@ -73,7 +73,7 @@
             </div>
             <div id="4" class="content-box d-none review">
                 <div class="overall-rev">
-                    <p><b><span>@(a / Model.Product.Reviews.Count())</span></b> (Overall)</p>
+                    <p><b><span>@(Model.Product.Reviews.Count() > 0 ? a / Model.Product.Reviews.Count(): 0) </span></b> (Overall)</p>
                     <p>Based on <span>@Model.Product.Reviews.Count()</span> Comments</p>
                 </div>
 
@@ -98,6 +98,7 @@
                             <div class="rewiev-box-bottom">
                                 <p>@review.Description</p>
                             </div>
+                            <hr>
                         </div>
                     }
                 }

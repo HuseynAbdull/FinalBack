@@ -23,7 +23,7 @@ namespace FinalProjectCode.ViewModels.RegisterVM
 
 
       /* SAYTIN OZUNDE OLMADIGI UCUN ISTIFADE ETMEDIM
-       * 
+       *
        * [Required]
         [DataType(DataType.Password)]
         [Compare("Password")]

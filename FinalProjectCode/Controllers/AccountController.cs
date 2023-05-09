@@ -11,6 +11,9 @@ using FinalProjectCode.DataAccessLayer;
 using Microsoft.EntityFrameworkCore;
 using FinalProjectCode.ViewModels.BasketVM;
 using Newtonsoft.Json;
+using System.Configuration;
+using Org.BouncyCastle.Crypto;
+using System.ComponentModel.DataAnnotations;
 
 namespace FinalProjectCode.Controllers
 {
@@ -367,6 +370,8 @@ namespace FinalProjectCode.Controllers
             return RedirectToAction(nameof(MyAccount));
         }
 
+
+   
         #region Create Role And SuperAdmin
         /*      [HttpGet]
       public async Task<IActionResult> CreateRole()

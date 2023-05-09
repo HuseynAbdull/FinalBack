@@ -11,7 +11,7 @@
             <div class="left-account">
                <h6>@User.Identity.Name</h6>
                 <h4>PRIMARY ADDRESS</h4>
-                <a class="addAdress"><i class="far fa-edit">Add Address</i></a>
+                <a style="cursor:pointer" class="addAdress"><i class="far fa-edit">Add Address</i></a>
                 <br />
                 <div class="addressForm d-none">
                     @await Html.PartialAsync("_AddressFormPartial",new Address())
@@ -26,10 +26,9 @@
                                 <h6 class="name">@($"{address.Country} {address.City}")</h6>
                                 <p><b>Address Line:</b> @address.AddressLine</p>
                                 <p><b>Postal Code:</b> @address.PostalCode </p>
-                                <br>
-                                <a class="editAdress"><i class="far fa-edit">Edit Address</i></a>
-                                <hr style="width:150px">
+                                @*<a class="editAdress"><i class="far fa-edit">Edit Address</i></a>*@
                             </div>
+							<br/>
                         }
                     }
                     
@@ -43,6 +42,7 @@
             </div>
             <div class="order-history">
                 <h4>ORDER HISTORY</h4>
+                
 				
 						<table class="table table-hover">
 							<thead>
@@ -55,8 +55,11 @@
 								</tr>
 							</thead>
 							<tbody>
+
+
 								@if (Model.Orders != null)
 								{
+
 									@foreach (Order order in Model.Orders)
 									{
 										<tr>

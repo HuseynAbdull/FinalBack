@@ -7,7 +7,10 @@ namespace FinalProjectCode.Models
         [StringLength(255)]
         public string Name { get; set; }
 
-        IEnumerable<Product> Products { get; set;}
+        public bool? IsMain { get; set; }
+        IEnumerable<Product>? Products { get; set;}
+
+
 
     }
 }

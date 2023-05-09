@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3q/tU8PU5WhdnpWUVvF1+Ld9aHRLYH73kNUE8vfjkVI=",
+  "Hash": "dbCQ0FKmaXlFYb2J0peIqYY33iVTX+udQog5dvOvpeg=",
   "Source": "FinalProjectCode",
   "BasePath": "_content/FinalProjectCode",
   "Mode": "Default",
@@ -3398,6 +3398,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\manage\\js\\app.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\manage\\js\\customap.js",
+      "SourceId": "FinalProjectCode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\",
+      "BasePath": "_content/FinalProjectCode",
+      "RelativePath": "manage/js/customap.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\manage\\js\\customap.js"
     },
     {
       "Identity": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\manage\\js\\dashboard.js",

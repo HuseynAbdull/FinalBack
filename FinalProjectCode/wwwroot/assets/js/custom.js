@@ -55,10 +55,6 @@ $(document).on('click', '.producttype-selector-btn', (function () {
 }))
 
 
-
-
-
-
 $(document).on('click', '.pagination-list', (function () {
     let pageindex = this.getAttribute('data-id');
     let producttypeid = this.getAttribute('data-producttype-id');
@@ -230,10 +226,20 @@ $(document).ready(function (){
 
 })
 
-$('.accordion-collapse').on('show.bs.collapse', function () {
+/*$('.accordion-collapse').on('show.bs.collapse', function () {
     $(this).closest("table")
         .find(".accordion-collapse.show")
         .not(this)
         .collapse('toggle');
 })
+*/
+/*$('.accordion-toggle').on('click', function () {
+    $(this).closest('tr').next().find('.accordion-collapse').collapse('toggle');
+});*/
 
+$(document).on('click', '.accordion-toggle', function (event) {
+    event.preventDefault();
+    var $this = $(this);
+    var $collapse = $this.closest('tr').next().find('.accordion-collapse');
+    $collapse.collapse('toggle');
+});

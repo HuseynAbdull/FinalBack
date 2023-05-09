@@ -797,6 +797,10 @@
       "PackagePath": "staticwebassets\\manage\\js\\app.min.js"
     },
     {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\manage\\js\\customap.js",
+      "PackagePath": "staticwebassets\\manage\\js\\customap.js"
+    },
+    {
       "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\manage\\js\\dashboard.js",
       "PackagePath": "staticwebassets\\manage\\js\\dashboard.js"
     },

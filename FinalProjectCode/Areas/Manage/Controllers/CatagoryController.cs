@@ -2,7 +2,7 @@
 using FinalProjectCode.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MimeKit.Cryptography;
+
 
 namespace FinalProjectCode.Areas.Manage.Controllers
 {
@@ -16,12 +16,19 @@ namespace FinalProjectCode.Areas.Manage.Controllers
             _context = context;
         }
 
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
-            IEnumerable<ProductType> productTypes = await _context.ProductTypes
+           
+            return View(await _context.ProductTypes
+                .Where(c=>c.IsDeleted == false).ToListAsync());
+        }
 
-                .Where(p =>p.IsDeleted == false).ToListAsync();
-            return View(productTypes);
+        [HttpGet]
+        public async Task<IActionResult> Create()
+        {
+            ViewBag.Catagories = await _context.ProductTypes.Where(c => c.IsDeleted == false).ToListAsync();
+            return View();
         }
 
     }

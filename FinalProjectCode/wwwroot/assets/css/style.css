@@ -19,6 +19,14 @@
     display: none;
     cursor: pointer;
 }
+.account-address {
+    border: 2px solid;
+    padding-left: 20px !important;
+    padding-top: 10px;
+    margin-right: 40px;
+    border-radius: 0 70px 70px 0;
+    border-color: #36b8ce;
+}
 
 .bar {
     display: block;
@@ -101,10 +109,11 @@ a {
 
 .left-top {
     width: 30%;
+    color: #36b8ce !important;
 }
 
     .left-top a {
-        color: #36b8ce;
+        color: #36b8ce !important;
         margin-left: 4%;
         font-size: 20px;
         font-weight: 100;
@@ -816,7 +825,7 @@ li {
     }
 
 .span-red {
-    color: rgb(212, 45, 45);
+    color: #CE29AB;
     transition: 0.3s;
     cursor: pointer;
 }
@@ -948,22 +957,23 @@ li {
     font-size: 14px;
     text-align: center;
     /* overflow: hidden; */
-    outline: none;
-    position: relative;
+    transition: 0.3s;
+    outline: none !important;
+    position: relative !important;
 }
 
     .wishlist-button:hover::before {
         content: "ADD TO WISHLIST";
-        position: absolute;
-        width: 10rem;
-        height: 50px;
-        text-align: center;
-        padding-top: 1rem;
-        border: #36b8ce 1px solid;
-        top: -80%;
-        left: 70%;
+        position: absolute !important;
+        width: 10rem !important;
+        height: 50px !important;
+        text-align: center !important;
+        padding-top: 1rem !important;
+        border: #36b8ce 1px solid !important;
+        top: -80% !important;
+        left: 70% !important;
         color: #36b8ce;
-        z-index: 3;
+        z-index: 3 !important;
         background-color: white;
     }
 
@@ -1240,18 +1250,6 @@ li {
     color: red;
 }
 
-
-/* #panel, #flip {
-    padding: 5px;
-    text-align: center;
-    background-color: #e5eecc;
-    border: solid 1px #c3c3c3;
-  }
-  
-  #panel {
-    padding: 50px;
-    display: none;
-  } */
 
 #flip {
     padding: 5px;
@@ -2299,6 +2297,14 @@ li {
     padding-left: 1rem !important;
 }
 
+#login-pg input{
+    padding-left: 10px;
+}
+
+.addressForm input{
+    padding-left: 10px;
+}
+
     #searchbody li {
         background-color: white !important;
         cursor:pointer;
@@ -2310,6 +2316,130 @@ li {
     #searchbody img {
         display: block;
     }
+
+
+    .name-rew p{
+        font-size: 23px;
+    }
+
+    .rewiev-box-bottom {
+        font-size: 18px;
+        letter-spacing: 3px;
+        font-style:italic;
+    }
+
+    .rating-add{
+        display: flex !important;
+        align-items: center! important;
+    }
+
+
+
+
+
+/* CUSTOM Darkmode  start */
+.right-header-bottom input {
+    padding-left: 10px;
+}
+
+.product-shop-info {
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+#seachbody{
+   background-color: white;
+   z-index: 88 !important!;
+}
+.opened-photo {
+    z-index: 1 !important;
+}
+
+.blue-hp-support {
+    isolation: isolate;
+}
+
+.video-sec {
+    isolation: isolate;
+}
+
+.left-top {
+    isolation: isolate;
+}
+
+.left-header-bottom img {
+    isolation: isolate !important;
+    background-color: white;
+    border-radius: 50px;
+}
+
+.logo-phone {
+    isolation: isolate;
+    background-color: white;
+    border-radius: 50px;
+}
+
+.slider-new-arrivals {
+    isolation: isolate !important;
+    background-color: white;
+}
+
+.body-top {
+    isolation: isolate;
+}
+
+.blue-hp-support {
+    isolation: isolate;
+}
+
+#head-footer {
+    isolation: isolate;
+}
+
+.shipping-logos-footer {
+    isolation: isolate;
+}
+
+.footer-custom {
+    isolation: isolate;
+}
+
+.darkmode-toggle {
+    z-index: 7;
+    opacity: 60%;
+}
+
+.shop-selector {
+    isolation: isolate;
+    margin-bottom: 2rem;
+}
+
+.products-all {
+    isolation: isolate;
+    background-color: white;
+}
+
+#pagination-sec {
+    isolation: isolate;
+}
+
+
+.p12 ul {
+    isolation: isolate;
+    background-color: white;
+}
+
+.product-shop-info {
+    isolation: isolate;
+    background-color: white;
+}
+
+
+
+/* Darkmode Finish */
+
+
+
 
 
 
