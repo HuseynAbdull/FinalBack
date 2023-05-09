@@ -181,7 +181,7 @@
             <!-- Left -->
             <!-- Right -->
             <div>
-                <a href="" class="me-4 link-secondary">
+                <a class="me-4 link-secondary">
                     <i class="fab fa-facebook-f"></i>
                 </a>
                 <a href="" class="me-4 link-secondary">
@@ -224,14 +224,35 @@
                         <h6 class="text-uppercase fw-bold mb-4">
                             Customers
                         </h6>
+                        @if (User.Identity.IsAuthenticated == true)
+                        {
+                            <p>
+                                <a asp-controller="account" asp-action="myaccount" class="text-reset">My Account</a>
+                            </p>
+                        }
+                        else
+                        {
+                            <p>
+                                <a asp-controller="account" asp-action="login" class="text-reset">My Account</a>
+                            </p>
+                            
+                        }
+
+                        @if (User.Identity.IsAuthenticated == true)
+                        {
+                            <p>
+                                <a asp-controller="account" asp-action="myaccount" class="text-reset">Order Status</a>
+                            </p>
+                        }
+                        else
+                        {
+                            <p>
+                                <a asp-controller="account" asp-action="login" class="text-reset">Order Status</a>
+                            </p>
+
+                        }
                         <p>
-                            <a href="myaccount.html" class="text-reset">My Account</a>
-                        </p>
-                        <p>
-                            <a href="myaccount.html" class="text-reset">Order Status</a>
-                        </p>
-                        <p>
-                            <a href="shipping.html" class="text-reset">Shipping</a>
+                            <a asp-action="Shipping" asp-controller="Footer" class="text-reset">Shipping</a>
                         </p>
 
                     </div>
@@ -243,19 +264,17 @@
                             Company
                         </h6>
                         <p>
-                            <a href="aboutus.html" class="text-reset">About Us</a>
+                            <a asp-action="AboutUs" asp-controller="Footer" class="text-reset">About Us</a>
                         </p>
                         <p>
-                            <a href="contactus.html" class="text-reset">Contact Us / Support</a>
+                            <a asp-action="ContactUs" asp-controller="Footer" class="text-reset">Contact Us / Support</a>
+                        </p>
+                       
+                        <p>
+                            <a asp-action="Terms" asp-controller="Footer" class="text-reset">Terms & Conditions</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Privacy Policy</a>
-                        </p>
-                        <p>
-                            <a href="terms.html" class="text-reset">Terms & Conditions</a>
-                        </p>
-                        <p>
-                            <a href="california.html" class="text-reset">California Prop 65</a>
+                            <a asp-action="California" asp-controller="Footer" class="text-reset">California Prop 65</a>
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -270,6 +289,7 @@
 
     <!-- </div> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js" integrity="sha512-xq+Vm8jC94ynOikewaQXMEkJIOBp7iArs3IhFWSWdRT3Pq8wFz46p+ZDFAR7kHnSFf+zUv52B3prRYnbDRdgog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.5/lib/darkmode-js.min.js"></script>
@@ -293,6 +313,13 @@
         }
         const darkmode = new Darkmode(options);
         darkmode.showWidget();
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#flip").click(function () {
+                $("#panel").slideToggle("slow");
+            });
+        });
     </script>
 
     @if (TempData["ToasterMessage4"] != null)
