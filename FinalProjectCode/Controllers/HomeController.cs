@@ -24,6 +24,7 @@ namespace FinalProjectCode.Controllers
             {
                 Products = await _context.Products.Where(p => p.IsDeleted == false).ToListAsync(),
                 BrandLogos =await _context.BrandLogos.Where(b => b.IsDeleted == false).ToListAsync(),
+                Genders = await _context.Genders.Where(g=>g.IsDeleted == false).ToListAsync(),
             };
 
             return View(homeVM);

@@ -26,10 +26,14 @@ namespace FinalProjectCode.Controllers
         {
             string basket = HttpContext.Request.Cookies["basket"];
             List<BasketVM> basketVMs = null;
-            if (basket != null)
+
+            
+            if (basket != null && basket != "")
             {
                 basketVMs=JsonConvert.DeserializeObject<List<BasketVM>>(basket);
-                
+
+                if (basketVMs != null)
+                {
                     foreach (BasketVM basketVM in basketVMs)
                     {
                         Product product = _context.Products.FirstOrDefault(p => p.Id == basketVM.Id && p.IsDeleted == false);
@@ -41,7 +45,8 @@ namespace FinalProjectCode.Controllers
                         }
 
                     }
-                
+                }
+
 
             }
             else

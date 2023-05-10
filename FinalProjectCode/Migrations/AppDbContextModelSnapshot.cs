@@ -84,7 +84,7 @@ namespace FinalProjectCode.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Addresses");
+                    b.ToTable("Addresses", (string)null);
                 });
 
             modelBuilder.Entity("FinalProjectCode.Models.AppUser", b =>
@@ -207,7 +207,7 @@ namespace FinalProjectCode.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Baskets");
+                    b.ToTable("Baskets", (string)null);
                 });
 
             modelBuilder.Entity("FinalProjectCode.Models.BrandLogo", b =>
@@ -248,7 +248,7 @@ namespace FinalProjectCode.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("BrandLogos");
+                    b.ToTable("BrandLogos", (string)null);
                 });
 
             modelBuilder.Entity("FinalProjectCode.Models.Gender", b =>
@@ -294,7 +294,7 @@ namespace FinalProjectCode.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Genders");
+                    b.ToTable("Genders", (string)null);
                 });
 
             modelBuilder.Entity("FinalProjectCode.Models.Order", b =>
@@ -381,7 +381,7 @@ namespace FinalProjectCode.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("FinalProjectCode.Models.OrderItem", b =>
@@ -434,7 +434,7 @@ namespace FinalProjectCode.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderItems");
+                    b.ToTable("OrderItems", (string)null);
                 });
 
             modelBuilder.Entity("FinalProjectCode.Models.Product", b =>
@@ -519,7 +519,7 @@ namespace FinalProjectCode.Migrations
 
                     b.HasIndex("ProductTypeId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("FinalProjectCode.Models.ProductImage", b =>
@@ -566,7 +566,7 @@ namespace FinalProjectCode.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductImages");
+                    b.ToTable("ProductImages", (string)null);
                 });
 
             modelBuilder.Entity("FinalProjectCode.Models.ProductType", b =>
@@ -594,7 +594,7 @@ namespace FinalProjectCode.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsMain")
+                    b.Property<bool?>("IsMain")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
@@ -611,7 +611,7 @@ namespace FinalProjectCode.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProductTypes");
+                    b.ToTable("ProductTypes", (string)null);
                 });
 
             modelBuilder.Entity("FinalProjectCode.Models.Review", b =>
@@ -672,7 +672,7 @@ namespace FinalProjectCode.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Reviews");
+                    b.ToTable("Reviews", (string)null);
                 });
 
             modelBuilder.Entity("FinalProjectCode.Models.Settings", b =>
@@ -719,7 +719,7 @@ namespace FinalProjectCode.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Settings");
+                    b.ToTable("Settings", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

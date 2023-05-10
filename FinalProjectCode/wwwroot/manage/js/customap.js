@@ -1,4 +1,4 @@
-﻿$(document).ready(function () {
+﻿/*$(document).ready(function () {
     let isMain = $('#IsMain').is(':checked');
     console.log(isMain);
 
@@ -24,4 +24,4 @@
          }
 
     })
-})
+})*/

@@ -41,10 +41,7 @@
             <div class="vr">
             </div>
             <div class="order-history">
-                <h4>ORDER HISTORY</h4>
-
-				<div class="my-account-order account-wrapper">
-					<h4 class="account-title">Orders</h4>
+                <h4>ORDER HISTORY</h4>	
 					<div class="account-table text-center mt-30 table-responsive">
 						<table class="table table-hover">
 							<thead>
@@ -70,7 +67,7 @@
 										</tr>
 										<tr>
 											<td colspan="6" class="hiddenRow">
-												@if (order.OrderItems.Any())
+												@if (order.OrderItems !=null && order.OrderItems.Any())
 												{
 													<div class="accordion-collapse collapse" id="demo@(order.Id)">
 														<table class="table">
@@ -106,8 +103,6 @@
 							</tbody>
 						</table>
 					</div>
-				</div>
-				
 			</div>
         </div>
     </div>

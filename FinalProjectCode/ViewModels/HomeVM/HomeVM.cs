@@ -7,5 +7,7 @@ namespace FinalProjectCode.ViewModels.HomeVM
         public IEnumerable<Product> Products { get; set; }
         public IEnumerable<BrandLogo> BrandLogos { get; set; }
 
+        public IEnumerable<Gender>? Genders { get; set; }
+
     }
 }
