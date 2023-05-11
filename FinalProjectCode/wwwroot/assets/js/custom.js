@@ -32,7 +32,7 @@ for(let searchSection of searchSections){
 $(document).on('click', '.gender-selector-btn', (function () {
     let genderid = this.getAttribute('data-id');
     let producttypeid = this.getAttribute('data-producttype-id');
-    fetch("/shop/filterProduct?genderid=" + genderid + "&producttypeid=" + producttypeid)
+    fetch("/shop/FilterProduct?genderid=" + genderid + "&producttypeid=" + producttypeid)
         .then(res => {
             return res.text();
         })
@@ -45,7 +45,7 @@ $(document).on('click', '.gender-selector-btn', (function () {
 $(document).on('click', '.producttype-selector-btn', (function () {
     let producttypeid = this.getAttribute('data-id');
     let genderid = this.getAttribute('data-gender-id');
-    fetch("/shop/filterProduct?producttypeid=" + producttypeid + "&genderid=" + genderid)
+    fetch("/shop/FilterProduct?producttypeid=" + producttypeid + "&genderid=" + genderid)
         .then(res => {
             return res.text();
         })
@@ -59,7 +59,7 @@ $(document).on('click', '.pagination-list', (function () {
     let pageindex = this.getAttribute('data-id');
     let producttypeid = this.getAttribute('data-producttype-id');
     let genderid = this.getAttribute('data-gender-id');
-    fetch("shop/GetFilteredProducts?pageindex=" + pageindex + "&producttypeid=" + producttypeid + "&genderid=" + genderid)
+    fetch("shop/FilterProduct?pageindex=" + pageindex + "&producttypeid=" + producttypeid + "&genderid=" + genderid)
         .then(res => {
             return res.text();
         })
@@ -117,9 +117,9 @@ $(document).ready(function (){
                             toast.addEventListener('mouseleave', Swal.resumeTimer)
                         }
                     })
-
                     Toast.fire({
                         icon: 'success',
+                        confirmButtonText: 'Cool',
                         title: 'Product Added from Cart',
                         customClass: {
                             container: 'my-sweet-alert'

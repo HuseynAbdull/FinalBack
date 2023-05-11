@@ -184,7 +184,7 @@ namespace FinalProjectCode.Controllers
             AppUser appUser = await _userManager.Users
                 .Include(u => u.Addresses.Where(a => a.IsDeleted == false))
 				.Include(u => u.Orders.Where(o => o.IsDeleted == false))
-				.ThenInclude(o => o.OrderItems.Where(oi => oi.IsDeleted))
+				.ThenInclude(o => o.OrderItems.Where(oi => oi.IsDeleted == false))
 				.ThenInclude(oi => oi.Product)
 				.FirstOrDefaultAsync(u => u.NormalizedUserName == User.Identity.Name.ToUpperInvariant());
 
@@ -217,7 +217,7 @@ namespace FinalProjectCode.Controllers
         {
             AppUser appUser = await _userManager.Users
                 .Include(u=>u.Orders.Where(o=>o.IsDeleted == false))
-                .ThenInclude(o =>o.OrderItems.Where(oi=>oi.IsDeleted))
+                .ThenInclude(o =>o.OrderItems.Where(oi=>oi.IsDeleted == false))
                 .ThenInclude(oi=>oi.Product)
                 .Include(u => u.Addresses.Where(a => a.IsDeleted == false))
                 .FirstOrDefaultAsync(u => u.NormalizedUserName == User.Identity.Name.ToUpperInvariant());

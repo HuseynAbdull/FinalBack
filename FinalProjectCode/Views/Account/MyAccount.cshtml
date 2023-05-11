@@ -11,7 +11,7 @@
             <div class="left-account">
                <h6>@User.Identity.Name</h6>
                 <h4>PRIMARY ADDRESS</h4>
-                <a style="cursor:pointer" class="addAdress"><i class="far fa-edit">Add Address</i></a>
+				<a style="cursor:pointer" class="addAdress editAdress"><i class="far fa-edit">Add Address</i></a>
                 <br />
                 <div class="addressForm d-none">
                     @await Html.PartialAsync("_AddressFormPartial",new Address())
@@ -26,7 +26,6 @@
                                 <h6 class="name">@($"{address.Country} {address.City}")</h6>
                                 <p><b>Address Line:</b> @address.AddressLine</p>
                                 <p><b>Postal Code:</b> @address.PostalCode </p>
-                                @*<a class="editAdress"><i class="far fa-edit">Edit Address</i></a>*@
                             </div>
 							<br/>
                         }
