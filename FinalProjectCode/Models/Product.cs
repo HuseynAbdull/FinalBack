@@ -7,7 +7,7 @@ namespace FinalProjectCode.Models
     public class Product : BaseEntity
     {
         [StringLength(255)]
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
         [StringLength(3000)]
 
@@ -18,13 +18,13 @@ namespace FinalProjectCode.Models
         public string? UPC { get; set; }
 
 
-        public ProductType ProductType { get; set; }
+        public ProductType? ProductType { get; set; }
         public int ProductTypeId { get; set; }
 
         [StringLength(50)]
         public string? Model { get; set; }
 
-        public Gender Gender { get; set; }
+        public Gender? Gender { get; set; }
         public int GenderId { get; set; }
 
         [StringLength(255)]
@@ -38,18 +38,24 @@ namespace FinalProjectCode.Models
         public double? DiscountedPrice { get; set; }
 
 
-        public int Count { get; set; }
+        public int? Count { get; set; }
         [StringLength(255)]
-        public string MainImage { get; set; }
+        public string? MainImage { get; set; }
 
-        public bool IsNewArrival { get; set; }
+        public bool? IsNewArrival { get; set; }
 
         public IEnumerable<Basket>? Baskets { get; set; }
 
-        public IEnumerable<ProductImage> ProductImages { get; set;}
+        public List<ProductImage>? ProductImages { get; set;}
 
         public IEnumerable<Review>? Reviews { get; set; }
 
+
+        [NotMapped]
+        public List<IFormFile>? Files { get; set; }
+
+        [NotMapped]
+        public IFormFile? MainFile { get; set; }
 
     }
 }

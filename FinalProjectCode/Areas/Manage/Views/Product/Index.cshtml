@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Product>
+
+<div class="row">
+    <div class="col-lg-4">
+        <h1 class="h3 mb-4 text-gray-800">Genders Page</h1>
+    </div>
+    <div class="col-lg-2">
+        <a asp-action="create" asp-controller="product" asp-area="manage" class="btn btn-primary">Create</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Created At</th>
+                    <th scope="col">Created By</th>
+                    <th scope="col">Updated At</th>
+                    <th scope="col">Updated By</th>
+                    <th scope="col">EDIT</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (Product product in Model)
+                {
+                    
+                    <tr>
+                        <td>@product.Title</td>
+                        <td><img style="width: 50px" src="~/assets/photos/products/@product.MainImage" /></td>
+                        <td>@product.CreatedAt</td>
+                        <td>@product.CreatedBy</td>
+                        <td>@product.UpdatedAt</td>
+                        <td>@product.UpdatedBy</td>
+                        <td>
+                            <a asp-area="manage" asp-controller="product" asp-action="detail" asp-route-productId="@product.Id" class="btn btn-primary">Detail</a>
+                            <a asp-area="manage" asp-controller="product" asp-action="Update" asp-route-productId="@product.Id" class="btn btn-warning">Update</a>
+                            <a asp-area="manage" asp-controller="product" asp-action="Delete" asp-route-productId="@product.Id" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>

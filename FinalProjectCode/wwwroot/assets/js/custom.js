@@ -32,7 +32,7 @@ for(let searchSection of searchSections){
 $(document).on('click', '.gender-selector-btn', (function () {
     let genderid = this.getAttribute('data-id');
     let producttypeid = this.getAttribute('data-producttype-id');
-    fetch("/shop/getfilteredproducts?genderid=" + genderid + "&producttypeid=" + producttypeid)
+    fetch("/shop/filterProduct?genderid=" + genderid + "&producttypeid=" + producttypeid)
         .then(res => {
             return res.text();
         })
@@ -45,7 +45,7 @@ $(document).on('click', '.gender-selector-btn', (function () {
 $(document).on('click', '.producttype-selector-btn', (function () {
     let producttypeid = this.getAttribute('data-id');
     let genderid = this.getAttribute('data-gender-id');
-    fetch("/shop/getfilteredproducts?producttypeid=" + producttypeid + "&genderid=" + genderid)
+    fetch("/shop/filterProduct?producttypeid=" + producttypeid + "&genderid=" + genderid)
         .then(res => {
             return res.text();
         })

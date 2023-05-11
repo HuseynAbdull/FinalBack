@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<ProductType>
+
 @{
     ViewData["Title"] = "Index";
     int count = 0;
@@ -31,9 +32,9 @@
                         <td>@count</td>
                         <td>@productType.Name</td>
                         <td>
-                            <a asp-area="manage" asp-controller="Catagory" asp-action="detail" asp-route-id="@productType.Id" class="btn btn-primary">Detail</a>
-                            <a asp-area="manage" asp-controller="Catagory" asp-action="Update" asp-route-id="@productType.Id" class="btn btn-warning">Update</a>
-                            <a asp-area="manage" asp-controller="Catagory" asp-action="Delete" asp-route-id="@productType.Id" class="btn btn-danger">Delete</a>
+                            <a asp-area="manage" asp-controller="Catagory" asp-action="detail" asp-route-productTypeId="@productType.Id" class="btn btn-primary">Detail</a>
+                            <a asp-area="manage" asp-controller="Catagory" asp-action="Update" asp-route-productTypeId="@productType.Id" class="btn btn-warning">Update</a>
+                            <a asp-area="manage" asp-controller="Catagory" asp-action="DeleteDetail" asp-route-productTypeId="@productType.Id" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>   
                 }

@@ -1,0 +1,14 @@
+﻿@model IEnumerable<ProductImage>
+
+    @if(Model != null && Model.Count()> 0){
+    foreach(ProductImage productImage in Model)
+    {
+        <div>
+            <img style="width: 50px" src="~/assets/photos/products/@productImage.Image" />
+            @if (Model.Count() > 0)
+            {
+                <a asp-action="DeleteImg" asp-controller="product" asp-area="manage" asp-route-id="@productImage.ProductId" data-imageId="@productImage.Id" >X</a>
+            }
+        </div>
+    }
+}

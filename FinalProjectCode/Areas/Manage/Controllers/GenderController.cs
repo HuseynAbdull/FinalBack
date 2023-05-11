@@ -108,24 +108,22 @@ namespace FinalProjectCode.Areas.Manage.Controllers
 
         public async Task<IActionResult> Delete(int? genderId)
         {
-            IEnumerable<Gender> Genders = await _context.Genders.Where(g => g.IsDeleted == false).ToListAsync();
+            if (genderId == null) return NotFound();
+            Gender Genders = await _context.Genders.Include(g => g.Products).Where(g => g.IsDeleted == false  && g.Id == genderId).FirstOrDefaultAsync();
 
 
-            if (genderId == null)
+            if (Genders == null) return BadRequest();
+
+            foreach (Product product in Genders.Products)
             {
-                BadRequest();
+                product.IsDeleted = true;
             }
 
-            if (!Genders.Any(g => g.Id == genderId))
-            {
-                return NotFound();
-            }
+            Genders.IsDeleted = true;
 
-            Gender gender = Genders.FirstOrDefault(g => g.Id == genderId);
 
-            _context.Genders.FirstOrDefault(c=>c.Id == genderId).IsDeleted = true;
-            gender.DeletedAt = DateTime.UtcNow.AddHours(4);
-            gender.DeletedBy = "System";
+            Genders.DeletedAt = DateTime.UtcNow.AddHours(4);
+            Genders.DeletedBy = "System";
             await _context.SaveChangesAsync();
 
             return RedirectToAction("Index");
@@ -170,7 +168,33 @@ namespace FinalProjectCode.Areas.Manage.Controllers
         [HttpPost]
         public async Task<IActionResult> Update(Gender gender)
         {
-            
+            if (gender.File?.ContentType != "image/jpeg")
+            {
+                ModelState.AddModelError("File", "Ancaq jpeg");
+                return View();
+            }
+
+            if ((gender.File?.Length / 1024) > 300)
+            {
+                ModelState.AddModelError("File", "Olchu maksimum 300 kb");
+                return View();
+            }
+            Gender dbgender = await _context.Genders.FirstOrDefaultAsync(c => c.IsDeleted == false && c.Id == gender.Id);
+
+            if (gender.File != null)
+            {
+
+                string fileName = $"{DateTime.Now.ToString("yyyyMMddHHmmssfff")}-{Guid.NewGuid().ToString()}-{gender.File.FileName}";
+                string filePath = Path.Combine(_env.WebRootPath, "assets", "photos", "gender", fileName);
+                dbgender.Image = fileName;
+
+                using (FileStream stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await gender.File.CopyToAsync(stream);
+                }
+            }
+
+
 
             if (!ModelState.IsValid)
             {
@@ -179,46 +203,13 @@ namespace FinalProjectCode.Areas.Manage.Controllers
             if (gender.Id == null) { return BadRequest(); }
            
 
-            Gender dbgender = await _context.Genders.FirstOrDefaultAsync(c => c.IsDeleted == false && c.Id == gender.Id);
+           
+
             if (dbgender == null) { return NotFound(); }
 
-            if(dbgender.Name == gender.Name)
-            {
-                ModelState.AddModelError("", "Ad eyni ola bilmez");
-                return View(gender);
-            }
+         
 
-            if (dbgender.File == gender.File)
-            {
-                ModelState.AddModelError("", "Ad eyni ola bilmez");
-                return View(gender);
-            }
-            if (gender.File?.ContentType != "image/jpeg")
-            {
-                ModelState.AddModelError("File", "Ancaq jpeg");
-                return View(gender);
-            }
-
-            if ((gender.File?.Length / 1024) > 300)
-            {
-                ModelState.AddModelError("File", "Olchu maksimum 300 kb");
-                return View(gender);
-            }
-
-            if (gender.File != null)
-            {
-
-                string fileName = $"{DateTime.Now.ToString("yyyyMMddHHmmssfff")}-{Guid.NewGuid().ToString()}-{gender.File.FileName}";
-                string filePath = Path.Combine(_env.WebRootPath, "assets", "photos", "gender", fileName);
-                gender.Image = fileName;
-
-                using (FileStream stream = new FileStream(filePath, FileMode.Create))
-                {
-                    await gender.File.CopyToAsync(stream);
-                }
-            }
-
-            if (string.IsNullOrEmpty(gender.Name))
+             if (string.IsNullOrEmpty(gender.Name))
             {
                 ModelState.AddModelError("", "Ad bos ola bilmez");
                 return View(gender);
@@ -228,10 +219,12 @@ namespace FinalProjectCode.Areas.Manage.Controllers
             dbgender.UpdatedBy = "System";
             dbgender.CreatedAt = DateTime.UtcNow.AddHours(4);
 
+
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
+        
 
 
     }

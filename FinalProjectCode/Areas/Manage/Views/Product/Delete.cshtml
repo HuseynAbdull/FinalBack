@@ -1,0 +1,37 @@
+﻿@model Product
+
+<div class="row">
+    <div class="col-lg-4">
+        <h1 class="h3 mb-4 text-gray-800">Gender Detail Page</h1>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Gender</th>
+            <th scope="col">MainImage</th>
+            <th scope="col">Created At</th>
+            <th scope="col">Created By</th>
+            <th scope="col">Updated At</th>
+            <th scope="col">Updated By</th>
+            <th scope="col">DELETE</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">//</></th>
+            <td>@Model.Title</td>
+            <td><img style="width: 40px" src="~/assets/photos/products/@Model.MainImage" /></td>
+            <td>@Model.CreatedAt</td>
+            <td>@Model.CreatedBy</td>
+            <td>@Model.UpdatedAt</td>
+            <td>@Model.UpdatedBy</td>
+            <td><a asp-action="DeleteProduct" asp-area="manage" asp-controller="Product" asp-route-productId="@Model.Id" class="btn btn-danger">DELETE</a></td>
+
+        </tr>
+    </tbody>
+</table>
+

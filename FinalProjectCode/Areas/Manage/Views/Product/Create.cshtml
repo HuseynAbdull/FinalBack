@@ -1,0 +1,97 @@
+﻿@model Product
+
+
+<H1>CREATE</H1>
+
+<div class="row">
+    <div class="col-lg-8">
+        <form method="post" enctype="multipart/form-data">
+            <!-- TITLE -->
+            <div class="mb-3">
+                <label asp-for=Title class="form-label"></label>
+                <input asp-for=Title class="form-control">
+                <span asp-validation-for=Title class="text text-danger"></span>
+            </div>
+
+            <!-- BrandName -->
+            <div class="mb-3">
+                <label asp-for=BrandName class="form-label"></label>
+                <input asp-for=BrandName class="form-control">
+                <span asp-validation-for=BrandName class="text text-danger"></span>
+            </div>
+
+            <!-- UPC -->
+            <div class="mb-3">
+                <label asp-for=UPC class="form-label"></label>
+                <input asp-for=UPC class="form-control">
+                <span asp-validation-for=UPC class="text text-danger"></span>
+            </div>
+
+            <!-- Model -->
+            <div class="mb-3">
+                <label asp-for=Model class="form-label"></label>
+                <input asp-for=Model class="form-control">
+                <span asp-validation-for=Model class="text text-danger"></span>
+            </div>
+
+            <!-- PRICE -->
+            <div class="mb-3">
+                <label asp-for=Price class="form-label"></label>
+                <input asp-for=Price class="form-control">
+                <span asp-validation-for=Price class="text text-danger"></span>
+            </div>
+            <!-- DiscountedPrice -->
+            <div class="mb-3">
+                <label asp-for=DiscountedPrice class="form-label"></label>
+                <input asp-for=DiscountedPrice class="form-control">
+                <span asp-validation-for=DiscountedPrice class="text text-danger"></span>
+            </div>
+            
+            <!-- Count -->
+            <div class="mb-3">
+                <label asp-for=Count class="form-label"></label>
+                <input asp-for=Count class="form-control">
+                <span asp-validation-for=Count class="text text-danger"></span>
+            </div>
+
+            <!-- Image -->
+            <div class="form-group">
+                <label asp-for=MainFile></label>
+                <input asp-for="MainFile" accept="image/jpeg" type="file" class="form-control-file">
+                <span asp-validation-for=MainFile class="text text-danger"></span>
+            </div>
+            <!-- Files -->
+            <div class="form-group">
+                <label asp-for=Files></label>
+                <input multiple asp-for=Files accept="image/jpeg" type="file" class="form-control-file">
+                <span asp-validation-for=Files class="text text-danger"></span>
+            </div>
+            <!-- ProductType Id -->
+            <div class="form-group">
+                <label asp-for="ProductTypeId"></label>
+                <select asp-for="ProductTypeId" class="form-control" asp-items="new SelectList(ViewBag.ProductTypes,nameof(ProductType.Id), nameof(ProductType.Name))">
+                </select>
+                <span asp-validation-for=ProductTypeId class="text text-danger"></span>
+            </div>
+            <!-- Description -->
+            <!-- Gender Id -->
+            <div class="form-group">
+                <label asp-for="GenderId"></label>
+                <select asp-for="GenderId" class="form-control" asp-items="new SelectList(ViewBag.Genders,nameof(Gender.Id), nameof(Gender.Name))">
+                </select>
+                <span asp-validation-for=GenderId class="text text-danger"></span>
+            </div>
+            <!-- Description -->
+            <div class="form-group">
+                <label asp-for="Description"></label>
+                <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+
+
+

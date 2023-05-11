@@ -44,7 +44,7 @@ namespace FinalProjectCode.Controllers
             return View(shopVM);
         }
 
-        public async Task<IActionResult> GetFilteredProducts(int? genderid ,int? producttypeid,int pageindex = 1)
+        public async Task<IActionResult> filterProduct(int? genderid ,int? producttypeid,int pageindex = 1)
         {
             IEnumerable<Product> Products= await _context.Products.Where(p=>p.IsDeleted== false).ToListAsync();
             if(genderid != null)
