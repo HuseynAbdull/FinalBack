@@ -44,7 +44,7 @@ namespace FinalProjectCode.Controllers
             return View(shopVM);
         }
 
-        public async Task<IActionResult> FilterProduct(int? genderid ,int? producttypeid,int pageindex = 1)
+        public async Task<IActionResult> FilterProduct(int? genderid ,int? producttypeid,int pageindex = 1, int sortid=1)
         {
             IEnumerable<Product> Products= await _context.Products.Where(p=>p.IsDeleted== false).ToListAsync();
             if(genderid != null)
@@ -58,6 +58,15 @@ namespace FinalProjectCode.Controllers
                 Products = Products.Where(t => t.ProductTypeId == producttypeid).ToList();
                 ViewBag.ProductTypeId = producttypeid;
             }
+            if (sortid == 1) { Products = Products.OrderBy(u => u.Title); }
+            if (sortid == 2) { Products = Products.OrderByDescending(u => u.Title); }
+            if (sortid == 5) { Products = Products.OrderByDescending(u => u.DiscountedPrice); }
+            if (sortid == 4) { Products = Products.OrderBy(u => u.DiscountedPrice); }
+            if (sortid == 6) { Products = Products.OrderByDescending(u => u.DiscountedPrice); }
+
+            ViewBag.Sortid = sortid;
+
+
 
             ViewBag.pageCount = (int)Math.Ceiling((decimal)Products.Count() / 6);
 

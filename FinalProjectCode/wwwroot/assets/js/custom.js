@@ -234,3 +234,21 @@ $('.accordion-collapse').on('show.bs.collapse', function () {
         .not(this)
         .collapse('toggle');
 })
+
+
+$(document).on('change', '.sortSelector', (function () {
+    let sortid = $(this).val()
+    console.log(sortid)
+    fetch('/shop/filterproduct?sortid=' + sortid)
+        .then(res => {
+            return res.text();
+        })
+        .then(data => {
+            $('.sale-full').html(data)
+        });
+
+
+
+}))
+
+

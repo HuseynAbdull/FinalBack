@@ -1,5 +1,4 @@
 
-
 $('.slider').slick({
     infinite: true,
     speed: 100,

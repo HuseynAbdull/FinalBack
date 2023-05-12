@@ -544,3 +544,4 @@ C:\Users\Mashkur\Desktop\FinalProjectCode\FinalProjectCode\bin\Debug\net6.0\Mime
 C:\Users\Mashkur\Desktop\FinalProjectCode\FinalProjectCode\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
 C:\Users\Mashkur\Desktop\FinalProjectCode\FinalProjectCode\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\Mashkur\Desktop\FinalProjectCode\FinalProjectCode\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\Mashkur\Desktop\FinalProjectCode\FinalProjectCode\bin\Debug\net6.0\Stripe.net.dll
