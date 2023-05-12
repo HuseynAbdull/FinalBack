@@ -1,12 +1,15 @@
 ﻿using FinalProjectCode.DataAccessLayer;
 using FinalProjectCode.Enums;
 using FinalProjectCode.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace FinalProjectCode.Areas.Manage.Controllers
 {
     [Area("Manage")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
     public class OrderController : Controller
     {
         private readonly AppDbContext _context;

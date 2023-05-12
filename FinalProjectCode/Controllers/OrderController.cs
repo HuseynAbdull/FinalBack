@@ -123,9 +123,7 @@ namespace FinalProjectCode.Controllers
                 orderVM.Order = new Order();
             }
 
-            // Pass the orderVM object to the partial view
-
-
+        
             if (!ModelState.IsValid)
             {
                 return View();

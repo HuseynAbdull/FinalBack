@@ -376,34 +376,34 @@ namespace FinalProjectCode.Controllers
         }
 
 
-   
-        #region Create Role And SuperAdmin
-        /*      [HttpGet]
-      public async Task<IActionResult> CreateRole()
-      {
-          await _roleManager.CreateAsync(new IdentityRole("SuperAdmin"));
-          await _roleManager.CreateAsync(new IdentityRole("Admin"));
-          await _roleManager.CreateAsync(new IdentityRole("Member"));
 
-          return Content("Ugurlu");
-      }
-*/
-        /*    [HttpGet]
+        #region Create Role And SuperAdmin
+       /* [HttpGet]
+        public async Task<IActionResult> CreateRole()
+        {
+            await _roleManager.CreateAsync(new IdentityRole("SuperAdmin"));
+            await _roleManager.CreateAsync(new IdentityRole("Admin"));
+            await _roleManager.CreateAsync(new IdentityRole("Member"));
+
+            return Content("Ugurlu");
+        }
+
+        [HttpGet]
         public async Task<IActionResult> CreateUser()
         {
             AppUser appUser = new AppUser
             {
-                Name = "Super",
+                Name = "Admin",
                 Surname = "Admin",
-                UserName = "SuperAdmin",
-                Email = "superadmin@gmail.com"
+                UserName = "Admin123",
+                Email = "admin@gmail.com"
             };
-            await _userManager.CreateAsync(appUser,"SuperAdmin123");
-            await _userManager.AddToRoleAsync(appUser, "SuperAdmin");
+            await _userManager.CreateAsync(appUser, "Admin123");
+            await _userManager.AddToRoleAsync(appUser, "Admin");
 
             return Content("Ugurlu");
-        }
-*/
+        }*/
+
         #endregion
 
     }
