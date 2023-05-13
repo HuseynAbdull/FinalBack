@@ -63,7 +63,7 @@ namespace FinalProjectCode.Areas.Manage.Controllers
            return View();
         }
 
-
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> DeleteDetail(int? productTypeId)
         {
             IEnumerable<ProductType> ProductTypes = await _context.ProductTypes.Where(g => g.IsDeleted == false).ToListAsync();
@@ -84,7 +84,7 @@ namespace FinalProjectCode.Areas.Manage.Controllers
             return View(productType);
         }
 
-
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int? productTypeId)
         {
             IEnumerable<ProductType> ProductTypes = await _context.ProductTypes.Where(p => p.IsDeleted == false).ToListAsync();

@@ -141,6 +141,7 @@ namespace FinalProjectCode.Areas.Manage.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int? productId)
         {
             if (productId == null)
@@ -155,6 +156,7 @@ namespace FinalProjectCode.Areas.Manage.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> DeleteProduct(int? productId)
         {
             if (productId == null)
@@ -260,11 +262,15 @@ namespace FinalProjectCode.Areas.Manage.Controllers
 
                 dbProduct.MainImage = await product.MainFile.CreateFileAsync(_env, "assets", "photos", "products");
             }
+
+            
+
+
             if (product.Price != null) { dbProduct.Price = product.Price; }
             if (product.DiscountedPrice != null) { dbProduct.DiscountedPrice = product.DiscountedPrice; }
             if (product.Count != null) { dbProduct.Count = product.Count; }
             if (product.Description != null) { dbProduct.Description = product.Description; }
-
+            if(product.Title != null) { dbProduct.Title = product.Title; }
            
             dbProduct.Title= product.Title.Trim();
             dbProduct.UpdatedAt = DateTime.UtcNow.AddHours(4);

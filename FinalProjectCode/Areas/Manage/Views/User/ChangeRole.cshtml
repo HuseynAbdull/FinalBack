@@ -1,0 +1,50 @@
+﻿@model UserChangeRoleVM
+@{
+    ViewData["Title"] = "ChangeRole";
+}
+
+<div class="row">
+    <div class="col-lg-4">
+        <h1 class="h3 mb-4 text-gray-800">User Change Role Page</h1>
+    </div>
+</div>
+
+
+<div class="Row">
+    <div class="col-lg-4">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Name:</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-lg-8">
+
+        <form method="post">
+            <!-- User Id -->
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="mb-3 d-none">
+                <label asp-for="UserId" class="form-label">Name</label>
+                <input asp-for="UserId" class="form-control">
+                <span asp-validation-for="UserId"></span>
+            </div>
+            <!-- Role Id -->
+            <div class="form-group">
+                <label asp-for="RoleId"></label>
+                <select asp-for="RoleId" class="form-control" asp-items="new SelectList(ViewBag.Role,nameof(IdentityRole.Id), nameof(IdentityRole.Name))">
+                </select>
+                <span asp-validation-for=RoleId class="text text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </form>
+    </div>
+</div>
+
+

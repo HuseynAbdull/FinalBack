@@ -1,0 +1,54 @@
+﻿@model IEnumerable<UserVM>
+
+@{
+    ViewData["Title"] = "Index";
+    int count = 0;
+}
+
+<div class="row">
+    <div class="col-lg-4">
+        <h1 class="h3 mb-4 text-gray-800">Users Page</h1>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>SurName</th>
+                    <th>Email</th>
+                    <th>UserName</th>
+                    <th>Role Name </th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (UserVM userVM in Model)
+                {
+                    count++;
+                    <tr>
+                        <td>@count</td>
+                        <td>@userVM.Name</td>
+                        <td>@userVM.SurName</td>
+                        <td>@userVM.Email</td>
+                        <td>@userVM.UserName</td>
+                        <td>@userVM.RoleName</td>
+                        <td>
+                            
+                            @if (User.IsInRole("SuperAdmin"))
+                            {
+                                <a asp-area="manage" asp-controller="user" asp-action="ChangeRole" asp-route-id="@userVM.Id" class="btn btn-warning">Change Role</a>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+

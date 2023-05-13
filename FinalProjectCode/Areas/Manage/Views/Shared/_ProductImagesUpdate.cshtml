@@ -1,14 +1,31 @@
 ﻿@model IEnumerable<ProductImage>
 
-    @if(Model != null && Model.Count()> 0){
+@*    @if(Model != null && Model.Count()> 0){
     foreach(ProductImage productImage in Model)
     {
-        <div>
-            <img style="width: 50px" src="~/assets/photos/products/@productImage.Image" />
+        <div class="">
+            <img class="productImages" style="width: 50px" src="~/assets/photos/products/@productImage.Image" />
             @if (Model.Count() > 0)
             {
-                <a asp-action="DeleteImg" asp-controller="product" asp-area="manage" asp-route-id="@productImage.ProductId" data-imageId="@productImage.Id" >X</a>
+                <a asp-action="DeleteImg" asp-controller="product" asp-area="manage" asp-route-id="@productImage.ProductId" data-imageId="@productImage.Id">X</a>
             }
         </div>
     }
-}
+}*@
+
+
+@if (Model.FirstOrDefault() != null)
+{
+    var productId = Model.FirstOrDefault().ProductId;
+
+    foreach (ProductImage productImage in Model)
+    {
+        <div class="">
+            <img class="productImage" style="width: 50px" src="~/assets/photos/products/@productImage.Image" />
+            @if (Model.Count() > 0)
+            {
+                <a class="deleteImg" asp-action="update" asp-controller="product" asp-area="manage" asp-route-id="@productId" data-imageId="@productImage.Id">X</a>
+            }
+        </div>
+    }
+} 

@@ -89,6 +89,7 @@ namespace FinalProjectCode.Areas.Manage.Controllers
             return View();
         }
 
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> DeleteDetail(int? genderId)
         {
             IEnumerable<Gender> Genders = await _context.Genders.Where(g=>g.IsDeleted == false).ToListAsync();
@@ -109,6 +110,7 @@ namespace FinalProjectCode.Areas.Manage.Controllers
             return View(gender);
         }
 
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int? genderId)
         {
             if (genderId == null) return NotFound();
