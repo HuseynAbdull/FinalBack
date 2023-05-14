@@ -1,6 +1,7 @@
 ﻿using FinalProjectCode.Areas.Manage.ViewModels.UserVMs;
 using FinalProjectCode.DataAccessLayer;
 using FinalProjectCode.Models;
+using FinalProjectCode.ViewModels.RegisterVM;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -15,11 +16,13 @@ namespace FinalProjectCode.Areas.Manage.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly AppDbContext _context;
         private readonly RoleManager<IdentityRole> _roleManager;
-        public UserController(UserManager<AppUser> userManager, AppDbContext context, RoleManager<IdentityRole> roleManager)
+        private readonly SignInManager<AppUser> _signInManager;
+        public UserController(UserManager<AppUser> userManager, AppDbContext context, RoleManager<IdentityRole> roleManager, SignInManager<AppUser> signInManager)
         {
             _userManager = userManager;
             _context = context;
             _roleManager = roleManager;
+            _signInManager = signInManager;
         }
 
         public async Task<IActionResult> Index()
@@ -95,6 +98,21 @@ namespace FinalProjectCode.Areas.Manage.Controllers
 
 
             return RedirectToAction(nameof(Index));
+        }
+
+
+        public async Task<IActionResult> UserBlock(string? id)
+        {
+            if (string.IsNullOrEmpty(id)) return BadRequest();
+
+            AppUser user = await _userManager.FindByIdAsync(id);
+
+            if (user == null) return NotFound();
+
+            user.LockoutEnd = DateTime.Now.AddYears(100);
+            await _userManager.UpdateAsync(user);
+            return RedirectToAction(nameof(Index));
+
         }
     }
 }

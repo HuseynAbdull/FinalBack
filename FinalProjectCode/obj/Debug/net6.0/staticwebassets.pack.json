@@ -197,6 +197,10 @@
       "PackagePath": "staticwebassets\\assets\\photos\\products\\20230511162012407-indir.jpeg"
     },
     {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\20230514105543777-indir (1).jpeg",
+      "PackagePath": "staticwebassets\\assets\\photos\\products\\20230514105543777-indir (1).jpeg"
+    },
+    {
       "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-1.png",
       "PackagePath": "staticwebassets\\assets\\photos\\products\\img-1.png"
     },
@@ -745,10 +749,6 @@
       "PackagePath": "staticwebassets\\assets\\photos\\products\\img-95.png"
     },
     {
-      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-96.png",
-      "PackagePath": "staticwebassets\\assets\\photos\\products\\img-96.png"
-    },
-    {
       "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-97.png",
       "PackagePath": "staticwebassets\\assets\\photos\\products\\img-97.png"
     },
@@ -779,6 +779,10 @@
     {
       "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\video\\5be16844f9664bcab99a6dd50f4ff47f.mov",
       "PackagePath": "staticwebassets\\assets\\video\\5be16844f9664bcab99a6dd50f4ff47f.mov"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\manage\\css\\customap.css",
+      "PackagePath": "staticwebassets\\manage\\css\\customap.css"
     },
     {
       "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\manage\\css\\icons\\tabler-icons\\fonts\\tabler-icons.eot",

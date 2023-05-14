@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5x3ayvc4AqLnWhr+HGnGKjpDU45WzHhdtskka1Hx778=",
+  "Hash": "KZn58BesU2g7Lyp5Mbm6xbWFoCLtdmyzdeRHN+adDe4=",
   "Source": "FinalProjectCode",
   "BasePath": "_content/FinalProjectCode",
   "Mode": "Default",
@@ -831,6 +831,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\photos\\products\\20230511162012407-indir.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\20230514105543777-indir (1).jpeg",
+      "SourceId": "FinalProjectCode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\",
+      "BasePath": "_content/FinalProjectCode",
+      "RelativePath": "assets/photos/products/20230514105543777-indir (1).jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\photos\\products\\20230514105543777-indir (1).jpeg"
     },
     {
       "Identity": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-1.png",
@@ -3162,23 +3179,6 @@
       "OriginalItemSpec": "wwwroot\\assets\\photos\\products\\img-95.png"
     },
     {
-      "Identity": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-96.png",
-      "SourceId": "FinalProjectCode",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\",
-      "BasePath": "_content/FinalProjectCode",
-      "RelativePath": "assets/photos/products/img-96.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\photos\\products\\img-96.png"
-    },
-    {
       "Identity": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\products\\img-97.png",
       "SourceId": "FinalProjectCode",
       "SourceType": "Discovered",
@@ -3330,6 +3330,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\video\\5be16844f9664bcab99a6dd50f4ff47f.mov"
+    },
+    {
+      "Identity": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\manage\\css\\customap.css",
+      "SourceId": "FinalProjectCode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\",
+      "BasePath": "_content/FinalProjectCode",
+      "RelativePath": "manage/css/customap.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\manage\\css\\customap.css"
     },
     {
       "Identity": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\manage\\css\\icons\\tabler-icons\\fonts\\tabler-icons.eot",

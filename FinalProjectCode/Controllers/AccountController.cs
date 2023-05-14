@@ -130,15 +130,25 @@ namespace FinalProjectCode.Controllers
                 return View(loginVM);
             }
 
+            
 
             Microsoft.AspNetCore.Identity.SignInResult signInResult = await _signInManager
                 .PasswordSignInAsync(appUser,loginVM.Password,loginVM.RemeindMe,true);
 
             if (signInResult.IsLockedOut)
             {
-                ModelState.AddModelError("","Hesab blocklanib");
+                TempData["ToasterMessage5"] = $"{appUser.LockoutEnd} e qeder Hesab blocklanib";
                 return View(loginVM);
             }
+
+
+
+            if (signInResult.IsNotAllowed)
+            {
+                ModelState.AddModelError("", "Hesaba giris Yoxdur");
+                return View(loginVM);
+            }
+
 
             if (!signInResult.Succeeded)
             {

@@ -54,24 +54,25 @@
                 <input asp-for=Count class="form-control">
                 <span asp-validation-for=Count class="text text-danger"></span>
             </div>
+            
 
             <!-- Image -->
-            <div class="form-group">
-                <label asp-for=MainFile></label>
-                <input asp-for="MainFile" accept="image/jpeg" type="file" class="form-control-file">
-                <span asp-validation-for=MainFile class="text text-danger"></span>
+            <div id="fileInput" class="form-group mb-3">
+                <label asp-for=MainFile class="fomr-label"></label>
+                <input asp-for="MainFile" accept="image/jpeg" type="file" class="form-control">
+                <span asp-validation-for=MainFile class=" text text-danger"></span>
             </div>
             <!-- Files -->
-            <div class="form-group">
-                <label asp-for=Files></label>
-                <input multiple asp-for=Files accept="image/jpeg" type="file" class="form-control-file">
+            <div id ="fileInput" class="form-group mb-3">
+                <label asp-for=Files class="fomr-label"></label>
+                <input multiple asp-for=Files accept="image/jpeg" type="file" class="form-control">
                 <span asp-validation-for=Files class="text text-danger"></span>
             </div>
-            <div class="my-5">
+            <div class="my-5 d-flex justify-content-between">
                 @await Html.PartialAsync("_ProductImagesUpdate",Model.ProductImages)
             </div>
             <!-- ProductType Id -->
-            <div class="form-group">
+            <div class="form-group my-5">
                 <label asp-for="ProductTypeId"></label>
                 <select asp-for="ProductTypeId" class="form-control" asp-items="new SelectList(ViewBag.ProductTypes,nameof(ProductType.Id), nameof(ProductType.Name))">
                 </select>
@@ -79,19 +80,19 @@
             </div>
             <!-- Description -->
             <!-- Gender Id -->
-            <div class="form-group">
+            <div class="form-group my-5">
                 <label asp-for="GenderId"></label>
                 <select asp-for="GenderId" class="form-control" asp-items="new SelectList(ViewBag.Genders,nameof(Gender.Id), nameof(Gender.Name))">
                 </select>
                 <span asp-validation-for=GenderId class="text text-danger"></span>
             </div>
             <!-- Description -->
-            <div class="form-group">
+            <div class="form-group my-5">
                 <label asp-for="Description"></label>
-                <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                <textarea asp-for="Description" class="form-control" style="height: 300px" rows="3"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary my-5">Submit</button>
         </form>
     </div>
 </div>

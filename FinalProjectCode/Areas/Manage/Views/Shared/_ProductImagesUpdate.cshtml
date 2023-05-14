@@ -14,7 +14,7 @@
 }*@
 
 
-@if (Model.FirstOrDefault() != null)
+@*@if (Model.FirstOrDefault() != null)
 {
     var productId = Model.FirstOrDefault().ProductId;
 
@@ -24,8 +24,22 @@
             <img class="productImage" style="width: 50px" src="~/assets/photos/products/@productImage.Image" />
             @if (Model.Count() > 0)
             {
-                <a class="deleteImg" asp-action="update" asp-controller="product" asp-area="manage" asp-route-id="@productId" data-imageId="@productImage.Id">X</a>
+                <a class="deleteImg" asp-action="update" asp-controller="product" asp-area="manage" asp-route-id="@productId" data-productId="@productImage.ProductId" data-imageId="@productImage.Id">X</a>
             }
         </div>
     }
-} 
+} *@
+
+@if (Model.FirstOrDefault() != null)
+{
+    foreach (ProductImage productImage in Model)
+    {
+        <div class="update-img d-flex justify-content-between">
+            <img class="productImage" style="width: 200px;" src="~/assets/photos/products/@productImage.Image" />
+            @if (Model.Count() > 0)
+            {
+                <a class="deleteImg" asp-action="update" asp-controller="product" asp-area="manage" asp-route-id="@productImage.ProductId" data-imageId="@productImage.Id" data-productId="@productImage.ProductId">X</a>
+            }
+        </div>
+    }
+}
