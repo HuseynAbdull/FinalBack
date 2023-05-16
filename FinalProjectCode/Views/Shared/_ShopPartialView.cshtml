@@ -8,7 +8,7 @@
                 @foreach (Gender gender in Model.Genders)
                 {
                     <li>
-                        <a class="gender-selector-btn @(gender.Id == ViewBag.genderid ? "active-for-gender" : "")" style="cursor:pointer" data-producttype-id="@ViewBag.ProductTypeId " data-id="@gender.Id">@gender.Name</a>
+                        <a class="gender-selector-btn @(gender.Id == ViewBag.genderid ? "active-for-gender" : "")" style="cursor:pointer" data-range-id="ViewBag.range" data-producttype-id="@ViewBag.ProductTypeId" data-gender-id="@gender.Id">@gender.Name</a>
                     </li>
                 }
             </ul>
@@ -18,30 +18,21 @@
                 @foreach (ProductType productType in Model.ProductTypes)
                 {
                     <li>
-                        <a class="producttype-selector-btn  @(productType.Id == ViewBag.ProductTypeId ? "active-for-gender" : "")" style="cursor:pointer" data-gender-id="@ViewBag.GenderId" data-id="@productType.Id">@productType.Name</a>
+                        <a class="producttype-selector-btn  @(productType.Id == ViewBag.ProductTypeId ? "active-for-gender" : "")" style="cursor:pointer" data-range-id="ViewBag.range" data-gender-id="@ViewBag.GenderId" data-producttype-id="@productType.Id">@productType.Name</a>
                     </li>
                 }
             </ul>
 
-            <!-- With number fields -->
-            <div class="filter level-filter level-req">
-                <div id="rangeSlider" class="range-slider">
-                    <label>Стоимость:</label>
-
-                    <div class="number-group">
-                        <input class="number-input" type="number" value="10" min="0" max="50" /> to
-                        <input class="number-input" type="number" value="50" min="0" max="50" />
-                    </div>
-
-                    <div class="range-group">
-                        <input class="range-input" value="10" min="1" max="50" step="1" type="range" />
-                        <input class="range-input" value="50" min="1" max="50" step="1" type="range" />
-                    </div>
-                </div>
+        <!-- single sidebar start -->
+            <div class="price-range" data-min="0" data-max="400"></div>
+            <div class="slider-rng">
+                <form>
+                    <input class="rangeInput" type="range" min="0" max="400" value="@ViewBag.range" onchange="updateRangeValue(this.value)" />
+                    <output class="rangeOutput" id="rangevalue">@ViewBag.range</output>
+                    <button data-gender-id="@ViewBag.genderid" data-producttype-id="@ViewBag.ProductTypeId" class="btn btn-success rangeFilter">FİLTER</button>
+                </form>
             </div>
-
-
-
+            <!-- single sidebar end -->
         </div>
         <div class="right-sale">
             <div class="shop-selector">
@@ -76,7 +67,6 @@
                             </div>
                         }
 
-
                     </div>
                 </div>
             </div>
@@ -88,18 +78,18 @@
     <div class="container">
         <div class="pagination p12">
             <ul>
-                <a class="pagination-list" data-gender-id="@ViewBag.GenderId" style="cursor: pointer" data-producttype-id="@ViewBag.ProductTypeId" data-id="@(ViewBag.pageIndex - 1)">
+                <a class="pagination-list" data-gender-id="@ViewBag.GenderId" style="cursor: pointer" data-range-id="ViewBag.range" data-producttype-id="@ViewBag.ProductTypeId" data-id="@(ViewBag.pageIndex - 1)">
                 <li >Previous</li>
                 </a>
 
                 @for(var i=1; i<=ViewBag.pageCount; i++)
                 {
-                    <a style="cursor: pointer" class="pagination-list @(ViewBag.pageIndex == i ? "is-active" : "")" data-gender-id="@ViewBag.GenderId" data-producttype-id="@ViewBag.ProductTypeId" data-id="@i">
+                    <a style="cursor: pointer" class="pagination-list @(ViewBag.pageIndex == i ? "is-active" : "")" data-gender-id="@ViewBag.GenderId" data-range-id="ViewBag.range" data-producttype-id="@ViewBag.ProductTypeId" data-id="@i">
                        <li> @i </li>
                     </a>
                         
                 }
-                <a class="pagination-list" style="cursor: pointer" data-gender-id="@ViewBag.GenderId" data-producttype-id="@ViewBag.ProductTypeId" data-id="@(ViewBag.pageIndex+1)">
+                <a class="pagination-list" style="cursor: pointer" data-gender-id="@ViewBag.GenderId" data-producttype-id="@ViewBag.ProductTypeId" data-range-id="ViewBag.range" data-id="@(ViewBag.pageIndex + 1)">
                 <li>Next</li>
                 </a>
 

@@ -85,16 +85,18 @@
                                 <span class="hide-menu">Orders</span>
                             </a>
                         </li>
-
-                        <li class="sidebar-item">
-                            <a asp-action="index" asp-area="manage" asp-controller="user" class="sidebar-link" aria-expanded="false">
-                                <span>
-                                    <i class="ti ti-article"></i>
-                                </span>
-                                <span class="hide-menu">Users</span>
-                            </a>
-                        </li>
-                       
+                        @if (User.IsInRole("SuperAdmin"))
+                        {
+                            <li class="sidebar-item">
+                                <a asp-action="index" asp-area="manage" asp-controller="user" class="sidebar-link" aria-expanded="false">
+                                    <span>
+                                        <i class="ti ti-article"></i>
+                                    </span>
+                                    <span class="hide-menu">Users</span>
+                                </a>
+                            </li>
+                        }
+                        
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->

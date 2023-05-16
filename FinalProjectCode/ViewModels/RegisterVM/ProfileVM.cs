@@ -5,6 +5,7 @@ namespace FinalProjectCode.ViewModels.RegisterVM
 {
     public class ProfileVM
     {
+
         [StringLength(100)]
         public string? Name { get; set; }
 

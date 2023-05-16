@@ -11,7 +11,7 @@ namespace FinalProjectCode.ViewModels.ShopVM
 
         public IEnumerable<Gender> Genders { get; set; }
 
-
+        public string? Range { get; set; }
 
     }
 }

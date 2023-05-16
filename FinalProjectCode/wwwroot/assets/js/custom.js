@@ -30,8 +30,9 @@ for(let searchSection of searchSections){
 
 
 $(document).on('click', '.gender-selector-btn', (function () {
-    let genderid = this.getAttribute('data-id');
+    let genderid = this.getAttribute('data-gender-id');
     let producttypeid = this.getAttribute('data-producttype-id');
+    
     fetch("/shop/FilterProduct?genderid=" + genderid + "&producttypeid=" + producttypeid)
         .then(res => {
             return res.text();
@@ -43,7 +44,8 @@ $(document).on('click', '.gender-selector-btn', (function () {
 }))
 
 $(document).on('click', '.producttype-selector-btn', (function () {
-    let producttypeid = this.getAttribute('data-id');
+    
+    let producttypeid = this.getAttribute('data-producttype-id');
     let genderid = this.getAttribute('data-gender-id');
     fetch("/shop/FilterProduct?producttypeid=" + producttypeid + "&genderid=" + genderid)
         .then(res => {
@@ -236,7 +238,46 @@ $('.accordion-collapse').on('show.bs.collapse', function () {
 })
 
 
-$(document).on('change', '.sortSelector', (function () {
+
+/*
+function updateRangeValue(value) {
+    document.getElementById('rangevalue').value = value;
+}
+
+document.querySelector('.rangeFilter').addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const val = document.querySelector('.rangeInput').value;
+
+    fetch('shop/FilterRange?maxPrice=' + val)
+        .then(res => res.text())
+        .then(data => {
+            document.querySelector('.sale-full').innerHTML = data;
+        });
+});
+*/
+
+function updateRangeValue(value) {
+    document.getElementById('rangevalue').value = value;
+}
+
+$(document).on('click', '.rangeFilter', (function () {
+    let producttypeid = this.getAttribute('data-producttype-id');
+    let genderid = this.getAttribute('data-gender-id');
+    let val = document.querySelector('.rangeInput').value;
+    console.log(typeof (val));
+    fetch("shop/FilterProduct?range=" + val + "&producttypeid=" + producttypeid + "&genderid=" + genderid)
+        .then(res => res.text())
+        .then(data => {
+            $('.sale-full').html(data)
+            
+        });
+
+}))
+
+
+
+/*$(document).on('change', '.sortSelector', (function () {
     let sortid = $(this).val()
     console.log(sortid)
     fetch('/shop/filterproduct?sortid=' + sortid)
@@ -246,9 +287,6 @@ $(document).on('change', '.sortSelector', (function () {
         .then(data => {
             $('.sale-full').html(data)
         });
-
-
-
 }))
-
+*/
 

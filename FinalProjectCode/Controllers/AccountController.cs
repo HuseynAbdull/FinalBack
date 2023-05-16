@@ -385,34 +385,120 @@ namespace FinalProjectCode.Controllers
             return RedirectToAction(nameof(MyAccount));
         }
 
-
-
-        #region Create Role And SuperAdmin
-       /* [HttpGet]
-        public async Task<IActionResult> CreateRole()
+        public IActionResult ForgotPassword()
         {
-            await _roleManager.CreateAsync(new IdentityRole("SuperAdmin"));
-            await _roleManager.CreateAsync(new IdentityRole("Admin"));
-            await _roleManager.CreateAsync(new IdentityRole("Member"));
-
-            return Content("Ugurlu");
+            return View();
         }
 
-        [HttpGet]
-        public async Task<IActionResult> CreateUser()
-        {
-            AppUser appUser = new AppUser
-            {
-                Name = "Admin",
-                Surname = "Admin",
-                UserName = "Admin123",
-                Email = "admin@gmail.com"
-            };
-            await _userManager.CreateAsync(appUser, "Admin123");
-            await _userManager.AddToRoleAsync(appUser, "Admin");
 
-            return Content("Ugurlu");
-        }*/
+        [HttpPost]
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordVM forgotPasswordVM)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(forgotPasswordVM);
+            }
+
+            AppUser appUser = await _userManager.Users.FirstOrDefaultAsync(u=>u.NormalizedEmail == forgotPasswordVM.Email.Trim().ToUpperInvariant());
+
+            if (appUser == null)
+            {
+                return RedirectToAction("ForgotPassword", "account");
+            }
+
+            string token = await _userManager.GeneratePasswordResetTokenAsync(appUser);
+
+            string url = Url.Action("ResetPassword", "Account", new { token, email = forgotPasswordVM.Email },
+                HttpContext.Request.Scheme, HttpContext.Request.Host.ToString());
+
+            string fullpath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "Shared", "PassReset.cshtml");
+            string templateContent = await System.IO.File.ReadAllTextAsync(fullpath);
+            templateContent = templateContent.Replace("{{url}}", url);
+
+            MimeMessage mimeMessage = new();
+            mimeMessage.From.Add(MailboxAddress.Parse(_smtpSetting.Email));
+            mimeMessage.To.Add(MailboxAddress.Parse(appUser.Email));
+            mimeMessage.Subject = "Reset Password";
+            mimeMessage.Body = new TextPart(MimeKit.Text.TextFormat.Html)
+            {
+                Text = templateContent
+            };
+            using (SmtpClient smtpClient = new())
+            {
+                smtpClient.ServerCertificateValidationCallback = (s, c, h, e) => true;
+                await smtpClient.ConnectAsync(_smtpSetting.Host, _smtpSetting.Port, MailKit.Security.SecureSocketOptions.Auto);
+                await smtpClient.AuthenticateAsync(_smtpSetting.Email, _smtpSetting.Password);
+                await smtpClient.SendAsync(mimeMessage);
+                await smtpClient.DisconnectAsync(true);
+                smtpClient.Dispose();
+            }
+
+           /* TempData["ToasterMessage5"] = "Your password reset request has been sent to your email. Please check your email!";*/
+            return RedirectToAction("index", "Home");
+
+        }
+
+
+        public IActionResult ResetPassword(string token,string email)
+        {
+            var model = new ResetPasswordVM { Token = token, Email = email };
+            return View(model);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ResetPassword(ResetPasswordVM resetPasswordVM)
+        {
+            if (!ModelState.IsValid)
+                return View(resetPasswordVM);
+
+             AppUser appUser = await _userManager.FindByEmailAsync(resetPasswordVM.Email);
+            if (appUser == null)
+                return NotFound();
+
+            var resetPassResult = await _userManager.ResetPasswordAsync(appUser, resetPasswordVM.Token, resetPasswordVM.Password);
+            if (!resetPassResult.Succeeded)
+            {
+                foreach (var error in resetPassResult.Errors)
+                {
+                    ModelState.TryAddModelError(error.Code, error.Description);
+                }
+
+                return View();
+            }
+
+
+            TempData["ToasterMessage4"] = "Password Changed Succesfully!";
+            return RedirectToAction("login","account");
+        }
+
+        #region Create Role And SuperAdmin
+        /* [HttpGet]
+		 public async Task<IActionResult> CreateRole()
+		 {
+			 await _roleManager.CreateAsync(new IdentityRole("SuperAdmin"));
+			 await _roleManager.CreateAsync(new IdentityRole("Admin"));
+			 await _roleManager.CreateAsync(new IdentityRole("Member"));
+
+			 return Content("Ugurlu");
+		 }
+
+		 [HttpGet]
+		 public async Task<IActionResult> CreateUser()
+		 {
+			 AppUser appUser = new AppUser
+			 {
+				 Name = "Admin",
+				 Surname = "Admin",
+				 UserName = "Admin123",
+				 Email = "admin@gmail.com"
+			 };
+			 await _userManager.CreateAsync(appUser, "Admin123");
+			 await _userManager.AddToRoleAsync(appUser, "Admin");
+
+			 return Content("Ugurlu");
+		 }*/
 
         #endregion
 
