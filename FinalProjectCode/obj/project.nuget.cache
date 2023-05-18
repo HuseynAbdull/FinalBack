@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xHyZ9VaLOI2fcVn4C8y7fTbat8VNR6gAkrZFEKCe+koeZt1fyGKalM4e7DuXtIP0h9FBq7iYkZdyY4xLH/ClKg==",
+  "dgSpecHash": "AMOLL0Dl/rIuj1D5Le44eAQvKO0GGL4eYGCl0qC3qyRAKeYDHuHk4eWWSfzrO5dV44MurEijIwj9jpfnqJiRnA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\FinalProjectCode.csproj",
   "expectedPackageFiles": [
@@ -103,7 +103,7 @@
     "C:\\Users\\Mashkur\\.nuget\\packages\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\Mashkur\\.nuget\\packages\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\Mashkur\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
-    "C:\\Users\\Mashkur\\.nuget\\packages\\stripe.net\\41.16.0\\stripe.net.41.16.0.nupkg.sha512",
+    "C:\\Users\\Mashkur\\.nuget\\packages\\stripe.net\\40.0.0\\stripe.net.40.0.0.nupkg.sha512",
     "C:\\Users\\Mashkur\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\Mashkur\\.nuget\\packages\\system.buffers\\4.3.0\\system.buffers.4.3.0.nupkg.sha512",
     "C:\\Users\\Mashkur\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",

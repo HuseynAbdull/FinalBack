@@ -2047,7 +2047,9 @@ li {
 
 
     /* CUSTOM Darkmode  start */
-    .right-header-bottom input {
+
+
+    /*.right-header-bottom input {
         padding-left: 10px;
     }
 
@@ -2072,13 +2074,13 @@ li {
         isolation: isolate;
     }
 
-    .left-top {
-        isolation: isolate;
-    }
+    .left-top {*/
+        /*isolation: isolate;*/
+    /*}
 
-    .left-header-bottom img {
-        isolation: isolate !important;
-        background-color: white;
+    .left-header-bottom img {*/
+        /*isolation: isolate !important;*/
+        /*background-color: white;
         border-radius: 50px;
     }
 
@@ -2141,16 +2143,20 @@ li {
     .product-shop-info {
         isolation: isolate;
         background-color: white;
-    }
+    }*/
 
 
 
 /* Darkmode Finish */
 
 
-    #add-section {
-        background-color: #2100ff !important;
-    }
+.nav-li{
+    z-index: 99 !important;
+}
+
+#add-section {
+    background-color: #2100ff !important;
+}
 
     .add-photo {
         width: 100%;
@@ -2193,7 +2199,7 @@ li {
 input[type="range"] {
     -webkit-appearance: none !important;
     height: 15px;
-    background-color: #A3CD99;
+    background-color: #36b8ce;
     border: 1px solid #97c68b;
     border-radius: 10px;
     margin: auto;
@@ -2205,21 +2211,21 @@ input[type="range"] {
 }
 
     input[type="range"]:hover {
-        background-color: #b2d5aa;
+        background-color: #36b8ce;
     }
 
     input[type="range"]::-webkit-slider-thumb {
         -webkit-appearance: none !important;
         width: 20px;
         height: 20px;
-        background-color: #579E81;
+        background-color: #36b8ce;
         border-radius: 30px;
         box-shadow: 0px 0px 3px #3c6d59;
         transition: all 0.5s ease;
     }
 
         input[type="range"]::-webkit-slider-thumb:hover {
-            background-color: #457d66;
+            background-color: #36b8ce;
         }
 
         input[type="range"]::-webkit-slider-thumb:active {
@@ -2234,10 +2240,10 @@ input[type="range"] {
     margin: auto;
     padding: 10px 0px;
     width: 100%;
-    color: #579E81;
-    top: 10px !important;
+    color: #36b8ce;
+    top: -70px !important;
     position: relative !important;
-    left: -28px !important;
+    left: -76px !important;
 }
 
         /* Range Filter Finish */

@@ -301,6 +301,7 @@ namespace FinalProjectCode.Controllers
                     return View(profileVM);
                 }
 
+
                 string token = await _userManager.GeneratePasswordResetTokenAsync(appUser);
 
                 identityResult = await _userManager.ResetPasswordAsync(appUser,token,profileVM.Password);
@@ -350,6 +351,7 @@ namespace FinalProjectCode.Controllers
 
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         [Authorize(Roles ="Member")]
 
         public async Task<IActionResult> AddAddress(Address address)
@@ -392,6 +394,7 @@ namespace FinalProjectCode.Controllers
 
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> ForgotPassword(ForgotPasswordVM forgotPasswordVM)
         {
             if (!ModelState.IsValid)

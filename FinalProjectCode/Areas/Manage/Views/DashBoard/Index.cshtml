@@ -1,10 +1,8 @@
-﻿
-@{
-    ViewData["Title"] = "Index";
-}
-
+﻿@using FinalProjectCode.Models
+@model List<Order>
+<h1>@ViewBag.Time</h1>
 <div class="row">
-    <div class="col-lg-8 d-flex align-items-strech">
+ @*   <div class="col-lg-8 d-flex align-items-strech">
         <div class="card w-100">
             <div class="card-body">
                 <div class="d-sm-flex d-block align-items-center justify-content-between mb-9">
@@ -23,7 +21,7 @@
                 <div id="chart"></div>
             </div>
         </div>
-    </div>
+    </div>*@
     <div class="col-lg-4">
         <div class="row">
 
@@ -34,7 +32,7 @@
                         <h5 class="card-title mb-9 fw-semibold">Yearly Earnings</h5>
                         <div class="row align-items-center">
                             <div class="col-8">
-                                <h4 class="fw-semibold mb-3">$36,358</h4>
+                                <h4 class="fw-semibold mb-3">$@ViewBag.YearlyRevenue</h4>
                                 <div class="d-flex align-items-center mb-3">
                                     <span class="me-1 rounded-circle bg-light-success round-20 d-flex align-items-center justify-content-center">
                                         <i class="ti ti-arrow-up-left text-success"></i>
@@ -72,7 +70,7 @@
                         <div class="row alig n-items-start">
                             <div class="col-8">
                                 <h5 class="card-title mb-9 fw-semibold"> Monthly Earnings </h5>
-                                <h4 class="fw-semibold mb-3">$6,820</h4>
+                                <h4 class="fw-semibold mb-3">$@ViewBag.MountlyRevenue</h4>
                                 <div class="d-flex align-items-center pb-1">
                                     <span class="me-2 rounded-circle bg-light-danger round-20 d-flex align-items-center justify-content-center">
                                         <i class="ti ti-arrow-down-right text-danger"></i>
@@ -104,59 +102,23 @@
                     <h5 class="card-title fw-semibold">Recent Transactions</h5>
                 </div>
                 <ul class="timeline-widget mb-0 position-relative mb-n5">
-                    <li class="timeline-item d-flex position-relative overflow-hidden">
-                        <div class="timeline-time text-dark flex-shrink-0 text-end">09:30</div>
-                        <div class="timeline-badge-wrap d-flex flex-column align-items-center">
-                            <span class="timeline-badge border-2 border border-primary flex-shrink-0 my-8"></span>
-                            <span class="timeline-badge-border d-block flex-shrink-0"></span>
-                        </div>
-                        <div class="timeline-desc fs-3 text-dark mt-n1">Payment received from John Doe of $385.90</div>
-                    </li>
-                    <li class="timeline-item d-flex position-relative overflow-hidden">
-                        <div class="timeline-time text-dark flex-shrink-0 text-end">10:00 am</div>
-                        <div class="timeline-badge-wrap d-flex flex-column align-items-center">
-                            <span class="timeline-badge border-2 border border-info flex-shrink-0 my-8"></span>
-                            <span class="timeline-badge-border d-block flex-shrink-0"></span>
-                        </div>
-                        <div class="timeline-desc fs-3 text-dark mt-n1 fw-semibold">
-                            New sale recorded <a href="javascript:void(0)" class="text-primary d-block fw-normal">#ML-3467</a>
-                        </div>
-                    </li>
-                    <li class="timeline-item d-flex position-relative overflow-hidden">
-                        <div class="timeline-time text-dark flex-shrink-0 text-end">12:00 am</div>
-                        <div class="timeline-badge-wrap d-flex flex-column align-items-center">
-                            <span class="timeline-badge border-2 border border-success flex-shrink-0 my-8"></span>
-                            <span class="timeline-badge-border d-block flex-shrink-0"></span>
-                        </div>
-                        <div class="timeline-desc fs-3 text-dark mt-n1">Payment was made of $64.95 to Michael</div>
-                    </li>
-                    <li class="timeline-item d-flex position-relative overflow-hidden">
-                        <div class="timeline-time text-dark flex-shrink-0 text-end">09:30 am</div>
-                        <div class="timeline-badge-wrap d-flex flex-column align-items-center">
-                            <span class="timeline-badge border-2 border border-warning flex-shrink-0 my-8"></span>
-                            <span class="timeline-badge-border d-block flex-shrink-0"></span>
-                        </div>
-                        <div class="timeline-desc fs-3 text-dark mt-n1 fw-semibold">
-                            New sale recorded <a href="javascript:void(0)" class="text-primary d-block fw-normal">#ML-3467</a>
-                        </div>
-                    </li>
-                    <li class="timeline-item d-flex position-relative overflow-hidden">
-                        <div class="timeline-time text-dark flex-shrink-0 text-end">09:30 am</div>
-                        <div class="timeline-badge-wrap d-flex flex-column align-items-center">
-                            <span class="timeline-badge border-2 border border-danger flex-shrink-0 my-8"></span>
-                            <span class="timeline-badge-border d-block flex-shrink-0"></span>
-                        </div>
-                        <div class="timeline-desc fs-3 text-dark mt-n1 fw-semibold">
-                            New arrival recorded
-                        </div>
-                    </li>
-                    <li class="timeline-item d-flex position-relative overflow-hidden">
-                        <div class="timeline-time text-dark flex-shrink-0 text-end">12:00 am</div>
-                        <div class="timeline-badge-wrap d-flex flex-column align-items-center">
-                            <span class="timeline-badge border-2 border border-success flex-shrink-0 my-8"></span>
-                        </div>
-                        <div class="timeline-desc fs-3 text-dark mt-n1">Payment Done</div>
-                    </li>
+                   @foreach (Order order in Model)
+                    {
+                        double? totalamount = 0;
+                        foreach (OrderItem orderItem in order.OrderItems)
+                        {
+                            totalamount += orderItem.Count * orderItem.Price;   
+                        }
+                        <li class="timeline-item d-flex position-relative overflow-hidden">
+                            <div class="timeline-time text-dark flex-shrink-0 text-end">@order.CreatedAt.ToString().Split(' ')[1]</div>
+                            <div class="timeline-badge-wrap d-flex flex-column align-items-center">
+                                <span class="timeline-badge border-2 border border-primary flex-shrink-0 my-8"></span>
+                                <span class="timeline-badge-border d-block flex-shrink-0"></span>
+                            </div>
+                            <div class="timeline-desc fs-3 text-dark mt-n1">Payment received from @order.Name @order.SurName of $@totalamount</div>
+                        </li>
+                    }
+                   
                 </ul>
             </div>
         </div>

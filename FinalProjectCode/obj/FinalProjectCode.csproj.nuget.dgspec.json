@@ -72,7 +72,7 @@
             },
             "Stripe.net": {
               "target": "Package",
-              "version": "[41.16.0, )"
+              "version": "[40.0.0, )"
             }
           },
           "imports": [

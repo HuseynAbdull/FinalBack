@@ -44,7 +44,7 @@ namespace FinalProjectCode.Controllers
 
             foreach (BasketVM basketVM in basketVMs)
             {
-                Product product = await _context.Products.FirstOrDefaultAsync(p => p.Id == basketVM.Id);
+                Models.Product product = await _context.Products.FirstOrDefaultAsync(p => p.Id == basketVM.Id);
 
                 basketVM.Price =product.Price;
                 basketVM.DiscountedPrice = product.DiscountedPrice;
@@ -104,7 +104,7 @@ namespace FinalProjectCode.Controllers
 
             foreach (BasketVM basketVM in basketVMs)
             {
-                Product product = await _context.Products.FirstOrDefaultAsync(p => p.Id == basketVM.Id);
+                Models.Product product = await _context.Products.FirstOrDefaultAsync(p => p.Id == basketVM.Id);
 
                 basketVM.Price = product.Price;
                 basketVM.DiscountedPrice = product.DiscountedPrice;
@@ -164,39 +164,6 @@ namespace FinalProjectCode.Controllers
 
             await _context.Orders.AddAsync(order);
             await _context.SaveChangesAsync();
-
-         /*   var options = new ChargeCreateOptions
-            {
-                Amount = (int)order.TotalPrice * 100,
-                Currency = "usd",
-                Source = stripeToken,
-                Description = "Payment for order",
-                Metadata = new Dictionary<string, string>
-         {
-             { "OrderNo", order.No.ToString() },
-             { "UserId", appUser.Id },
-         },
-            };
-
-            var service = new ChargeService();
-            Charge charge = service.Create(options);
-
-            if (charge.Status == "succeeded")
-            {
-                // ödeme işlemi başarılı ise
-                TempData["ToasterMessage1"] = "Payment completed successfully!";
-
-                // kullanıcıyı belirtilen URL'ye yönlendir
-                string returnUrl = "https://example.com/payment/complete";
-                return Redirect(returnUrl);
-            }
-            else
-            {
-                // ödeme işlemi başarısız ise
-                TempData["ToasterMessage2"] = "Payment failed!";
-                return RedirectToAction("Index", "home");
-            }
-*/
 
             TempData["ToasterMessage4"] = "Order Placed Successfully!";
             return RedirectToAction("index", "home");

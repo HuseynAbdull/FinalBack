@@ -261,19 +261,22 @@ function updateRangeValue(value) {
     document.getElementById('rangevalue').value = value;
 }
 
-$(document).on('click', '.rangeFilter', (function () {
+$(document).on('click', '.rangeFilter', (function (e) {
+    e.preventDefault();
     let producttypeid = this.getAttribute('data-producttype-id');
     let genderid = this.getAttribute('data-gender-id');
     let val = document.querySelector('.rangeInput').value;
-    console.log(typeof (val));
+    console.log(val);
     fetch("shop/FilterProduct?range=" + val + "&producttypeid=" + producttypeid + "&genderid=" + genderid)
         .then(res => res.text())
         .then(data => {
             $('.sale-full').html(data)
             
         });
-
 }))
+
+
+
 
 
 

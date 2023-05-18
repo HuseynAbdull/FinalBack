@@ -311,7 +311,7 @@ namespace FinalProjectCode.Areas.Manage.Controllers
 
 
 
-            return PartialView("_ProductImagePartial", productImages);
+            return PartialView("_ProductImagesUpdate", productImages);
         }
 
 

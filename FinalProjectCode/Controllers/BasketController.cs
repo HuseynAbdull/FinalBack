@@ -31,7 +31,9 @@ namespace FinalProjectCode.Controllers
             if (basket != null && basket != "")
             {
                 basketVMs=JsonConvert.DeserializeObject<List<BasketVM>>(basket);
-
+               
+                
+             
                 if (basketVMs != null)
                 {
                     foreach (BasketVM basketVM in basketVMs)
@@ -53,6 +55,8 @@ namespace FinalProjectCode.Controllers
             {
                 basketVMs = new List<BasketVM>();
             }
+
+
 
             return View(basketVMs);
         }

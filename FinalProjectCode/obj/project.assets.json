@@ -2124,7 +2124,7 @@
           }
         }
       },
-      "Stripe.net/41.16.0": {
+      "Stripe.net/40.0.0": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
@@ -6529,10 +6529,10 @@
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
       ]
     },
-    "Stripe.net/41.16.0": {
-      "sha512": "cROMpFu+YZ1hoFR2ze0Y2H6HjEJ3DXuvjLJRlucAKYrXFgND7rLPKq6zt0rUOZt0aOF9DYN9TOq6i7jbqo/xzQ==",
+    "Stripe.net/40.0.0": {
+      "sha512": "SD1bGiF+sVQG3p2LXNTZ5rEG2aCnXIHokcxYS9yyW3dR01J0ryf+iNFOwid148yePZ0gCBcRxj3wiW1mTmP7UQ==",
       "type": "package",
-      "path": "stripe.net/41.16.0",
+      "path": "stripe.net/40.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -6548,7 +6548,7 @@
         "lib/netcoreapp3.1/Stripe.net.xml",
         "lib/netstandard2.0/Stripe.net.dll",
         "lib/netstandard2.0/Stripe.net.xml",
-        "stripe.net.41.16.0.nupkg.sha512",
+        "stripe.net.40.0.0.nupkg.sha512",
         "stripe.net.nuspec"
       ]
     },
@@ -10365,7 +10365,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.14",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.14",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.13",
-      "Stripe.net >= 41.16.0"
+      "Stripe.net >= 40.0.0"
     ]
   },
   "packageFolders": {
@@ -10440,7 +10440,7 @@
           },
           "Stripe.net": {
             "target": "Package",
-            "version": "[41.16.0, )"
+            "version": "[40.0.0, )"
           }
         },
         "imports": [

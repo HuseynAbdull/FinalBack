@@ -5,6 +5,7 @@ using FinalProjectCode.Services;
 using FinalProjectCode.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Stripe;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
@@ -42,7 +43,6 @@ builder.Services.AddHttpContextAccessor();
 var app = builder.Build();
 
 app.UseSession();
-
 app.UseAuthentication();
 app.UseAuthorization();
 

@@ -19,46 +19,51 @@ namespace FinalProjectCode.Areas.Manage.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            /*IQueryable<Order> orders = _context.Orders
-               .Include(o => o.OrderItems);*/
-            /*decimal yearlyEarnings = GetYearlyEarnings(); 
-            decimal monthlyEarnings = GetMonthlyEarnings(); */
-
-            /*ViewData["YearlyEarnings"] = yearlyEarnings.ToString("C"); 
-            ViewData["MonthlyEarnings"] = monthlyEarnings.ToString("C");*/
+            IEnumerable<Order> orders = await _context.Orders
+               .Include(o => o.OrderItems)
+               
+               .ToListAsync();
 
 
+            ViewBag.YearlyRevenue = 0;
+            foreach (var order in orders)
+            {
+                foreach (OrderItem orderItem in order.OrderItems)
+                {
+                    ViewBag.YearlyRevenue += orderItem.Count * orderItem.Price;  
+                }
 
-            return View();
+
+            }
+           if(DateTime.UtcNow.AddHours(4).ToString("dd/MM") == "01.01")
+            {
+                ViewBag.YearlyRevenue = 0;
+            }
+
+
+            ViewBag.MountlyRevenue = 0;
+            foreach (var order in orders)
+            {
+                foreach (OrderItem orderItem in order.OrderItems)
+                {
+                    ViewBag.MountlyRevenue += orderItem.Count * orderItem.Price;
+                }
+
+
+            }
+            if (DateTime.UtcNow.AddHours(4).ToString("dd") == "01")
+            {
+                ViewBag.MountlyRevenue = 0;
+            }
+
+
+            orders = orders.Where(o => o.Status == OrderType.Pending).OrderByDescending(o=>o.CreatedAt).Take(20).ToList();
+
+            return View(orders);
         }
 
-     /*   private decimal GetYearlyEarnings()
-        {
-            DateTime currentDate = DateTime.Now;
-            int currentYear = currentDate.Year;
-
-            decimal yearlyEarnings = _context.Orders
-                .Where(o => o.CreatedAt== currentYear && o.Status == OrderType.Accepted)
-                .Sum(o => o.OrderItems.Sum(oi => oi.Price * oi.Count));
-
-            return yearlyEarnings;
-        }
-
-        private decimal GetMonthlyEarnings()
-        {
-            DateTime currentDate = DateTime.Now;
-            int currentYear = currentDate.Year;
-            int currentMonth = currentDate.Month;
-
-            decimal monthlyEarnings = _context.Orders
-                .Where(o => o.CreatedAt.Year == currentYear && o.CreatedDate.Month == currentMonth && o.Status == OrderType.Accepted)
-                .Sum(o => o.OrderItems.Sum(oi => oi.Price * oi.Count));
-
-            return monthlyEarnings;
-        }*/
-  
 
     }
 }

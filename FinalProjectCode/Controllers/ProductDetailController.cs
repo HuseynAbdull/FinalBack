@@ -28,7 +28,7 @@ namespace FinalProjectCode.Controllers
             }
                 Product product = await _context.Products
                 .Include(p => p.Reviews.Where(r => r.IsDeleted == false))
-                .Include(p => p.ProductImages)
+                .Include(p => p.ProductImages.Where(pi=>pi.IsDeleted==false))
                 .FirstOrDefaultAsync(p=>p.IsDeleted == false && p.Id == productid);
 
             if (product == null)

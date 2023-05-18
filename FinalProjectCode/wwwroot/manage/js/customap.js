@@ -1,52 +1,16 @@
-﻿/*    $(document).ready(function () {
-        $(document).on('click', '.deleteImg', function (e) {
-            e.preventDefault();
-            let url = $(this).attr('href');
-            let imageid = $(this).data('imageid');
-            let productId = $(this).data('productId');
-            console.log(url);
-            console.log(imageid);
-            console.log(productId);
-            fetch(url + "?productId=" + productId + "&imageId=" + imageid)
-                .then(res => res.text())
-                .then(data => {
-                    $('.productImage').html(data)
-                })
-        })
-    })
-*/
-
-
-/*$(document).ready(function () {
-    let productId = $('.deleteImg').data('productId');
+﻿
+$(document).ready(function (e) {
     $(document).on('click', '.deleteImg', function (e) {
         e.preventDefault();
-        let url = $(this).attr('href');
-        let imageid = $(this).data('imageid');
-        console.log(url);
-        console.log(imageid);
-        console.log(productId);
-        fetch(url + "?productId=" + productId + "&imageId=" + imageid)
-            .then(res => res.text())
-            .then(data => {
-                $('.productImage').html(data)
-            })
-    })
-}) */
+        let imgid = $(this).attr('data-imageId')
+        let prodid = $(this).attr('data-prodid')
+        console.log(imgid)
+        console.log(prodid)
 
-$(document).ready(function () {
-    $(document).on('click', '.deleteImg', function (e) {
-        e.preventDefault();
-        let url = $(this).attr('href');
-        let imageid = $(this).data('imageid');
-        let productId = $(this).data('productId');
-        console.log(url);
-        console.log(imageid);
-        console.log(productId);
-        fetch(url + "?productId=" + productId + "&imageId=" + imageid)
+        fetch('/manage/product/DeleteImg?productId=' + prodid + '&imageId=' + imgid)
             .then(res => res.text())
             .then(data => {
-                $('.productImage').html(data)
+                $('.productImages').html(data)
             })
-    })
-})
+    });
+});

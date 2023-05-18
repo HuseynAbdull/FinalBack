@@ -7,9 +7,7 @@ using System.Text;
 
 namespace FinalProjectCode.Controllers
 {
-    //[Authorize(Roles ="SuperAdmin,Admin")]
-    //[AllowAnonymous]
-
+    
     public class HomeController : Controller
     {
         private readonly AppDbContext _context;
