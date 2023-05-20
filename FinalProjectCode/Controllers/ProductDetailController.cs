@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FinalProjectCode.Controllers
 {
+
+
     public class ProductDetailController : Controller
     {
         private readonly AppDbContext _context;

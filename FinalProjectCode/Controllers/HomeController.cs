@@ -44,7 +44,7 @@ namespace FinalProjectCode.Controllers
         {
 
             Models.ContactMe contactMe1 = new Models.ContactMe();
-            if(homeVM.ContactMes.Name != null) 
+            if(homeVM.ContactMes.Name != null)
             {
                 contactMe1.Name = homeVM.ContactMes.Name;
                 if (homeVM.ContactMes.Email != null)
@@ -53,10 +53,11 @@ namespace FinalProjectCode.Controllers
                     await _context.ContactMes.AddAsync(contactMe1);
                     await _context.SaveChangesAsync();
                 }
-            }
+				
+			}
+            
 
-
-            return RedirectToAction("Index");
+			return RedirectToAction("Index");
 
         }
 

@@ -130,7 +130,7 @@ namespace FinalProjectCode.Controllers
             }
 
             List<OrderItem> orderItems = new List<OrderItem>();
-
+            List<Product> products = await _context.Products.ToListAsync();
             foreach (BasketVM basketVM in basketVMs)
             {
                 OrderItem orderItem = new OrderItem
@@ -158,6 +158,11 @@ namespace FinalProjectCode.Controllers
             order.CreatedAt = DateTime.UtcNow.AddHours(4);
             order.CreatedBy = $"{appUser.Name} {appUser.Surname}";
             order.OrderItems = orderItems;
+            foreach (OrderItem orderItem1 in order.OrderItems)
+            {
+                products.FirstOrDefault(p => p.Id == orderItem1.ProductId).Count -= orderItem1.Count;
+
+            }
             order.No = appUser.Orders != null && appUser.Orders.Count() > 0 ? appUser.Orders.Last().No + 1 : 1;
 
 
