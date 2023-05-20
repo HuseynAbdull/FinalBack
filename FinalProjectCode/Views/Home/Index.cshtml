@@ -177,11 +177,14 @@
                 <a class="social-media-logos" href=""><i class="fa-brands fa-instagram"></i></a>
             </div>
             <div class="right-contact">
-                <p>NAME<span> *</span> </p>
-                <input type="text" placeholder="NAME">
-                <p>EMAIL<span> *</span> </p>
-                <input class="email-input" type="email" placeholder="EMAIL">
-                <button class="send-button">SEND</button>
+                <form method="post" asp-controller="home" asp-action="ContactMe">
+                    <div asp-validation-summary="ModelOnly" class="text text-danger"></div>
+                    <p>NAME<span> *</span> </p>
+                    <input asp-for="ContactMes.Name" placeholder="NAME">
+                    <p>EMAIL<span> *</span> </p>
+                    <input asp-for="ContactMes.Email" placeholder="EMAIL">
+                    <button type="submit" class="send-button">SEND</button>
+                </form>
             </div>
         </div>
     </div>

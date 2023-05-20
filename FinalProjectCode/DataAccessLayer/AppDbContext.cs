@@ -31,5 +31,7 @@ namespace FinalProjectCode.DataAccessLayer
 
         public DbSet<Basket> Baskets { get; set; }
 
+        public DbSet<ContactMe> ContactMes { get; set; }
+
     }
 }
