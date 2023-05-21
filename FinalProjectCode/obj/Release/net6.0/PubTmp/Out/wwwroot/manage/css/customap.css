@@ -1,0 +1,61 @@
+/* ADMIN PANEL BUTTONS */
+
+.ap-button {
+    text-align: center !important;
+    align-items: center !important;
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+    width: 100px !important;
+    height: 30px !important;
+    background-color: #2100ff;
+    transition: 0.3s !important;
+    border-radius: 5px !important;
+    margin-bottom: 1rem !important;
+    margin-top: 1rem !important;
+    border: 1px solid #262626 !important;
+    cursor: pointer !important;
+    display: inline-table !important;
+}
+
+.ap-detail {
+    background-color: #00f7ff !important;
+}
+
+.ap-update {
+    background-color: #88ff00fd;
+}
+
+.ap-delete {
+    background-color: #ff002be3;
+}
+
+.ap-create {
+    background-color: #36b8ce;
+}
+
+
+
+.ap-button a {
+    color: rgba(82, 74, 74, 0.753) !important;
+    font-size: 14px !important;
+    font-style: italic !important;
+    font-weight: 500 !important;
+    transition: 0.3s !important;
+}
+
+
+
+
+    .ap-button a:hover {
+        color: #fff !important;
+    }
+
+
+.ap-button:hover {
+    transform: scale(1.1) !important;
+    overflow: hidden !important;
+}
+
+
+
+/* ADMIN PANEL BUTTONS */
