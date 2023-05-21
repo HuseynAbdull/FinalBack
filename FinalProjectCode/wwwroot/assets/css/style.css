@@ -15,6 +15,12 @@
     display: none;
 }
 
+
+.dark-mode {
+    background-color: #333 !important;
+    color: #fff !important;
+}
+
 .hamburger {
     display: none;
     cursor: pointer;

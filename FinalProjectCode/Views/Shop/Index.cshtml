@@ -1,5 +1,8 @@
 ﻿@model ShopVM
 
+@*Shop Sale Head Photo*@
+
+
 <section id="sale-head-photo">
     <div class="container">
         <img src="assets/photos/shop-home-photo/6cc5db85df435323f28fe8aea37c6a6f_1200x.progressive.png" alt="">
@@ -8,6 +11,7 @@
 </section>
 
 
+<!-- Shop partial -->
 <section class="sale-full" id="sale-full">
     @await Html.PartialAsync("_ShopPartialView", Model)
 </section>

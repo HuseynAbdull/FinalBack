@@ -5,10 +5,10 @@ namespace FinalProjectCode.ViewModels.RegisterVM
     public class RegisterVM
     {
         [StringLength(100)]
-        public string? Name { get; set; }
+        public string Name { get; set; }
 
         [StringLength(100)]
-        public string? Surname { get; set; }
+        public string Surname { get; set; }
 
         [Required]
         [EmailAddress]

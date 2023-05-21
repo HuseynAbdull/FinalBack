@@ -324,7 +324,7 @@
         });
     </script>
 
-    @if (TempData["ToasterMessage4"] != null)
+  @* @if (TempData["ToasterMessage4"] != null)
     {
         <script>
             Swal.fire({
@@ -334,20 +334,56 @@
                 showConfirmButton: false
             });
         </script>
+    }*@
+
+    @if (TempData["ToasterMessage4"] != null)
+    {
+        <script>
+            Swal.fire({
+                title: '@TempData["ToasterMessage4"]',
+                icon: 'success',
+                timer: 2000,
+                showConfirmButton: false,
+                toast: true,
+                customClass: {
+                    popup: 'dark-mode',
+                    title: 'dark-mode',
+                    icon: 'dark-mode',
+                    content: 'dark-mode',
+                    confirmButton: 'dark-mode',
+                },
+                didOpen: () => {
+                    const swalContainer = document.querySelector('.swal-container');
+                    swalContainer.classList.add('dark-mode');
+                }
+            });
+        </script>
     }
+
 
     @if (TempData["ToasterMessage5"] != null)
     {
         <script>
             Swal.fire({
-                title: '@TempData["ToasterMessage5"]',
-                icon: 'error',
-                timer: 5000,
-                showConfirmButton: true
+                title: '@TempData["ToasterMessage4"]',
+                icon: 'success',
+                timer: 2000,
+                showConfirmButton: false,
+                toast: true,
+                customClass: {
+                    popup: 'dark-mode',
+                    title: 'dark-mode',
+                    icon: 'dark-mode',
+                    content: 'dark-mode',
+                    confirmButton: 'dark-mode',
+                },
+                didOpen: () => {
+                    const swalContainer = document.querySelector('.swal-container');
+                    swalContainer.classList.add('dark-mode');
+                }
             });
         </script>
     }
-
 
 
 </body>
