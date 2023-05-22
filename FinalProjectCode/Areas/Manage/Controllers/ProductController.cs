@@ -43,9 +43,56 @@ namespace FinalProjectCode.Areas.Manage.Controllers
             ViewBag.Genders = await _context.Genders.Where(g => g.IsDeleted == false).ToListAsync();
             ViewBag.ProductTypes = await _context.ProductTypes.Where(p => p.IsDeleted == false).ToListAsync();
 
+            if (string.IsNullOrEmpty(product.Title))
+            {
+                ModelState.AddModelError("Title", "Ad mutlekdir");
+                return View(product);
+            }
+
+            if (string.IsNullOrEmpty(product.BrandName))
+            {
+                ModelState.AddModelError("BrandName", "BrandName mutlekdir");
+                return View(product);
+            }
+
+            if (string.IsNullOrEmpty(product.UPC))
+            {
+                ModelState.AddModelError("UPC", "UPC mutlekdir");
+                return View(product);
+            }
+
+            if (string.IsNullOrEmpty(product.Model))
+            {
+                ModelState.AddModelError("Model", "Model mutlekdir");
+                return View(product);
+            }
+
+            if (product.Count == null && product.Count < 1)
+            {
+                ModelState.AddModelError("Count", "Count mutlekdir");
+                return View(product);
+            }
+
+            if (product.Price == null && product.Price < 1)
+            {
+                ModelState.AddModelError("Price", "Price mutlekdir");
+                return View(product);
+            }
+
+
+            if (string.IsNullOrEmpty(product.Description))
+            {
+                ModelState.AddModelError("Description", "Description mutlekdir");
+                return View(product);
+            }
+
+
+
             if (!ModelState.IsValid) return View(product);
 
-            if(!await _context.ProductTypes.AnyAsync(p=>p.IsDeleted == false && p.Id == product.ProductTypeId))
+
+
+            if (!await _context.ProductTypes.AnyAsync(p=>p.IsDeleted == false && p.Id == product.ProductTypeId))
             {
                 ModelState.AddModelError("ProductTypeId", $"Daxil olunan ProductTypeId{product.ProductTypeId}yanlishdir");
 
@@ -56,6 +103,8 @@ namespace FinalProjectCode.Areas.Manage.Controllers
                 ModelState.AddModelError("GenderId", $"Daxil olunan GenderId{product.GenderId}yanlishdir");
 
             }
+
+         
 
             if (product.MainFile != null)
             {
@@ -263,15 +312,51 @@ namespace FinalProjectCode.Areas.Manage.Controllers
                 dbProduct.MainImage = await product.MainFile.CreateFileAsync(_env, "assets", "photos", "products");
             }
 
-            
 
+            if (string.IsNullOrEmpty(product.Title))
+            {
+                
+                return RedirectToAction("update", "product", new { productId = product.Id});
+
+            }
+
+            if (string.IsNullOrEmpty(product.BrandName))
+            {
+                return RedirectToAction("update", "product", new { productId = product.Id });
+            }
+
+            if (string.IsNullOrEmpty(product.UPC))
+            {
+                return RedirectToAction("update", "product", new { productId = product.Id });
+            }
+
+            if (string.IsNullOrEmpty(product.Model))
+            {
+                return RedirectToAction("update", "product", new { productId = product.Id });
+            }
+
+            if (product.Count == null || product.Count < 1)
+            {
+                return RedirectToAction("update", "product", new { productId = product.Id });
+            }
+
+            if (product.Price == null || product.Price < 1)
+            {
+                return RedirectToAction("update", "product", new { productId = product.Id });
+            }
+
+            if (string.IsNullOrEmpty(product.Description))
+            {
+                return RedirectToAction("update", "product", new { productId = product.Id });
+            }
 
             if (product.Price != null) { dbProduct.Price = product.Price; }
             if (product.DiscountedPrice != null) { dbProduct.DiscountedPrice = product.DiscountedPrice; }
             if (product.Count != null) { dbProduct.Count = product.Count; }
             if (product.Description != null) { dbProduct.Description = product.Description; }
             if(product.Title != null) { dbProduct.Title = product.Title; }
-           
+
+
             dbProduct.Title= product.Title.Trim();
             dbProduct.UpdatedAt = DateTime.UtcNow.AddHours(4);
             dbProduct.UpdatedBy = "ADMIN";

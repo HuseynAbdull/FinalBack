@@ -71,7 +71,7 @@ namespace FinalProjectCode.Controllers
             }
 
             await _userManager.AddToRoleAsync(appUser, "Member");
-            string token = await _userManager.GenerateEmailConfirmationTokenAsync(appUser);
+           /* string token = await _userManager.GenerateEmailConfirmationTokenAsync(appUser);
 
             string url = Url.Action("EmailConfirm", "Account", new {id=appUser.Id, token=token},
                 HttpContext.Request.Scheme, HttpContext.Request.Host.ToString());
@@ -100,7 +100,7 @@ namespace FinalProjectCode.Controllers
                 await smtpClient.DisconnectAsync(true);
                 smtpClient.Dispose();
             }
-
+            */
             return RedirectToAction(nameof(Login));
         }
 

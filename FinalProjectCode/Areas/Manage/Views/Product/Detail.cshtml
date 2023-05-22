@@ -1,39 +1,32 @@
 ﻿@model Product
-
+@{
+    int count = 0;
+    
+}
 <div class="row">
     <div class="col-lg-4">
-        <h1 class="h3 mb-4 text-gray-800">Gender Detail Page</h1>
+        <h1 class="h3 mb-4 text-gray-800">Product Detail Page</h1>
     </div>
 </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Gender</th>
-            <th scope="col">MainImage</th>
-            <th scope="col">Images</th>
-            <th scope="col">Created At</th>
-            <th scope="col">Created By</th>
-            <th scope="col">Updated At</th>
-            <th scope="col">Updated By</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">//</></th>
-            <td>@Model.Title</td>
-            <td><img style="width: 40px" src="~/assets/photos/products/@Model.MainImage"/></td>
-            @foreach (ProductImage productImage in Model.ProductImages)
-            {
-                <td><img style="width: 40px" src="~/assets/photos/products/@productImage.Image" /></td>
-            }
-            <td>@Model.CreatedAt</td>
-            <td>@Model.CreatedBy</td>
-            <td>@Model.UpdatedAt</td>
-            <td>@Model.UpdatedBy</td>
 
-        </tr>
-    </tbody>
-</table>
-
+<div class="Row">
+    <div class="col-lg-4">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Name: @Model.Title</h5>
+                <h5 class="card-title">Main Image: <img style="width: 100px" src="~/assets/photos/products/@Model.MainImage" /> </h5>
+                @foreach (ProductImage productImage in Model.ProductImages)
+                {
+                    count++;
+                    <h5 class="card-title">Product Images @count : <img style="width: 100px" src="~/assets/photos/products/@productImage.Image" /> </h5>
+                }
+                <h5 class="card-title">Created At : @Model.CreatedAt</h5>
+                <h5 class="card-title">Created By: @Model.CreatedBy</h5>
+                <h5 class="card-title">Updated At: @Model.UpdatedAt</h5>
+                <h5 class="card-title">Updated By: @Model.UpdatedBy</h5>
+              
+            </div>
+        </div>
+    </div>
+</div>

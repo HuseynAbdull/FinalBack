@@ -9,7 +9,7 @@
             <img style="width: 200px;" src="~/assets/photos/products/@productImage.Image" />
             @if (Model.Count() > 0)
             {
-                <a class="deleteImg" data-prodid="@productImage.ProductId" data-imageId="@productImage.Id">X</a>
+                <a style="cursor: pointer !important" class="deleteImg" data-prodid="@productImage.ProductId" data-imageId="@productImage.Id">X</a>
             }
         </div>
     }

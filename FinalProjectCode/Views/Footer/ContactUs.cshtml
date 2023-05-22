@@ -1,7 +1,9 @@
-﻿
+﻿@inject ILayoutServices layoutservice
 @{
-    ViewData["Title"] = "ContactUs";
+    IDictionary<string, string> settings = await layoutservice.GetSettings();
+    IEnumerable<BasketVM> basketVMs = await layoutservice.GetBaskets();
 }
+
 
 <section>
     <div class="container">
@@ -12,11 +14,12 @@
             <p>Sunrise, FL 33325</p>
             
             <br>
-            <p><b>PHONE:</b> <span>070.744.20.44</span></p>
-            <p><b>E-MAIL:</b> <span>HUSEYNKA@CODE.EDU.AZ</span></p>
+            <p><b>PHONE:</b> <span>@Html.Raw(settings.FirstOrDefault(s=>s.Key == "Phone").Value)</span> </p>
+            <p><b>SUPPORTPHONE:</b> <span>@Html.Raw(settings.FirstOrDefault(s=>s.Key == "SupportPhone").Value)</span> </p>
+            <p><b>E-MAIL:</b> <span>@Html.Raw(settings.FirstOrDefault(s=>s.Key == "Email").Value)</span></p>
             <br>
             <p><b>Customer Service Times:</b></p>
-            <p>Monday - Friday: 9:30am – 5:30pm EST</p>
+            <p>@Html.Raw(settings.FirstOrDefault(s=>s.Key == "WorkDate").Value)</p>
             <br>
             <p><b>Business Development:</b></p>
             <p>
@@ -26,7 +29,7 @@
                 Please only email for business-related inquires.
             </p>
             <br>
-            <p>If you are in a rush for your order, please contact us.</p>
+            <p>@Html.Raw(settings.FirstOrDefault(s=>s.Key == "About").Value)</p>
             <br>
         </div>
     </div>

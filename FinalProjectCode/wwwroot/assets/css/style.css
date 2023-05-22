@@ -2054,6 +2054,14 @@ li {
 
     /* CUSTOM Darkmode  start */
 
+    .center-nav {
+        z-index: 999 !important;
+    }
+
+    .catagory-sale {
+        z-index: 999 !important;
+    }
+
 
     .right-header-bottom input {
         padding-left: 10px;
@@ -2335,6 +2343,8 @@ input[type="range"] {
 
     .refine-by {
         display: block;
+        width: 100% !important;
+        height: 80px !important;
     }
 
     .catagory-sale {
