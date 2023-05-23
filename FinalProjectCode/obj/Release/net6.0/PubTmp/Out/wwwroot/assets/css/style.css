@@ -983,7 +983,7 @@ li {
         text-align: center !important;
         padding-top: 1rem !important;
         border: #36b8ce 1px solid !important;
-        top: -80% !important;
+        top: -240% !important;
         left: 70% !important;
         color: #36b8ce;
         z-index: 3 !important;
@@ -2193,7 +2193,7 @@ li {
     .cart-header span {
         position: absolute;
         font-size: 19px;
-        left: 30%;
+        left: 101%;
         top: -45%;
         color: #36b8ce;
         font-weight: bold;
@@ -2205,10 +2205,15 @@ li {
 
         /* Range Filter Start */
 
-.slider-rng {
-    width: 100%;
-    margin: 50% auto;
-}
+    .slider-rng {
+        width: 100%;
+        margin: 50% auto;
+    }
+
+    .rangeFilter{
+        position:relative !important;
+        top:5px !important;
+    }
 
 input[type="range"] {
     -webkit-appearance: none !important;
@@ -2219,7 +2224,7 @@ input[type="range"] {
     margin: auto;
     transition: all 0.3s ease;
     position: relative;
-    left: -53px !important;
+    left: 0;
     top: 0;
     width: 157px !important;
 }

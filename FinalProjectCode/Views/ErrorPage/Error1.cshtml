@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/assets/css/error.css">
+    <title>ShadesDaddy</title>
+</head>
+<body>
+    <section class="notFound">
+        <div class="img">
+            <img src="https://assets.codepen.io/5647096/backToTheHomepage.png" alt="Back to the Homepage" />
+            <img src="https://assets.codepen.io/5647096/Delorean.png" alt="El Delorean, El Doc y Marti McFly" />
+        </div>
+        <div class="text">
+            <h1>404</h1>
+            <h2>PAGE NOT FOUND</h2>
+            <h3>BACK TO HOME?</h3>
+            <a asp-controller="home" asp-action="index" class="yes">YES</a>
+            <a asp-controller="ErrorPage" asp-action="Error1" >NO</a>
+        </div>
+    </section>
+</body>
+</html>

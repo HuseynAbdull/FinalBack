@@ -3,6 +3,7 @@ using FinalProjectCode.Interfaces;
 using FinalProjectCode.Models;
 using FinalProjectCode.Services;
 using FinalProjectCode.ViewModels;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -40,7 +41,7 @@ builder.Services.AddHttpContextAccessor();
 
 
 var app = builder.Build();
-
+app.UseStatusCodePagesWithReExecute("/ErrorPage/Error1","?code={0}");
 
 app.UseSession();
 app.UseAuthentication();

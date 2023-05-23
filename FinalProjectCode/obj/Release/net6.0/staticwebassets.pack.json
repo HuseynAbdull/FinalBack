@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\css\\error.css",
+      "PackagePath": "staticwebassets\\assets\\css\\error.css"
+    },
+    {
       "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\css\\style.css",
       "PackagePath": "staticwebassets\\assets\\css\\style.css"
     },
