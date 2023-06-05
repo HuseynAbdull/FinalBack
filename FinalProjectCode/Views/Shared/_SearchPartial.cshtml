@@ -2,12 +2,11 @@
 
 @foreach (Product product in Model)
 {
-    <li style="background-color:azure">
-        <a asp-action="Index" asp-controller="productdetail" asp-route-productid="@product.Id" style="width:100%">
-            <img style="width:100px" src="~/assets/photos/products/@product.MainImage" />
-            <p style="display:inline-block">@product.Title</p>
-            <p style="display:inline-block">from <span class="span-red">@product.DiscountedPrice$</span> <span class="old-price">@product.Price$</span></p>
-        </a>
-    </li>
-
+        <li style="background-color:azure">
+            <a asp-action="Index" asp-controller="productdetail" asp-route-productid="@product.Id" style="width:100%">
+                <img style="width:100px" src="~/assets/photos/products/@product.MainImage" />
+                <p style="display:inline-block">@product.Title</p>
+                <p style="display:inline-block">from <span class="span-red">@product.DiscountedPrice$</span> <span class="old-price">@product.Price$</span></p>
+            </a>
+        </li>
 }

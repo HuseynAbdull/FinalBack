@@ -71,12 +71,12 @@ namespace FinalProjectCode.Controllers
             }
 
             await _userManager.AddToRoleAsync(appUser, "Member");
-           /* string token = await _userManager.GenerateEmailConfirmationTokenAsync(appUser);
+            string token = await _userManager.GenerateEmailConfirmationTokenAsync(appUser);
 
-            string url = Url.Action("EmailConfirm", "Account", new {id=appUser.Id, token=token},
+            string url = Url.Action("EmailConfirm", "Account", new { id = appUser.Id, token = token },
                 HttpContext.Request.Scheme, HttpContext.Request.Host.ToString());
 
-            string fullpath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "Shared", "_EmailConfirmPartial.cshtml");
+            string fullpath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "templates", "_EmailConfirmPartial.html");
             string templateContent = await System.IO.File.ReadAllTextAsync(fullpath);
             templateContent = templateContent.Replace("{{url}}", url);
 
@@ -100,7 +100,7 @@ namespace FinalProjectCode.Controllers
                 await smtpClient.DisconnectAsync(true);
                 smtpClient.Dispose();
             }
-            */
+
             return RedirectToAction(nameof(Login));
         }
 
@@ -414,7 +414,7 @@ namespace FinalProjectCode.Controllers
             string url = Url.Action("ResetPassword", "Account", new { token, email = forgotPasswordVM.Email },
                 HttpContext.Request.Scheme, HttpContext.Request.Host.ToString());
 
-            string fullpath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "Shared", "PassReset.cshtml");
+            string fullpath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "templates", "PassReset.html");
             string templateContent = await System.IO.File.ReadAllTextAsync(fullpath);
             templateContent = templateContent.Replace("{{url}}", url);
 
@@ -436,7 +436,7 @@ namespace FinalProjectCode.Controllers
                 smtpClient.Dispose();
             }
 
-           /* TempData["ToasterMessage5"] = "Your password reset request has been sent to your email. Please check your email!";*/
+            TempData["ToasterMessage4"] = "Your password reset request has been sent to your email !";
             return RedirectToAction("index", "Home");
 
         }

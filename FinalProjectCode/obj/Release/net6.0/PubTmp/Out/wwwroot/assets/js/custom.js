@@ -98,7 +98,6 @@ $(document).ready(function (){
     })
 
 
-
     $('.addToBasket').click(function myfunction(e) {
         e.preventDefault();
         let productId = $(this).data('id');

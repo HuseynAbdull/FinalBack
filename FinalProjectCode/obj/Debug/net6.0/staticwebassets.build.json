@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5MVwpfS7uN3pTtyTpFBxXBPDTFstyaizoHb5MbCLaRg=",
+  "Hash": "0YAavuYt8169W4/AfgwyxyeGqudfQUEkZQGgwjOJleQ=",
   "Source": "FinalProjectCode",
   "BasePath": "_content/FinalProjectCode",
   "Mode": "Default",
@@ -3313,6 +3313,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\photos\\shop-home-photo\\eyeglasses.png"
+    },
+    {
+      "Identity": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\shop-home-photo\\hp.jpg",
+      "SourceId": "FinalProjectCode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\",
+      "BasePath": "_content/FinalProjectCode",
+      "RelativePath": "assets/photos/shop-home-photo/hp.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\photos\\shop-home-photo\\hp.jpg"
     },
     {
       "Identity": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\shop-home-photo\\newarrivals.png",
@@ -14278,6 +14295,57 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\manage\\scss\\variables\\_variables.scss"
+    },
+    {
+      "Identity": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\templates\\_CheckoutPartial.html",
+      "SourceId": "FinalProjectCode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\",
+      "BasePath": "_content/FinalProjectCode",
+      "RelativePath": "templates/_CheckoutPartial.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\templates\\_CheckoutPartial.html"
+    },
+    {
+      "Identity": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\templates\\_EmailConfirmPartial.html",
+      "SourceId": "FinalProjectCode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\",
+      "BasePath": "_content/FinalProjectCode",
+      "RelativePath": "templates/_EmailConfirmPartial.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\templates\\_EmailConfirmPartial.html"
+    },
+    {
+      "Identity": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\templates\\PassReset.html",
+      "SourceId": "FinalProjectCode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\",
+      "BasePath": "_content/FinalProjectCode",
+      "RelativePath": "templates/PassReset.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\templates\\PassReset.html"
     }
   ]
 }

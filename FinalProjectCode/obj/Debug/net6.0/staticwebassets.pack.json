@@ -777,6 +777,10 @@
       "PackagePath": "staticwebassets\\assets\\photos\\shop-home-photo\\eyeglasses.png"
     },
     {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\shop-home-photo\\hp.jpg",
+      "PackagePath": "staticwebassets\\assets\\photos\\shop-home-photo\\hp.jpg"
+    },
+    {
       "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\assets\\photos\\shop-home-photo\\newarrivals.png",
       "PackagePath": "staticwebassets\\assets\\photos\\shop-home-photo\\newarrivals.png"
     },
@@ -3355,6 +3359,18 @@
     {
       "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\manage\\scss\\variables\\_variables.scss",
       "PackagePath": "staticwebassets\\manage\\scss\\variables\\_variables.scss"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\templates\\PassReset.html",
+      "PackagePath": "staticwebassets\\templates\\PassReset.html"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\templates\\_CheckoutPartial.html",
+      "PackagePath": "staticwebassets\\templates\\_CheckoutPartial.html"
+    },
+    {
+      "Id": "C:\\Users\\Mashkur\\Desktop\\FinalProjectCode\\FinalProjectCode\\wwwroot\\templates\\_EmailConfirmPartial.html",
+      "PackagePath": "staticwebassets\\templates\\_EmailConfirmPartial.html"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.FinalProjectCode.Microsoft.AspNetCore.StaticWebAssets.props",

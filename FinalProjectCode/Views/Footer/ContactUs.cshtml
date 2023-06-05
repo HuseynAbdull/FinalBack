@@ -5,7 +5,7 @@
 }
 
 
-<section>
+<section data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
     <div class="container">
         <div class="contact-us-page">
             <h1>CONTACT US</h1>
@@ -15,7 +15,7 @@
             
             <br>
             <p><b>PHONE:</b> <span>@Html.Raw(settings.FirstOrDefault(s=>s.Key == "Phone").Value)</span> </p>
-            <p><b>SUPPORTPHONE:</b> <span>@Html.Raw(settings.FirstOrDefault(s=>s.Key == "SupportPhone").Value)</span> </p>
+            <p><b>SUPPORT PHONE:</b> <span>@Html.Raw(settings.FirstOrDefault(s=>s.Key == "SupportPhone").Value)</span> </p>
             <p><b>E-MAIL:</b> <span>@Html.Raw(settings.FirstOrDefault(s=>s.Key == "Email").Value)</span></p>
             <br>
             <p><b>Customer Service Times:</b></p>

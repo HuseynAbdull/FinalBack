@@ -4,8 +4,8 @@
 @*Home Page First Photo*@
 
 <section>
-    <div class="opened-photo">
-        <img src="assets/photos/SD_Homepage_Banner_3 1 (1).png" alt="">
+    <div data-aos="zoom-in-up" data-aos-offset="300" data-aos-easing="ease-in-sine" class="opened-photo">
+        <img src="~/assets/photos/shop-home-photo/hp.jpg" alt="">
     </div>
 </section>
 
@@ -15,7 +15,7 @@
 <section>
     <div class="container-custom">
         <div class="new-products">
-            <p>New Products</p>
+            <p data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">New Products</p>
         </div>
         <div class="row slider new-arrivals">
 
@@ -45,7 +45,7 @@
 @*Home Page Photos Slider*@
 
 
-<section id="slider-about-section">
+<section data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in-sine" id="slider-about-section">
     <div class="row slider-ab slider-about">
         <div class="col-md-12">
             <div class="about-picture">
@@ -125,13 +125,13 @@
 
 <section id="catagory">
 
-    <div class="catagory-left">
+    <div data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000" class="catagory-left">
         <img src="https://cdn.shopify.com/s/files/1/0025/3332/6907/files/his_2def799f-44ba-4c91-872d-3b43cb332758_600x.jpg?v=1680267646" alt="">
         <h4>Men’s Collection</h4>
         <p>Save big on handsome optical designs for him.</p>
         <a asp-action="index" asp-controller="shop" asp-route-genderid="1" class="category-button">SHOP MEN'S</a>
     </div>
-    <div class="catagory-right">
+    <div data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000" class="catagory-right">
         <img src="https://cdn.shopify.com/s/files/1/0025/3332/6907/files/hers_b9ebd63a-aa8e-4d39-bf55-862af5f60a80_600x.jpg?v=1680267668" alt="">
         <h4>Women’s Collection</h4>
         <p>Shop the hottest prescription-ready eyeglasses for her.</p>
@@ -145,7 +145,7 @@
 
 <section>
     <div class="container">
-        <div class="video-sec">
+        <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" class="video-sec">
             <a style="cursor:pointer !important" asp-action="index" asp-controller="shop"> <video playsinline="" autoplay="" muted="" loop="" src="assets/video/5be16844f9664bcab99a6dd50f4ff47f.mov"></video></a>
         </div>
     </div>
@@ -210,7 +210,7 @@
                     <input asp-for="ContactMes.Name" placeholder="NAME">
                     <p>EMAIL<span> *</span> </p>
                     <input asp-for="ContactMes.Email" placeholder="EMAIL">
-                    <button type="submit" class="send-button">SEND</button>
+                    <button data-aos="fade-left" data-aos-delay="100" data-aos-duration="500" type="submit" class="send-button">SEND</button>
                 </form>
             </div>
         </div>

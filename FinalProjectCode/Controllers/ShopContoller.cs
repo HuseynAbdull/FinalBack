@@ -105,8 +105,7 @@ namespace FinalProjectCode.Controllers
 
                 .Where(p => p.IsDeleted == false && 
                 (p.Title.ToLower().Contains(search.ToLower()) || p.BrandName.ToLower().Contains(search.ToLower()))).ToListAsync();
-
-
+            
             return PartialView("_SearchPartial", products);
         }
 

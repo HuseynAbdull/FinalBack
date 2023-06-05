@@ -1,0 +1,64 @@
+﻿@model Order
+
+<form id="orderCheckoutForm" method="post">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="single-input-item">
+                <label asp-for="Name" class="required"></label>
+                <input asp-for="Name" id="f_name" placeholder="First Name" required />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="single-input-item">
+                <label asp-for="SurName" class="required"></label>
+                <input asp-for="SurName" id="l_name" placeholder="Last Name" required />
+                <span asp-validation-for="SurName" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="single-input-item">
+        <label asp-for="Email" class="required"></label>
+        <input asp-for="Email" id="email" placeholder="Email Address" required />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="single-input-item">
+            <label asp-for="Country" class="required"></label>
+            <input asp-for="Country" id="l_name" placeholder="Country" required />
+            <span asp-validation-for="Country" class="text-danger"></span>
+    </div>
+   
+    <div class="single-input-item">
+        <label asp-for="City" class="required"></label>
+        <input asp-for="City" id="town" placeholder="Town / City" required />
+        <span asp-validation-for="City" class="text-danger"></span>
+    </div>
+
+    <div class="single-input-item">
+        <label asp-for="State"></label>
+        <input asp-for="State" id="state" placeholder="State / Divition" />
+        <span asp-validation-for="State" class="text-danger"></span>
+
+    </div>
+
+    <div class="single-input-item">
+        <label asp-for="PostalCode" class="required"></label>
+        <input asp-for="PostalCode" id="postcode" placeholder="Postcode / ZIP" required />
+        <span asp-validation-for="PostalCode" class="text-danger"></span>
+    </div>
+
+    <div class="single-input-item">
+        <label asp-for="AddressLine" class="required"></label>
+        <input asp-for="AddressLine" id="postcode" placeholder="Address Line" required />
+        <span asp-validation-for="AddressLine" class="text-danger"></span>
+    </div>
+
+    <div class="single-input-item">
+        <label asp-for="Phone"></label>
+        <input asp-for="Phone" id="phone" placeholder="Phone" />
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+</form>

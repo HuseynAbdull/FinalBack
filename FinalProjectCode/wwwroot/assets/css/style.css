@@ -1375,10 +1375,12 @@ li {
 
 .about-image {
     width: 100%;
+    overflow: hidden !important;
 }
 
     .about-image img {
         width: 100%;
+        overflow: hidden !important;
     }
 
 .about-text {
@@ -2631,6 +2633,11 @@ input[type="range"] {
     .vr {
         display: none !important;
     }
+
+    .discount-photo img {
+        object-fit: contain !important;
+    }
+
 }
 
 
